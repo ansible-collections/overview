@@ -90,7 +90,7 @@ Documentation
 ==============
 
 * `Using Ansible Collections <https://docs.ansible.com/ansible/latest/user_guide/collections_using.html>`_
-* `Using Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_
+* `Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_
 
 Work needed
 ===========
@@ -102,9 +102,9 @@ The majority of the Ansible 2.10 release cycle is for:
 * Defining what the split of collections should be
 * Defining which modules and plugins go into these new collections
 * Defining ansible-base (ie which modules stay in ansible/ansible)
-* Updating test infrastruture
+* Updating test infrastructure
 * Testing the changes
-* Getting feedack from *you*
+* Getting feedback from *you*
 
 We will soon begin the migration of content out of ansible/ansible, into its new component collection repositories.
 
@@ -223,6 +223,16 @@ Q: What happens if I don't move my content into a collection?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Content that doesn't end up in its own Collection will end up being automatically migrated to ``community.general`` during the devel freeze window.
+
+Q: Why would I want a dedicated collection?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The benefits of claiming content are the following:
+
+* Source content is housed in a GitHub organization/repository of your choosing
+* Source content is subject to your own CI processes, decisions, and testing
+* Your own dedicated Issue and PR backlog
+* Ability to use more GitHub functionality, such as direct assignments, reviews, milestones and Project Boards
 
 Q: What will versioning and deprecation look like for Collections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
