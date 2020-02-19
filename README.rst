@@ -193,7 +193,7 @@ If you spot an problems with ansible-base between now and ``temp-2.10-devel`` ha
 Contributors to Ansible
 ------------------------
 
-`Using Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_
+`Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_
 
 Q: I'd like to submit a new module or plugin to Ansible. How shall I proceed?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
