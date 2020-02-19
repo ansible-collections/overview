@@ -79,7 +79,7 @@ Collection name
   In the second part of a Fully Qualified Collection Name, the collection name further divides the functional characteristics of the collection content and denotes ownership.  For example, the cisco namespace might contain  ``cisco.ios``, ``cisco.ios_community``, and ``cisco.ios_prc``, containing content for managing ios network devices maintained by Cisco.
 
 The community.general collection
-  A special collection managed by the Ansible Community Team containing all the modules and plugins which shipped in Ansible 2.9 that don't have their own dedicated Collection. A work in progress can be found in `community.general <https://github.com/ansible-collection-migration/community.general/>`_ repository.
+  A special collection managed by the Ansible Community Team containing all the modules and plugins which shipped in Ansible 2.9 that don't have their own dedicated Collection. A work in progress can be found in `community.general <https://github.com/ansible-collection-migration/community.general/>`_ repository. At least initially there are no Long Term Support (LTS) plans, though we will see how the need for that grows over time.
 
 Repository
   The location of the source code included in a collection. Contributors make suggestions, fix bugs, and add features through the repository. Collection owners can host repositories on GitHub, Gerrit, or any other source code repository platform they choose.
@@ -156,12 +156,35 @@ Once the split has been successfully accomplished, devel users will consume ansi
 Q: What exactly is ansible-base for and what will it contain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-FIXME use-cases
+**Ansible-base** is the name for what github.com/ansible/ansible will become once content has been removed and ``temp-2.10-devel`` has been merged back into ``devel`` branch.
 
-FIXME Link to repo
+use-cases for ansible-base
+""""""""""""""""""""""""""
 
-Link to Scenario file (with notes)
+ ``ansible[|-playbook|-galaxy|-pull|-doc|-test]`` --help
+* Being able to install content from Galaxy or Automation Hub
+  * ``ansible-galaxy collection ...``
+  * Setup Networking
+  * Setup Proxy
+* Being able to install supported content via packages
+  * ie RHEL users will not use ``ansible-galaxy collection install ...``, they want RPMs
+  * Ability to setup and use package repos
+  * Ability to work online or offline
+* Include things that are "hardcoded" into Ansible
+  * eg ``stat`` is used to handle any file information internally
+  * ``include_tasks`` is hardcoded as the implementation is inside the engine, same with ``add_hosts``, ``group-by``, ``debug`` and others, async_wrapp, async-poll, assert/fail are 'parts of the language'
+* Development
+  * Ability to run ``ansible-test sanity,unit,integration`` against the Ansible code base
+* Parts of the Windows codebase that can't currently be removed from ansible-base.
 
+pre-release versions of ansible-base
+""""""""""""""""""""""""""""""""""""
+
+If you wish to look at the current state of ansible-base you can:
+* See the `scenario <https://github.com/ansible-collection-migration/ansible-base>`_ which defines what goes into ansible-base
+* Checkout and run the source https://github.com/ansible-collection-migration/ansible-base (pip install in a Python virtual environment, or do ``source hacking/env-setup``)
+
+If you spot an problems with ansible-base between now and ``temp-2.10-devel`` has been merged back into ``devel`` branch please raise them via `collection_migration <https://github.com/ansible-community/collection_migration/issues/new/>`_, after this point use `ansible/ansible issues <https://github.com/ansible/ansible/issues/new/choose>`_
 
 Contributors to Ansible
 ------------------------
@@ -201,3 +224,31 @@ Q: What happens if I don't move my content into a collection?
 
 Content that doesn't end up in its own Collection will end up being automatically migrated to ``community.general`` during the devel freeze window.
 
+Q: What will versioning and deprecation look like for Collections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* In ansible/ansible:
+
+  * There is a single version number which is over everything shipped in Ansible
+  * Doesn't use semver, uses X.Y (ie 2.9) is the major number
+  * deprecations are done over 4 versions (~ 2 years)
+* In Collections
+
+  * Can be versioned and released independently to Ansible
+  * MUST be use `semver (Semantic Versioning) <https://semver.org/>`_
+
+Details around versioning and deprecation policy are still being worked on, we will have a proposal up shortly
+
+Q: How can I fix bugs in Ansible 2.9?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The `previous policy <https://docs.ansible.com/ansible/latest/community/development_process.html#making-your-pr-merge-worthy>`_ was:
+1. PR for bug fix including ``changelog/fragment`` file
+2. PRs gets merged into ``devel``
+3. Backport (``git cherry-pick -x``) PR against the ``stable-2.9`` branch
+
+
+Once content has been removed from the ``devel`` branch, the process will be:
+1. PR for bug fix made against the Collection
+2. PR gets merged into Collection
+3. Raise PR directly against ``ansible/ansible:stable-2.9`` (ie not a backport) including a ``changelog/fragment`` file
