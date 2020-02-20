@@ -199,7 +199,7 @@ If you wish to look at the current state of ansible-base you can:
 * See the `scenario <https://github.com/ansible-collection-migration/ansible-base>`_ which defines what goes into ansible-base
 * Checkout and run the source https://github.com/ansible-collection-migration/ansible-base (pip install in a Python virtual environment, or do ``source hacking/env-setup``)
 
-If you spot an problems with ansible-base between now and ``temp-2.10-devel`` has been merged back into ``devel`` branch please raise them via `collection_migration <https://github.com/ansible-community/collection_migration/issues/new/>`_, after this point use `ansible/ansible issues <https://github.com/ansible/ansible/issues/new/choose>`_
+If you spot any problems with ansible-base between now and ``temp-2.10-devel`` has been merged back into ``devel`` branch please raise them via `collection_migration <https://github.com/ansible-community/collection_migration/issues/new/>`_, after this point use `ansible/ansible issues <https://github.com/ansible/ansible/issues/new/choose>`_
 
 Contributors to Ansible
 ------------------------
