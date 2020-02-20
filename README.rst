@@ -178,17 +178,22 @@ use-cases for ansible-base
 
  ``ansible[|-playbook|-galaxy|-pull|-doc|-test]`` --help
 * Being able to install content from Galaxy or Automation Hub
+
   * ``ansible-galaxy collection ...``
   * Setup Networking
   * Setup Proxy
 * Being able to install supported content via packages
+
   * ie RHEL users will not use ``ansible-galaxy collection install ...``, they want RPMs
   * Ability to setup and use package repos
   * Ability to work online or offline
+  
 * Include things that are "hardcoded" into Ansible
+
   * eg ``stat`` is used to handle any file information internally
-  * ``include_tasks`` is hardcoded as the implementation is inside the engine, same with ``add_hosts``, ``group-by``, ``debug`` and others, async_wrapp, async-poll, assert/fail are 'parts of the language'
+  * ``include_tasks`` is hardcoded as the implementation is inside the engine, same with ``add_hosts``, ``group-by``, ``debug`` and others, async_wrapp, async-poll, assert/fail are 'parts of the language'  
 * Development
+
   * Ability to run ``ansible-test sanity,unit,integration`` against the Ansible code base
 * Parts of the Windows codebase that can't currently be removed from ansible-base.
 
@@ -196,6 +201,7 @@ pre-release versions of ansible-base
 """"""""""""""""""""""""""""""""""""
 
 If you wish to look at the current state of ansible-base you can:
+
 * See the `scenario <https://github.com/ansible-collection-migration/ansible-base>`_ which defines what goes into ansible-base
 * Checkout and run the source https://github.com/ansible-collection-migration/ansible-base (pip install in a Python virtual environment, or do ``source hacking/env-setup``)
 
