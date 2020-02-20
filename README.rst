@@ -74,7 +74,7 @@ Ansible Galaxy
   An online hub for finding and sharing Ansible community content.  Also, the command-line utility that lets users  install individual Ansible Collections. `galaxy.ansible.com <https://galaxy.ansible.com/>`_.
 
 Fully Qualified Collection Name (FQCN)
-  The full definition of a module, plugin, or role hosted within a collection, in the form ``namespace.collection.content_name``. Allows a Playbook to refer to a specific module or plugin from a specific source in an unambiguous manner, for example, ``community.grafana.grafana_dashboard``. The FQCN is required when you want to specify the exact source of a module and multiple modules with the same name are available. Can always be identified in a playbook; ideally not necessary in most playbooks, but in cases in which users have multiple collections installed with similar content, the FQCN will always be the explicit and authoritative indicator of which collection to use for content. Example: cisco.ios.ios_config would be the FQCN, and the playbook would generally call "ios_config". When is this required.
+  The full definition of a module, plugin, or role hosted within a collection, in the form ``namespace.collection.content_name``. Allows a Playbook to refer to a specific module or plugin from a specific source in an unambiguous manner, for example, ``community.grafana.grafana_dashboard``. The FQCN is required when you want to specify the exact source of a module and multiple modules with the same name are available. Can always be identified in a playbook; ideally not necessary in most playbooks, but in cases in which users have multiple collections installed with similar content, the FQCN will always be the explicit and authoritative indicator of which collection to use for content. Example: cisco.ios.ios_config would be the FQCN, and the playbook would generally call "ios_config". When this is required.
 
 Namespace
   The first part of a Fully Qualified Collection Name, the namespace usually reflects a functional content category. Example: in ``cisco.ios.ios_config``, “Cisco” is the Namespace. Namespaces are reserved and distributed by Red Hat at Red Hat’s discretion. Many, but not all, namespaces will correspond with vendor names.
@@ -199,7 +199,7 @@ If you wish to look at the current state of ansible-base you can:
 * See the `scenario <https://github.com/ansible-collection-migration/ansible-base>`_ which defines what goes into ansible-base
 * Checkout and run the source https://github.com/ansible-collection-migration/ansible-base (pip install in a Python virtual environment, or do ``source hacking/env-setup``)
 
-If you spot an problems with ansible-base between now and ``temp-2.10-devel`` has been merged back into ``devel`` branch please raise them via `collection_migration <https://github.com/ansible-community/collection_migration/issues/new/>`_, after this point use `ansible/ansible issues <https://github.com/ansible/ansible/issues/new/choose>`_
+If you spot any problems with ansible-base between now and ``temp-2.10-devel`` has been merged back into ``devel`` branch please raise them via `collection_migration <https://github.com/ansible-community/collection_migration/issues/new/>`_, after this point use `ansible/ansible issues <https://github.com/ansible/ansible/issues/new/choose>`_
 
 Contributors to Ansible
 ------------------------
