@@ -38,7 +38,7 @@ Ansible 2.10 and later
 
 * The ``ansible/ansible`` repository will only contain:
 
-  * The core Ansible programs, ansible-(playbook,galaxy,docs,test,etc)
+  * The core Ansible programs, ``ansible-{playbook,galaxy,doc,test}``, etc.
   * Documentation
   * A tiny subset of modules and plugins to allow for a functioning controller
   * Together this will be known as ``ansible-base``
