@@ -13,14 +13,14 @@ Overview
 Feedback
 ========
 
-As with any project it's very important that we get feedback from users, contributors and maintainers. We recognise that the move to Collections is a big change in how Ansible is developed and delivered. Therefore you should expect that **the devel branch maybe broken** on occasion.
+As with any project it's very important that we get feedback from users, contributors and maintainers. We recognize that the move to Collections is a big change in how Ansible is developed and delivered. Therefore you should expect that **the devel branch may be broken** on occasion.
 
 See the `Ansible Communication channels <https://docs.ansible.com/ansible/latest/community/communication.html>`_ for a list of IRC channels and email lists you can use to join the discussion. For specific issues please `raise a bug report <https://github.com/ansible/ansible/issues/new/choose>`_.
 
 Where we've come from, and where we are going
 =============================================
 
-To understand where we are going, it's often useful to remind ourselves of where are today.
+To understand where we are going, it's often useful to remind ourselves of where we are today.
 
 Ansible 2.9 and earlier
 ------------------------
@@ -28,7 +28,7 @@ Ansible 2.9 and earlier
 **Classic Ansible**
 
 * Single repository `ansible/ansible <https://github.com/ansible/ansible>`_.
-* Single packages called `ansible`
+* Single package called `ansible`
 * `ansible` has major releases twice a year
 * New features go into the next major release - ie worst case you need to wait 6 months
 
@@ -63,7 +63,7 @@ Collection
   A packaging format for bundling and distributing Ansible content: plugins, roles, modules. Can be released independent of other collections or ``ansible-base`` so features can be made available sooner to users. Installed via ``ansible-galaxy collection install <namespace.collection>``.
 
 Ansible Base
-  The codebase that will be contained in github.com/ansible/ansible for the Ansible 2.10 release. Contains a minimal amount of modules and plugin, allows other collections to be installed. Similar to Ansible 2.9 though without any content that has since moved into a collection. A work in progress can be found in `ansible-base <https://github.com/ansible-collection-migration/ansible-base/>`_ repository.
+  The codebase that will be contained in github.com/ansible/ansible for the Ansible 2.10 release. Contains a minimal amount of modules and plugins, allows other collections to be installed. Similar to Ansible 2.9 though without any content that has since moved into a collection. A work in progress can be found in `ansible-base <https://github.com/ansible-collection-migration/ansible-base/>`_ repository.
 
 At this time it is unknown if there will be an ``ansible-base`` package (ie a RPM/Python/Deb package with only the minimal set of modules and plugins).
 
@@ -74,7 +74,7 @@ Ansible Galaxy
   An online hub for finding and sharing Ansible community content.  Also, the command-line utility that lets users  install individual Ansible Collections. `galaxy.ansible.com <https://galaxy.ansible.com/>`_.
 
 Fully Qualified Collection Name (FQCN)
-  The full definition of a module, plugin, or role hosted within a collection, in the form ``namespace.collection.content_name``. Allows a Playbook to refer to a specific module or plugin from a specific source in an unambiguous manner, for example, ``community.grafana.grafana_dashboard``. The FQCN is required when you want to specify the exact source of a module and multiple modules with the same name are available. Can always be identified in a playbook; ideally not necessary in most playbooks, but in cases in which users have multiple collections installed with similar content, the FQCN will always be the explicit and authoritative indicator of which collection to use for content. Example: cisco.ios.ios_config would be the FQCN, and the playbook would generally call "ios_config". When this is required.
+  The full definition of a module, plugin, or role hosted within a collection, in the form ``namespace.collection.content_name``. Allows a Playbook to refer to a specific module or plugin from a specific source in an unambiguous manner, for example, ``community.grafana.grafana_dashboard``. The FQCN is required when you want to specify the exact source of a module and multiple modules with the same name are available. Can always be identified in a playbook; ideally not necessary in most playbooks, but in cases in which users have multiple collections installed with similar content, the FQCN will always be the explicit and authoritative indicator of which collection to use for content. Example: ``cisco.ios.ios_config`` would be the FQCN, and the playbook would generally call "ios_config" when this is required.
 
 Namespace
   The first part of a Fully Qualified Collection Name, the namespace usually reflects a functional content category. Example: in ``cisco.ios.ios_config``, “Cisco” is the Namespace. Namespaces are reserved and distributed by Red Hat at Red Hat’s discretion. Many, but not all, namespaces will correspond with vendor names.
@@ -125,7 +125,7 @@ Timeline
 
 * TBC, ``community.general`` accepts new Pull Requests (PRs).
 
-* TBC, The ``ansible`` package has been updated to include the Community Collections.
+* TBC, the ``ansible`` package has been updated to include the Community Collections.
 
 * TBC alpha, beta, RC, Release dates for Ansible 2.10
 
@@ -191,10 +191,10 @@ use-cases for ansible-base
 * Include things that are "hardcoded" into Ansible
 
   * eg ``stat`` is used to handle any file information internally
-  * ``include_tasks`` is hardcoded as the implementation is inside the engine, same with ``add_hosts``, ``group-by``, ``debug`` and others, async_wrapp, async-poll, assert/fail are 'parts of the language'  
+  * ``include_tasks`` is hardcoded as the implementation is inside the engine, same with ``add_host``, ``group_by``, ``debug`` and others, async_wrapp, async-poll, assert/fail are 'parts of the language'  
 * Development
 
-  * Ability to run ``ansible-test sanity,unit,integration`` against the Ansible code base
+  * Ability to run ``ansible-test sanity,units,integration`` against the Ansible code base
 * Parts of the Windows codebase that can't currently be removed from ansible-base.
 
 pre-release versions of ansible-base
@@ -261,12 +261,12 @@ Q: What will versioning and deprecation look like for Collections
 * In ansible/ansible:
 
   * There is a single version number which is over everything shipped in Ansible
-  * Doesn't use semver, uses X.Y (ie 2.9) is the major number
-  * deprecations are done over 4 versions (~ 2 years)
+  * Doesn't use semver, uses X.Y (ie 2.9) as the major number
+  * Deprecations are done over 4 versions (~ 2 years)
 * In Collections
 
   * Can be versioned and released independently to Ansible
-  * MUST be use `semver (Semantic Versioning) <https://semver.org/>`_
+  * MUST use `semver (Semantic Versioning) <https://semver.org/>`_
 
 Details around versioning and deprecation policy are still being worked on, we will have a proposal up shortly
 
@@ -274,12 +274,14 @@ Q: How can I fix bugs in Ansible 2.9?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The `previous policy <https://docs.ansible.com/ansible/latest/community/development_process.html#making-your-pr-merge-worthy>`_ was:
+
 1. PR for bug fix including ``changelog/fragment`` file
-2. PRs gets merged into ``devel``
+2. PR gets merged into ``devel``
 3. Backport (``git cherry-pick -x``) PR against the ``stable-2.9`` branch
 
 
 Once content has been removed from the ``devel`` branch, the process will be:
+
 1. PR for bug fix made against the Collection
 2. PR gets merged into Collection
 3. Raise PR directly against ``ansible/ansible:stable-2.9`` (ie not a backport) including a ``changelog/fragment`` file
