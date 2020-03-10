@@ -270,6 +270,25 @@ Q: What will versioning and deprecation look like for Collections
 
 Details around versioning and deprecation policy are still being worked on, we will have a proposal up shortly
 
+
+Q: What should I do to move plugins across collections during migration?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Create PR against new collection repo to add the plugin(s)
+  * if it is an action plugin, remember to include the corresponding module with documentation.
+  * if it is a module, check if it has a corresponding action plugin that should carry with it.
+  * check meta/ for relevant updates to action_groups.yml and routing.yml if they exist.
+  
+2. Create PR against old collection repo to remove
+  * if it is an action plugin, remember to include the corresponding module with documentation.
+  * if it is a module, check if it has a corresponding action plugin that should carry with it.
+  * ensure meta/ has updates to action_groups.yml and routing.yml if they did in step #1.
+  
+3. Update core (temp-2.10-devel branch) entries for all files moved
+  * lib/ansible/config/routing.yml (redirect entry)
+  * .github/BOTMETA.yml (migrated_to entry)
+
+
 Q: How can I fix bugs in Ansible 2.9?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
