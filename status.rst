@@ -28,7 +28,8 @@ Most Collections aren't ready to be used yet, though you can start contributing 
   * `community.kubernetes <https://github.com/ansible-collections/kubernetes>`_ done
   * `community.grafana <https://github.com/ansible-collections/grafana>`_ done
   * `community.mongodb <https://github.com/ansible-collections/mongodb>`_ done
-
+* `ansible.amazon <https://github.com/ansible-collections/ansible.amazon>`_ done
+* `community.amazon <https://github.com/ansible-collections/community.amazon>`_ done
 Details
 =======
 
@@ -46,5 +47,5 @@ Aims:
 * Ansibulbot by FIXME
 
 
-Limiations and known issues
+Limitations and known issues
 ============================
