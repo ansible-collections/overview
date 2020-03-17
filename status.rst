@@ -21,17 +21,29 @@ Most Collections aren't ready to be used yet, though you can start contributing 
 
 * Devel frozen: **DONE**
 * Collection repos created: **DONE**
-* CI working: in-progress
+* Collection repos that are ready for use
 
   * `ansible.windows <https://github.com/ansible-collections/ansible.windows/>`_ done
   * `community.windows <https://github.com/ansible-collections/community.windows/>`_ done
   * `community.kubernetes <https://github.com/ansible-collections/kubernetes>`_ done
   * `community.grafana <https://github.com/ansible-collections/grafana>`_ done
+  * `community.mongodb <https://github.com/ansible-collections/mongodb>`_ done
 
 Details
 =======
 
+Nitz's PR blocks a lot of community.general
 
+Automatic push to Galaxy on Git tag
+
+Documentation for setting up CI
+
+Aims:
+* CI working by 3rd April
+* `ansible-base` by FIXME
+* https://github.com/ansible-collections/collection_template/ 
+* PR mover tests by 10th April
+* Ansibulbot by FIXME
 
 
 Limiations and known issues
