@@ -24,7 +24,7 @@ Most Collections aren't ready to be used yet, though you can start contributing 
 * Collection repos that are ready for use:
 
   * `ansible.amazon <https://github.com/ansible-collections/ansible.amazon>`_ done
-  * `ansible.posux <https://github.com/ansible-collections/ansible.posix/>`_ done
+  * `ansible.posix <https://github.com/ansible-collections/ansible.posix/>`_ done
   * `ansible.windows <https://github.com/ansible-collections/ansible.windows/>`_ done
   * `community.amazon <https://github.com/ansible-collections/community.amazon>`_ done
   * `community.grafana <https://github.com/ansible-collections/grafana>`_ done
