@@ -21,15 +21,20 @@ Most Collections aren't ready to be used yet, though you can start contributing 
 
 * Devel frozen: **DONE**
 * Collection repos created: **DONE**
-* Collection repos that are ready for use
+* Collection repos that are ready for use:
 
+  * `ansible.amazon <https://github.com/ansible-collections/ansible.amazon>`_ done
+  * `ansible.posux <https://github.com/ansible-collections/ansible.posix/>`_ done
   * `ansible.windows <https://github.com/ansible-collections/ansible.windows/>`_ done
-  * `community.windows <https://github.com/ansible-collections/community.windows/>`_ done
-  * `community.kubernetes <https://github.com/ansible-collections/kubernetes>`_ done
+  * `community.amazon <https://github.com/ansible-collections/community.amazon>`_ done
   * `community.grafana <https://github.com/ansible-collections/grafana>`_ done
+  * `community.kubernetes <https://github.com/ansible-collections/kubernetes>`_ done
   * `community.mongodb <https://github.com/ansible-collections/mongodb>`_ done
-* `ansible.amazon <https://github.com/ansible-collections/ansible.amazon>`_ done
-* `community.amazon <https://github.com/ansible-collections/community.amazon>`_ done
+  * `community.windows <https://github.com/ansible-collections/community.windows/>`_ done
+  * `kubernetes <https://github.com/ansible-collections/kubernetes>`_ done
+
+
+  
 Details
 =======
 
