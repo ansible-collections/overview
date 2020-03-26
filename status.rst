@@ -17,6 +17,7 @@ For background on collections see `Ansible Collections Overview <https://github.
 Summary
 =======
 
+
 A lot of the new Ansible Collection repos are open for contributions
 Most Collections aren't ready to be used yet, though you can start contributing to a few.
 
@@ -68,6 +69,8 @@ In Ansible 2.9 (and earlier) all modules and plugins were all packaged to gether
 ACD Proposal
 ------------
 
+`ACD Proposal <https://github.com/ansible-collections/overview/issues/39>`_
+
 FIXME: Link to proposal
 
 
@@ -108,6 +111,14 @@ Moving Issues and PRs from ansible/ansible
 * We have a script which will help move PRs from ansible/ansible into the collection which hosts the code
 * Once the repos are stable we will auto close PRs in ansible/ansible
 * We don't have a good method to move Issues, these will stay in ansible/ansible for longer
+
+
+Other items
+-----------
+
+This document is just a summary of the bigger todo items.
+
+A list of items can be found in the `Community Collection Project Board <https://github.com/orgs/ansible-collections/projects/1>`_
 
 
 Limitations and known issues
