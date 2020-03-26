@@ -63,9 +63,9 @@ Collection
   A packaging format for bundling and distributing Ansible content: plugins, roles, modules. Can be released independent of other collections or ``ansible-base`` so features can be made available sooner to users. Installed via ``ansible-galaxy collection install <namespace.collection>``.
 
 Ansible Base
-  The codebase that will be contained in github.com/ansible/ansible for the Ansible 2.10 release. Contains a minimal amount of modules and plugins, allows other collections to be installed. Similar to Ansible 2.9 though without any content that has since moved into a collection. A work in progress can be found in `ansible-base <https://github.com/ansible-collection-migration/ansible-base/>`_ repository.
+  The codebase that will be contained in github.com/ansible/ansible for the Ansible 2.10 release. Contains a minimal amount of modules and plugins, allows other collections to be installed. Similar to Ansible 2.9 though without any content that has since moved into a collection. The devel branch of ``ansible/ansible`` is now ansible-base.
 
-At this time it is unknown if there will be an ``ansible-base`` package (ie a RPM/Python/Deb package with only the minimal set of modules and plugins).
+There will be an ``ansible-base`` package (ie a RPM/Python/Deb package with only the minimal set of modules and plugins).
 
 Ansible Community Content Collections
   The collections which host the modules and plugins, previously in Ansible 2.9, which are managed by the community. These collections will be combined and released when you do ``$package_manager install ansible``. These may run at different cadences, and may now be installed individually by users via Ansible Galaxy.
@@ -166,12 +166,18 @@ We don't have a firm date yet, but we plan to release Ansible 2.10 sometime in 2
 Q: I'd like to consume the development stream of Ansible during this process. How do I do that?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the split has been successfully accomplished, devel users will consume ansible-base and collections separately. We will provide instructions for installing the various components from devel when it is unfrozen on March 23.
+You can pip install ansible-base by doing:
 
-Q: What exactly is ansible-base for and what will it contain
+``python -m pip install --user https://github.com/ansible/ansible/archive/devel.tar.gz``
+
+Individual collections can be installed by doing:
+
+``ansible-galaxy collection install NAMESPACE.COLLECTION``
+
+Q: What exactly is ansible-base for and what does it contain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Ansible-base** is the name for what github.com/ansible/ansible will become once content has been removed and ``temp-2.10-devel`` has been merged back into ``devel`` branch.
+**Ansible-base** is the name for what github.com/ansible/ansible has become now that most of the content has been removed.
 
 use-cases for ansible-base
 """"""""""""""""""""""""""
@@ -197,15 +203,7 @@ use-cases for ansible-base
   * Ability to run ``ansible-test sanity,units,integration`` against the Ansible code base
 * Parts of the Windows codebase that can't currently be removed from ansible-base.
 
-pre-release versions of ansible-base
-""""""""""""""""""""""""""""""""""""
-
-If you wish to look at the current state of ansible-base you can:
-
-* See the `scenario <https://github.com/ansible-collection-migration/ansible-base>`_ which defines what goes into ansible-base
-* Checkout and run the source https://github.com/ansible-collection-migration/ansible-base (pip install in a Python virtual environment, or do ``source hacking/env-setup``)
-
-If you spot any problems with ansible-base between now and ``temp-2.10-devel`` has been merged back into ``devel`` branch please raise them via `collection_migration <https://github.com/ansible-community/collection_migration/issues/new/>`_, after this point use `ansible/ansible issues <https://github.com/ansible/ansible/issues/new/choose>`_
+Bugs in ansible-base should be reported via  `ansible/ansible issues <https://github.com/ansible/ansible/issues/new/choose>`_.
 
 Contributors to Ansible
 ------------------------
@@ -221,7 +219,7 @@ If you want to submit your module to the ``community.general`` Collection, pleas
 
 If you want to submit your module to an existing collection, you'll want to coordinate with the maintainers of those collections and follow their guidelines. Note that not all collections will necessarily accept new modules, nor follow the guidelines that ansible/ansible previously did.
 
-As of today **Ansible Base (and ansible/ansible) will no longer accept new modules.**
+As of today **ansible-base (and ansible/ansible) will no longer accept new modules.**
 
 Q: I'd like to submit a pull request to an existing Ansible module. How will I know where this module will live?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
