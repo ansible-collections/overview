@@ -117,17 +117,17 @@ Timeline
 
 **Warning:** Dates subject to change
 
-* **2nd March 2020**, we will freeze the devel branch using protected branches, and we will create the temp-2.10-devel branch from devel. This date marks the end of merging non-base plugin/module PRs into ansible/ansible.
+* **DONE** 2nd March 2020, we will freeze the devel branch using protected branches, and we will create the temp-2.10-devel branch from devel. This date marks the end of merging non-base plugin/module PRs into ansible/ansible.
 
-* **9th March 2020**, we will perform the initial migration against temp-2.10-devel, and we will do our initial testing of the components.
+* **DONE** 9th March 2020, we will perform the initial migration against temp-2.10-devel, and we will do our initial testing of the components.
 
-* **23rd March 2020**, we intend to unfreeze devel and merge temp-2.10-devel back into devel. From that point on, devel for ansible/ansible will be for the ansible-base project only.
+* **DONE** 23rd March 2020, we intend to unfreeze devel and merge temp-2.10-devel back into devel. From that point on, devel for ansible/ansible will be for the ansible-base project only.
 
 * TBC, ``community.general`` accepts new Pull Requests (PRs).
 
 * TBC, the ``ansible`` package has been updated to include the Community Collections.
 
-* TBC alpha, beta, RC, Release dates for Ansible 2.10
+* See `ROADMAP_2.10 <https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/roadmap/ROADMAP_2_10.rst>`_ for dates of  beta, RC, Release dates for Ansible 2.10
 
 FAQ
 ====
@@ -274,17 +274,22 @@ Details around versioning and deprecation policy are still being worked on, we w
 Q: What should I do to move plugins across collections during migration?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Create PR against new collection repo to add the plugin(s)
-  * if it is an action plugin, remember to include the corresponding module with documentation.
-  * if it is a module, check if it has a corresponding action plugin that should carry with it.
-  * check meta/ for relevant updates to action_groups.yml and routing.yml if they exist.
-  
-2. Create PR against old collection repo to remove
+1. Create PR against old collection repo to remove
+
   * if it is an action plugin, remember to include the corresponding module with documentation.
   * if it is a module, check if it has a corresponding action plugin that should carry with it.
   * ensure meta/ has updates to action_groups.yml and routing.yml if they did in step #1.
-  
-3. Update core (temp-2.10-devel branch) entries for all files moved
+
+2. Create PR against new collection repo to add the files removed in step 1, as well as:
+
+  * if it is an action plugin, remember to include the corresponding module with documentation.
+  * if it is a module, check if it has a corresponding action plugin that should carry with it.
+  * check meta/ for relevant updates to action_groups.yml and routing.yml if they exist.
+  * Carefully check ``tests/integration``, ``tests/units``
+  * ``tests/sanity/ignore-*.txt`` entries
+
+3. Update ``ansible/ansible:devel`` branch entries for all files moved
+
   * lib/ansible/config/routing.yml (redirect entry)
   * .github/BOTMETA.yml (migrated_to entry)
 
