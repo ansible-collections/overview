@@ -3,7 +3,6 @@ name: Request a new repo for a Collection
 about: Create a report to help us improve
 title: 'repo: $NAME'
 labels: repo
-assignees: gundalow
 
 ---
 
