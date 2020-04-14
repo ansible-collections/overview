@@ -86,8 +86,8 @@ community.general collection
 
 The ``community.general`` is the largest collection we have. It has ~1,000 modules in.
 
-* Move out ``plugins/modules/network`` into a new ``commuity.network`` collection
-* Remove hacks once ` collection redirection/tombstoning (#67684) <https://github.com/ansible/ansible/pull/67684>`_ has been merged
+* **DONE** Network content moved to `community.network <https://github.com/ansible-collections/community.network`_
+* Remove hacks once `collection redirection/tombstoning (#67684) <https://github.com/ansible/ansible/pull/67684>`_ has been merged
 * re-enable disabled integration tests
 
 Ansibulbot
