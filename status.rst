@@ -112,6 +112,21 @@ Moving Issues and PRs from ansible/ansible
 * Once the repos are stable we will auto close PRs in ansible/ansible
 * We don't have a good method to move Issues, these will stay in ansible/ansible for longer
 
+Documentation changes
+----------------------
+
+The main pending documentation changes include:
+
+* Create a `pipeline to pull module documentation for ACD into docs.ansible.com <https://github.com/ansible/ansible/pull/59761>`_ to replace the old module pages. 
+* Define the `recommended changelog strategy <https://github.com/ansible-collections/overview/issues/18>`_ for individual collections and how that feeds into an ACD changelog (`draft mockup <https://github.com/samccann/ansible/blob/test-changelog/docs/docsite/rst/changelog_acd.rst>`_).
+* `update examples to use FQCN <https://github.com/ansible/ansible/issues/67486>`_.
+* Update user/developer guides to reflect collections now.
+
+
+
+The other documentation issues related to collections on docs.ansible.com are being tracked with the `docs and collections labels 
+<https://github.com/ansible/ansible/issues?q=is%3Aopen+is%3Aissue+label%3Adocs+label%3Acollection>`_.
+
 
 Other items
 -----------
