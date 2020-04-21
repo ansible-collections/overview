@@ -279,11 +279,11 @@ Q: What should I do to move plugins across collections during migration?
 * if it is a module, check if it has a corresponding action plugin that should carry with it.
 * ensure ``meta/`` has updates to action_groups.yml and routing.yml if they did in step #1.
 * sanity ignore lines from ``tests/sanity/ignore*.txt``
-* integration tests: ``tests/integrations/targets/`
-* unit tests: ``tests/units/plugins/`
+* integration tests: ``tests/integrations/targets/``
+* unit tests: ``tests/units/plugins/``
 * if moving from community.general remove entries from ``.github/BOTMETA.yml``
-* Carefully review ``meta/routing.yml` for any entries, in particular deprecated
-* Update ``meta/routing.yml` to contain redirects for EVERY PLUGIN, pointing to the new collection name.
+* Carefully review ``meta/routing.yml`` for any entries, in particular deprecated
+* Update ``meta/routing.yml`` to contain redirects for EVERY PLUGIN, pointing to the new collection name.
 
 **PR2:** Create PR against new collection repo to add the files removed in step 1, as well as:
 
