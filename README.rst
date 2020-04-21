@@ -127,7 +127,7 @@ Timeline
 
 * TBC, the ``ansible`` package has been updated to include the Community Collections.
 
-* See `ROADMAP_2.10 <https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/roadmap/ROADMAP_2_10.rst>`_ for dates of  beta, RC, Release dates for Ansible 2.10
+* See `ROADMAP_2.10 <https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/roadmap/ROADMAP_2_10.rst>`_ for dates of  beta, RC, Release dates for ansible-base 2.10
 
 FAQ
 ====
@@ -272,24 +272,34 @@ Details around versioning and deprecation policy are still being worked on, we w
 Q: What should I do to move plugins across collections during migration?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Create PR against old collection repo to remove
+**PR1** Create PR against old collection repo to remove
 
-  * if it is an action plugin, remember to include the corresponding module with documentation.
-  * if it is a module, check if it has a corresponding action plugin that should carry with it.
-  * ensure meta/ has updates to action_groups.yml and routing.yml if they did in step #1.
+* all modules, module_utils, docs_fragments, etc
+* if it is an action plugin, remember to include the corresponding module with documentation.
+* if it is a module, check if it has a corresponding action plugin that should carry with it.
+* ensure ``meta/`` has updates to action_groups.yml and routing.yml if they did in step #1.
+* sanity ignore lines from ``tests/sanity/ignore*.txt``
+* integration tests: ``tests/integrations/targets/`
+* unit tests: ``tests/units/plugins/`
+* if moving from community.general remove entries from ``.github/BOTMETA.yml``
+* Carefully review ``meta/routing.yml` for any entries, in particular deprecated
+* Update ``meta/routing.yml` to contain redirects for EVERY PLUGIN, pointing to the new collection name.
 
-2. Create PR against new collection repo to add the files removed in step 1, as well as:
+**PR2:** Create PR against new collection repo to add the files removed in step 1, as well as:
 
-  * if it is an action plugin, remember to include the corresponding module with documentation.
-  * if it is a module, check if it has a corresponding action plugin that should carry with it.
-  * check meta/ for relevant updates to action_groups.yml and routing.yml if they exist.
-  * Carefully check ``tests/integration``, ``tests/units``
-  * ``tests/sanity/ignore-*.txt`` entries
+This PR MUST add all the items removed by PR1.
 
-3. Update ``ansible/ansible:devel`` branch entries for all files moved
+* if it is an action plugin, remember to include the corresponding module with documentation.
+* if it is a module, check if it has a corresponding action plugin that should carry with it.
+* check meta/ for relevant updates to action_groups.yml and routing.yml if they exist.
+* Carefully check ``tests/integration``, ``tests/units``
+* ``tests/sanity/ignore-*.txt`` entries
+* ``meta/routing.yml``
 
-  * lib/ansible/config/routing.yml (redirect entry)
-  * .github/BOTMETA.yml (migrated_to entry)
+**PR3:** Update ``ansible/ansible:devel`` branch entries for all files moved
+
+* ``lib/ansible/config/routing.yml`` (redirect entry)
+* ``.github/BOTMETA.yml`` (migrated_to entry)
 
 
 Q: How can I fix bugs in Ansible 2.9?
