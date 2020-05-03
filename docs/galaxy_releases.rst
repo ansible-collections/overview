@@ -69,6 +69,7 @@ galaxy_deploy.yml
           content: |
             token: {{ lookup('env','ANSIBLE_GALAXY_TOKEN') }}
           dest: ~/.ansible/galaxy_token
+          mode: '0600'
     tasks:
       - name: Template out the galaxy.yml file.
         template:
