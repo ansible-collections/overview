@@ -193,7 +193,7 @@ new file :code:`release.yml` and it should look something like this.
           python -m pip install --upgrade pip
           pip install ansible
 
-      - name: Run role test
+      - name: Run the Ansible Galaxy deploy playbook
         run: >-
           ansible-playbook -i 'localhost,' build/galaxy_deploy.yml -e "github_tag=${{ github.ref }}"
 
