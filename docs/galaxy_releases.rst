@@ -197,7 +197,7 @@ new file :code:`release.yml` and it should look something like this.
           ansible-playbook -i 'localhost,' build/galaxy_deploy.yml -e "github_tag=${{ github.ref }}"
 
 In this file you may notice we have :code:`github.ref`, and
-:code:`secrets.ANSIBLE_GALAXY_TOKEN`vars. These vars will be handled by GitHub
+:code:`secrets.ANSIBLE_GALAXY_TOKEN` vars. These vars will be handled by GitHub
 on execution of the workflow. The :code:`github.ref` is automatic and will be
 parsed from GitHub as it passes this value on release to the Workflow
 automatically.
