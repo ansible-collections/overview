@@ -169,7 +169,7 @@ new file :code:`release.yml` and it should look something like this.
   jobs:
     release:
       name: Build and release a collection
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-18.04
       env:
         ANSIBLE_FORCE_COLOR: 1
       steps:
