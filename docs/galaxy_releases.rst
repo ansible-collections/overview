@@ -55,36 +55,28 @@ galaxy_deploy.yml
     vars:
       # This should be set via the command line at runtime.
       tag: "{{ github_tag.split('/')[-1] }}"
-    pre_tasks:
-      - name: Ensure the ANSIBLE_GALAXY_TOKEN environment variable is set.
-        fail:
-          msg: ANSIBLE_GALAXY_TOKEN is not set.
-        when: "lookup('env','ANSIBLE_GALAXY_TOKEN') | length == 0"
-      - name: Ensure the ~/.ansible directory exists.
-        file:
-          path: ~/.ansible
-          state: directory
-      - name: Write the Galaxy token to ~/.ansible/galaxy_token
-        copy:
-          content: |
-            token: {{ lookup('env','ANSIBLE_GALAXY_TOKEN') }}
-          dest: ~/.ansible/galaxy_token
-          mode: '0600'
     tasks:
+      - name: Ensure that the ansible_galaxy_apikey exists
+        assert:
+          that:
+            - ansible_galaxy_apikey | length > 0
       - name: Template out the galaxy.yml file.
         template:
           src: templates/galaxy.yml.j2
           dest: ../galaxy.yml
         register: galaxy_yml
       - name: Build the collection. # noqa 503
-        command: >
-          ansible-galaxy collection build
-          chdir=../
+        command: ansible-galaxy collection build
+        args:
+          chdir: ../
         when: galaxy_yml.changed
       - name: Publish the collection. # noqa 503
         command: >
-          ansible-galaxy collection publish ./namespace-collection-{{ tag }}.tar.gz
-          chdir=../
+          ansible-galaxy collection publish
+            ./ericsysmin-test_collection-{{ tag }}.tar.gz
+            --api-key={{ ansible_galaxy_apikey }}
+        args:
+          chdir: ../
         when: galaxy_yml.changed
 
 You'll then need to create the :code:`build/templates` directory which we will
@@ -168,34 +160,34 @@ new file :code:`release.yml` and it should look something like this.
 
 .. code-block:: yaml
 
+  ---
   name: "release"
   on:
-  release:
-    types:
-      - created
+    release:
+      types:
+        - created
   jobs:
-  release:
-    runs-on: ubuntu-18.04
-    env:
-      ANSIBLE_GALAXY_TOKEN: ${{ secrets.ANSIBLE_GALAXY_TOKEN }}
-      ANSIBLE_FORCE_COLOR: 1
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v1
+    release:
+      name: Build and release a collection
+      runs-on: ubuntu-latest
+      env:
+        ANSIBLE_FORCE_COLOR: 1
+      steps:
+        - name: Check out code
+          uses: actions/checkout@v1
 
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.8
+        - name: Set up Python 3.8
+          uses: actions/setup-python@v1
+          with:
+            python-version: 3.8
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install ansible
+        - name: Install dependencies
+          run: pip install ansible
 
-      - name: Run the Ansible Galaxy deploy playbook
-        run: >-
-          ansible-playbook -i 'localhost,' build/galaxy_deploy.yml -e "github_tag=${{ github.ref }}"
+        - name: Run the Ansible Galaxy deploy playbook
+          run: ansible-playbook -i 'localhost,' build/galaxy_deploy.yml
+            -e "github_tag=${{ github.ref }}"
+            -e "ansible_galaxy_apikey=${{ secrets.ANSIBLE_GALAXY_APIKEY }}"
 
 In this file you may notice we have :code:`github.ref`, and
 :code:`secrets.ANSIBLE_GALAXY_TOKEN` vars. These vars will be handled by GitHub
@@ -203,8 +195,8 @@ on execution of the workflow. The :code:`github.ref` is automatic and will be
 parsed from GitHub as it passes this value on release to the Workflow
 automatically.
 
-Configure ANSIBLE_GALAXY_TOKEN Secret
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configure ``ANSIBLE_GALAXY_TOKEN`` Secret
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #.  Go to Ansible Galaxy and get your API Key. You can find it on
     https://galaxy.ansible.com/me/preferences in the section API Key. Just click
