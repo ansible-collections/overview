@@ -40,16 +40,16 @@ Ansible 2.9 and earlier
 Ansible 2.10 and later
 ----------------------
 
-* The ``ansible/ansible`` repository will only contain:
+* The ``ansible/ansible`` repository only contain:
 
   * The core Ansible programs, ``ansible-{playbook,galaxy,doc,test}``, etc.
   * Documentation
   * A tiny subset of modules and plugins to allow for a functioning controller
   * Together this will be known as ``ansible-base``
-* The rest of the modules and plugins will move into multiple Collections
+* The rest of the modules and plugins have neem moved into multiple Collections
 * Collections:
 
-  * Can be released independently of Ansible, at whatever release cycle/cadence the collection maintainer prefers.
+  * Can be released independently of ansible-base and Ansible, at whatever release cycle/cadence the collection maintainer prefers.
   * Will have their own repo (GitHub, GitLab, etc) with dedicated backlog, ie no more shared massive issue & PR backlog
   * Should still have CI testing and in many cases can be tested more thoroughly
 
@@ -66,8 +66,8 @@ Classic Ansible (CA)
 Collection
   A packaging format for bundling and distributing Ansible content: plugins, roles, modules. Can be released independent of other collections or ``ansible-base`` so features can be made available sooner to users. Installed via ``ansible-galaxy collection install <namespace.collection>``.
 
-Ansible Base
-  The codebase that will be contained in github.com/ansible/ansible for the Ansible 2.10 release. Contains a minimal amount of modules and plugins, allows other collections to be installed. Similar to Ansible 2.9 though without any content that has since moved into a collection. The devel branch of ``ansible/ansible`` is now ansible-base.
+ansible-base
+  The codebase that will is now contained in github.com/ansible/ansible for the Ansible 2.10 release. Contains a minimal amount of modules and plugins, allows other collections to be installed. Similar to Ansible 2.9 though without any content that has since moved into a collection. The devel branch of ``ansible/ansible`` is now ansible-base.
 
 There will be an ``ansible-base`` package (ie a RPM/Python/Deb package with only the minimal set of modules and plugins).
 
