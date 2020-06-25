@@ -161,7 +161,7 @@ These changes, however, will have both a temporary and permanent impact.
 Q: When will the next version of Ansible be released with these changes?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We don't have a firm date yet, but we plan to release Ansible 2.10 sometime in 2020, and we do expect to have several alpha/beta releases between now and then. Until that time, Ansible 2.9 will continue to be the supported version.
+We don't have a firm date yet, but we plan to release Ansible 2.10 sometime in 2020, and we do expect to have several alpha/beta releases between now and then. Until that time, Ansible 2.9 will continue to be the available version.
 
 Q: I'd like to consume the development stream of Ansible during this process. How do I do that?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
