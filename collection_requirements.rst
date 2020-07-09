@@ -39,17 +39,17 @@ meta/runtime.yml
 ----------------
 Example: `meta/runtime.yml <https://github.com/ansible-collections/collection_template/blob/main/meta/runtime.yml>`_
 * MUST define the minimim version of Ansible which this collection works with
-  * If the Collection works with Ansible 2.9, then this shuld be set to
+  * If the Collection works with Ansible 2.9, then this should be set to `>=2.9.10`
 
 Modules & Plugins
 ------------------
 
 Documentation
 ~~~~~~~~~~~~~~
-All module and plugin ``DOCUMENTATION`` MUST
+All module and plugin ``DOCUMENTATION`` and ``RETURN`` MUST
 
-* Use the FQCN for ``M(...)`` FIXME Docs link
-* Use the FQCN for ``SEEALSO`` FIXME Docs link
+* Use the FQCN for ``M(...)`` See `Linking within module documentation<https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-within-module-documentation>`_
+* Use the FQCN for ``seealso`` FIXME Docs link
 * Use the FQCN for ``extends_documentation_fragment:``, unles you are referring to doc_fragments from ansible-base
 
 Contributor Workflow
@@ -98,17 +98,30 @@ At a minimim ``ansible-test sanity`` MUST be run from the ``ansible-base:stable-
 
 For most repos GitHub actions are sufficient, see `example<https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_
 
+FIXME to write a guide "How to write CI tests" (from scratch / add to existing) and put the reference here
 
-
+Unit Testing
+============
 
 
 Collections and Working Groups
 ==============================
-
+* Working group page(s) on a corresponding wiki (if needed. Makes sense if there is a group of modules for working with one common entity, e.g. postgresql, zabbix, grafana, etc.)
 * Issue for agenda (or pinboard if there aren't regular meetings) as pinned issue in the Repo
+
+When moving modules between collections
+=======================================
+
+All related entities must be moved / copied including:
+* related plugins/module_utils/ files (moving be sure it is not used by other modules, otherwise copy)
+* CI and unit tests
+* corresponding documentation fragments from plugins/doc_fragments
+
+Also:
+* change M(), examples, seealso, extended_documentation_fragments to use actual FQCNs (in moved content and in other collections that have references to the content)
+* move all related issues / pull requests / wiki pages
 
 
 Other things
 ============
 * ansible-base's runtime.yml
-
