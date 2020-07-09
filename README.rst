@@ -15,7 +15,11 @@ Feedback
 
 As with any project it's very important that we get feedback from users, contributors and maintainers. We recognize that the move to Collections is a big change in how Ansible is developed and delivered. Therefore you should expect that **the devel branch may be broken** on occasion.
 
-See the `Ansible Communication channels <https://docs.ansible.com/ansible/latest/community/communication.html>`_ for a list of IRC channels and email lists you can use to join the discussion. For specific issues please `raise a bug report <https://github.com/ansible/ansible/issues/new/choose>`_.
+See the `Ansible Communication channels <https://docs.ansible.com/ansible/latest/community/communication.html>`_ for a list of IRC channels and email lists you can use to join the discussion. F
+
+* Discussing in ``#ansible-community`` in Freenode IRC
+* Adding to the `Community Working Group IRC meeting <https://github.com/ansible/community/issues/539>`_
+* Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ against this repo
 
 Where we've come from, and where we are going
 =============================================
