@@ -46,11 +46,18 @@ Modules & Plugins
 
 Documentation
 ~~~~~~~~~~~~~~
-All module and plugin ``DOCUMENTATION`` and ``RETURN`` MUST
+All module and plugin ``DOCUMENTATION`` and ``RETURN`` MUST:
 
 * Use the FQCN for ``M(...)`` See `Linking within module documentation<https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-within-module-documentation>`_
 * Use the FQCN for ``seealso`` FIXME Docs link
-* Use the FQCN for ``extends_documentation_fragment:``, unles you are referring to doc_fragments from ansible-base
+
+All module and plugin ``EXAMPLES`` MUST:
+
+* Use FQCN for module (or plugin) name.
+
+Other items:
+* You MUST Use the FQCN for ``extends_documentation_fragment:``, unles you are referring to doc_fragments from ansible-base
+
 
 Contributor Workflow
 ====================
@@ -58,9 +65,14 @@ Contributor Workflow
 Changelogs
 ~~~~~~~~~~
 
-FIXME: What's the actual minimum requirement here, is it a file called X?
+To give a consistent feel for changelogs across collections, and ensure for collections included in the ``ansible`` package we suggest you use `antsibull-changelog <https://github.com/ansible-community/antsibull-changelog>`_
 
-FIXME: Add details and examples of automated system
+
+Preferred (in descending order):
+
+1. Use antsibull-changelog (preffered)
+2. Provide ``changelogs/changelog.yaml`` in the `correct format <https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md>`_
+3. Provide a link to the changelog file (self-hosted) (not recommended)
 
 Versioning and deprecation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,7 +106,7 @@ Branch protections MUST be enforced
 CI Testing
 ===========
 
-At a minimim ``ansible-test sanity`` MUST be run from the ``ansible-base:stable-2.10`` branch
+At a minimim ``ansible-test sanity`` MUST be run from the `latest stable ansible-base branch <https://github.com/ansible/ansible/branches/all?query=stable->`_
 
 For most repos GitHub actions are sufficient, see `example<https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_
 
