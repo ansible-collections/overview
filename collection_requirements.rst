@@ -35,7 +35,7 @@ Repo structure
 galaxy.yml
 ----------
 
-* tags MUST set
+* tags MUST be set
 * dependencies MUST be set to ``'>=1.0.0'`` (Might have to think about dependency order when publishing)
 
 meta/runtime.yml
@@ -52,12 +52,12 @@ Documentation
 All module and plugin ``DOCUMENTATION`` and ``RETURN`` MUST:
 
 * Use the FQCN for ``M(...)`` See `Linking within module documentation<https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-within-module-documentation>`_
-* Use the FQCN for ``seealso`` FIXME Docs link
+* Use collection version numbers for `version_added` (otherwise `version_added_collection` must be provided, but this is discouraged)
 
 All module and plugin ``EXAMPLES`` MUST:
 
 * Use FQCN for module (or plugin) name.
-* for modules (or plugins) left in ansible-base use ``ansibul.builtin.template``
+* for modules (or plugins) left in ansible-base use ``ansible.builtin.template``
 
 Other items:
 * You MUST Use the FQCN for ``extends_documentation_fragment:``, unless you are referring to doc_fragments from ansible-base
@@ -77,6 +77,8 @@ Preferred (in descending order):
 1. Use antsibull-changelog (preffered)
 2. Provide ``changelogs/changelog.yaml`` in the `correct format <https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md>`_
 3. Provide a link to the changelog file (self-hosted) (not recommended)
+
+Please note that the porting guide is complied from `changelogs/changelog.yaml` (sections `breaking_changes`, `major_changes`, `deprecated_features`, `removed_features`). So if you use option 3, you will not be able to add something to the porting guide.
 
 Versioning and deprecation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,7 +112,7 @@ Branch protections MUST be enforced
 CI Testing
 ===========
 
-At a minimim ``ansible-test sanity`` MUST be run from the `latest stable ansible-base branch <https://github.com/ansible/ansible/branches/all?query=stable->`_
+At a minimim ``ansible-test sanity`` MUST be run from the `latest stable ansible-base branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. We suggest to *additionally* run ``ansible-test sanity`` from the ``devel`` branch so that you find out about new linting requirements earlier.
 
 For most repos GitHub actions are sufficient, see `example<https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_
 
