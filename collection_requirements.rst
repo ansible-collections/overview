@@ -21,6 +21,9 @@ Please raise feedback by
 * Adding to the `Community Working Group IRC meeting <https://github.com/ansible/community/issues/539>`_
 * Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ against this repo
 
+Be sure you're subscribed to:
+* `Changes impacting Collections <https://github.com/ansible-collections/overview/issues/45>` to track changes that Collection maintainers should be aware of 
+* The Bullhorn, a newsletter for the Ansible developer community, `back issues and how to add content <https://github.com/ansible/community/issues/546>`_
 
 Why is this needed
 ===================
@@ -54,9 +57,10 @@ All module and plugin ``DOCUMENTATION`` and ``RETURN`` MUST:
 All module and plugin ``EXAMPLES`` MUST:
 
 * Use FQCN for module (or plugin) name.
+* for modules (or plugins) left in ansible-base use ``ansibul.builtin.template``
 
 Other items:
-* You MUST Use the FQCN for ``extends_documentation_fragment:``, unles you are referring to doc_fragments from ansible-base
+* You MUST Use the FQCN for ``extends_documentation_fragment:``, unless you are referring to doc_fragments from ansible-base
 
 
 Contributor Workflow
