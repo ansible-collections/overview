@@ -63,7 +63,7 @@ Terminology
 
 
 Classic Ansible (CA)
-  What we think of as Ansible prior to 2020. The open source project and the deliverable. What you currently get (as of Ansible 2.9) when you type ``pip install ansible``. Was developed almost entirely within the ``ansible/ansible`` repository on GitHub.
+  What we think of as Ansible prior to 2020. The open source project and the deliverable. What you currently get (as of Ansible 2.9 and earlier versions) when you type ``pip install ansible``. Was developed almost entirely within the ``ansible/ansible`` repository on GitHub.
 
 Collection
   A packaging format for bundling and distributing Ansible content: plugins, roles, modules. Can be released independent of other collections or ``ansible-base`` so features can be made available sooner to users. Installed via ``ansible-galaxy collection install <namespace.collection>``.
