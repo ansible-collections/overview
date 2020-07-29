@@ -6,7 +6,7 @@ Ansible Collections Checklist
 
 Overview
 ========
-
+This document is for maintainers of collections to provide them help, advice, and guidance on making sure their collections are correct.
 **Warning:** Subject to frequent updates
        This is a "living document", expect it to change as we progress with the Collections work over the next few months.
 
@@ -20,6 +20,9 @@ Please raise feedback by
 * Discussing in ``#ansible-community`` in Freenode IRC
 * Adding to the `Community Working Group IRC meeting <https://github.com/ansible/community/issues/539>`_
 * Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ against this repo
+
+Keeping informed
+================
 
 Be sure you're subscribed to:
 * `Changes impacting Collections <https://github.com/ansible-collections/overview/issues/45>` to track changes that Collection maintainers should be aware of 
@@ -41,8 +44,9 @@ galaxy.yml
 meta/runtime.yml
 ----------------
 Example: `meta/runtime.yml <https://github.com/ansible-collections/collection_template/blob/main/meta/runtime.yml>`_
-* MUST define the minimim version of Ansible which this collection works with
-  * If the Collection works with Ansible 2.9, then this should be set to `>=2.9.10`
+* MUST define the minimum version of Ansible which this collection works with
+  * If the collection works with Ansible 2.9, then this should be set to `>=2.9.10`
+  * It's usually better to avoid adding `<2.11` as a restriction, since this for example makes it impossible to use the collection with the current ansible-base devel branch (which has version 2.11.0.dev0)
 
 Modules & Plugins
 ------------------
@@ -74,11 +78,11 @@ To give a consistent feel for changelogs across collections, and ensure for coll
 
 Preferred (in descending order):
 
-1. Use antsibull-changelog (preffered)
+1. Use antsibull-changelog (preferred)
 2. Provide ``changelogs/changelog.yaml`` in the `correct format <https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md>`_
 3. Provide a link to the changelog file (self-hosted) (not recommended)
 
-Please note that the porting guide is complied from `changelogs/changelog.yaml` (sections `breaking_changes`, `major_changes`, `deprecated_features`, `removed_features`). So if you use option 3, you will not be able to add something to the porting guide.
+Please note that the porting guide is complied from ``changelogs/changelog.yaml`` (sections ``breaking_changes``, ``major_changes``, ``deprecated_features``, ``removed_features``). So if you use option 3, you will not be able to add something to the porting guide.
 
 Versioning and deprecation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -112,7 +116,7 @@ Branch protections MUST be enforced
 CI Testing
 ===========
 
-At a minimim ``ansible-test sanity`` MUST be run from the `latest stable ansible-base branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. We suggest to *additionally* run ``ansible-test sanity`` from the ``devel`` branch so that you find out about new linting requirements earlier.
+At a minimum ``ansible-test sanity`` MUST be run from the `latest stable ansible-base branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. We suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 
 For most repos GitHub actions are sufficient, see `example<https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_
 
