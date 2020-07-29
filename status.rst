@@ -17,6 +17,7 @@ For background on collections see `Ansible Collections Overview <https://github.
 Summary
 =======
 
+# FIXME, can we say all collections from acd.in are good now?
 
 A lot of the new Ansible Collection repos are open for contributions
 Most Collections aren't ready to be used yet, though you can start contributing to a few.
@@ -36,12 +37,28 @@ Most Collections aren't ready to be used yet, though you can start contributing 
   * `community.windows <https://github.com/ansible-collections/community.windows/>`_ done
 
 
-  
+Ansible Roadmap
+===============
+
+This section details the various deadlines and milestones which make up the Ansible release.
+
+Ansible-base has it's own `roadmap <https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/roadmap/ROADMAP_2_10.rst>`_.
+
+* ansible-base 2.10 beta 1 (creation of ``ansible/ansible:stable-2.10``)
+* All collections passing ``ansible-test sanity`` against ``ansible/ansible:stable-2.10``
+* No more moving (claiming) content from communtiy.general or community.network into dedicated collections
+* Feature freeze for all collections (no more modules/plugins)
+* New ansible package for PyPi
+* new ansible package for rpm, deb,... *(include externally maintained packages?)*
+
+Note, the order of the above items may change, also items may be added or removed
+
+
 Remaining big ticket items
 ===========================
 
 The following section details the remaining large blocks of work remaining before Ansible 2.10 can be released.
-Some of these item are proposals, or work in progress (WIP) Pull Requests. As Collecions is a large change to development, community and end-users it's really important to us that 
+Some of these item are proposals, or work in progress (WIP) Pull Requests. As Collecions is a large change to development, community and end-users it's really important to us that
 
 Collection redirection/tombstoning
 -----------------------------------
@@ -86,7 +103,7 @@ community.general collection
 
 The ``community.general`` is the largest collection we have. It has ~1,000 modules in.
 
-* **DONE** Network content moved to `community.network <https://github.com/ansible-collections/community.network`_
+* **DONE** Network content moved to `community.network <https://github.com/ansible-collections/community.network>`_
 * Remove hacks once `collection redirection/tombstoning (#67684) <https://github.com/ansible/ansible/pull/67684>`_ has been merged
 * re-enable disabled integration tests
 
@@ -117,14 +134,14 @@ Documentation changes
 
 The main pending documentation changes include:
 
-* Create a `pipeline to pull module documentation for ACD into docs.ansible.com <https://github.com/ansible/ansible/pull/59761>`_ to replace the old module pages. 
+* Create a `pipeline to pull module documentation for ACD into docs.ansible.com <https://github.com/ansible/ansible/pull/59761>`_ to replace the old module pages.
 * Define the `recommended changelog strategy <https://github.com/ansible-collections/overview/issues/18>`_ for individual collections and how that feeds into an ACD changelog (`draft mockup <https://github.com/samccann/ansible/blob/test-changelog/docs/docsite/rst/changelog_acd.rst>`_).
 * `update examples to use FQCN <https://github.com/ansible/ansible/issues/67486>`_.
 * Update user/developer guides to reflect collections now.
 
 
 
-The other documentation issues related to collections on docs.ansible.com are being tracked with the `docs and collections labels 
+The other documentation issues related to collections on docs.ansible.com are being tracked with the `docs and collections labels
 <https://github.com/ansible/ansible/issues?q=is%3Aopen+is%3Aissue+label%3Adocs+label%3Acollection>`_.
 
 
