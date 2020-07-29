@@ -82,7 +82,7 @@ Preferred (in descending order):
 2. Provide ``changelogs/changelog.yaml`` in the `correct format <https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md>`_
 3. Provide a link to the changelog file (self-hosted) (not recommended)
 
-Please note that the porting guide is complied from ``changelogs/changelog.yaml`` (sections ``breaking_changes``, ``major_changes``, ``deprecated_features``, ``removed_features``). So if you use option 3, you will not be able to add something to the porting guide.
+Please note that the porting guide is compiled from ``changelogs/changelog.yaml`` (sections ``breaking_changes``, ``major_changes``, ``deprecated_features``, ``removed_features``). So if you use option 3, you will not be able to add something to the porting guide.
 
 Versioning and deprecation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
