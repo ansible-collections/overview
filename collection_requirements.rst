@@ -19,7 +19,7 @@ Please raise feedback by
 
 * Discussing in ``#ansible-community`` in Freenode IRC
 * Adding to the `Community Working Group IRC meeting <https://github.com/ansible/community/issues/539>`_
-* Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ against this repo
+* Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ against this repository
 
 Keeping informed
 ================
@@ -91,22 +91,22 @@ FIXME Details here
 * Deprecation vs Collection version
 * How many Collection major versions to give
 
-Repo management
-===============
+Repository management
+=====================
 
-Repo name
-~~~~~~~~~
+Repository name
+~~~~~~~~~~~~~~~
 
 For collections under ansible-collections the repo SHOULD be named ``NAMESPACE.COLLECTION``
 
 Branch name and configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All new repos under `ansible-collections<https://github.com/ansible-collections>`_ MUST have `main`` as the default branch.
+All new repositories under `ansible-collections<https://github.com/ansible-collections>`_ MUST have `main`` as the default branch.
 
-Existing repos SHOULD be converted to use ``main``
+Existing repositories SHOULD be converted to use ``main``
 
-Repo Protections:
+Repository Protections:
 * Allow merge commits: disallowed
 
 Branch protections MUST be enforced
@@ -118,7 +118,7 @@ CI Testing
 
 At a minimum ``ansible-test sanity`` MUST be run from the `latest stable ansible-base branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. We suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 
-For most repos GitHub actions are sufficient, see `example<https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_
+For most repository GitHub actions are sufficient, see `example<https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_
 
 FIXME to write a guide "How to write CI tests" (from scratch / add to existing) and put the reference here
 
@@ -129,7 +129,7 @@ Unit Testing
 Collections and Working Groups
 ==============================
 * Working group page(s) on a corresponding wiki (if needed. Makes sense if there is a group of modules for working with one common entity, e.g. postgresql, zabbix, grafana, etc.)
-* Issue for agenda (or pinboard if there aren't regular meetings) as pinned issue in the Repo
+* Issue for agenda (or pinboard if there aren't regular meetings) as pinned issue in the repository
 
 When moving modules between collections
 =======================================
