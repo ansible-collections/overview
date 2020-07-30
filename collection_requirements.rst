@@ -55,13 +55,13 @@ Documentation
 ~~~~~~~~~~~~~~
 All module and plugin ``DOCUMENTATION`` and ``RETURN`` MUST:
 
-* Use the FQCN for ``M(...)`` See `Linking within module documentation<https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-within-module-documentation>`_
+* Use the FQCN for ``M(...)`` and ``- module:`` references of ``seealso`` subsections. See `Linking within module documentation<https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-within-module-documentation>`_
 * Use collection version numbers for `version_added` (otherwise `version_added_collection` must be provided, but this is discouraged)
 
 All module and plugin ``EXAMPLES`` MUST:
 
 * Use FQCN for module (or plugin) name.
-* for modules (or plugins) left in ansible-base use ``ansible.builtin.template``
+* For modules (or plugins) left in ansible-base use ``ansible.builtin.`` as a FQCN prefix, for example, ``ansible.builtin.template``
 
 Other items:
 * You MUST Use the FQCN for ``extends_documentation_fragment:``, unless you are referring to doc_fragments from ansible-base
