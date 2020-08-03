@@ -210,6 +210,8 @@ Contributors to Ansible
 
 `Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_
 
+`Ansible Collections Checklist <https://github.com/ansible-collections/overview/blob/master/collection_requirements.rst>`_
+
 Q: I'd like to submit a new module or plugin to Ansible. How shall I proceed?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
