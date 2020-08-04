@@ -154,8 +154,7 @@ These changes, however, will have both a temporary and permanent impact.
   * We cannot guarantee that devel will be as stable as it has been in the past during this transition period.
 * Permanent
 
-
-* Users of devel will need to get both ansible-base (the package with contains ``ansible-playbook``) and the ansible collections that their playbooks rely on. The collections will reside in multiple other git repositories (or can be installed from galaxy).
+  * Users of devel will need to get both ansible-base (the package with contains ``ansible-playbook``) and the ansible collections that their playbooks rely on. The collections will reside in multiple other git repositories (or can be installed from galaxy).
   * If your workflow presently updates your checkout of the ansible devel branch, you'll need to change it to also retrieve the collections you need otherwise your playbooks will fail,
 
 Q: When will the next version of Ansible be released with these changes?
