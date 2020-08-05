@@ -96,6 +96,7 @@ Versioning and deprecation
   * You can only remove things or make breaking changes in major releases.
 * We recommend to make sure that if a deprecation is added in a collection version that is included in 2.10.x, but not in 2.10.0, that the removal itself will only happen in a collection version included in 2.12.0 or later, but not in a collection version included in 2.11.0.
 * Content moved from ansible/ansible that was scheduled for removal in 2.11 or later MUST NOT be removed in the current major release  available when ansible 2.10.0 is released. Otherwise it would already be removed in 2.10, unexpectedly for users! Deprecation cycles can be shortened (since they are now uncoupled from ansible or ansible-base versions), but existing ones must not be unexpectedly terminated.
+* We recommend to announce your policy of releasing, versioning and deprecation to contributors and users in some way. For an example of how to do this, see `the announcement in community.general <https://github.com/ansible-collections/community.general/issues/582>`_. You could also do this in the README.
 
 
 Repository management
