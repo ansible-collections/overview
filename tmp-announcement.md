@@ -10,7 +10,7 @@ This collection will be included in Ansible 2.10 because it contains modules and
 
 ## DEADLINE: 2020-08-18
 
-The latest version of the collection available on August 18 will be included in Ansible 2.10.0, except possibly newer versions which differ only in the patch level. (For details, see [the roadmap](https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/roadmap/COLLECTIONS_2_10.rst)). Please release version 1.0.0 of your collection by this date! **If 1.0.0 does not exist, the same 0.x.y version will be used in all of Ansible 2.10 without updates,** and your 1.x.y release will not be included until Ansible 2.11 (unless you request an exception at a community working group meeting and go through a demanding manual process to vouch for backwards compatibility . . . you want to avoid this!).
+The latest version of the collection available on August 18 will be included in Ansible 2.10.0, except possibly newer versions which differ only in the patch level. (For details, see [the roadmap](https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/roadmap/COLLECTIONS_2_10.rst)). Please release version 1.0.0 of your collection by this date! **If 1.0.0 does not exist, the same 0.x.y version will be used in all of Ansible 2.10 without updates,** and your 1.x.y release will not be included until Ansible 2.11 (unless you request an exception at a [community working group meeting](https://github.com/ansible/community/issues/539) and go through a demanding manual process to vouch for backwards compatibility . . . you want to avoid this!).
 
 ## Follow semantic versioning rules
 
