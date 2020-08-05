@@ -46,3 +46,7 @@ Be sure you're subscribed to:
 ## Questions and Feedback
 
 If you have questions or want to provide feedback, please see [the Feedback section in the collection requirements](https://github.com/ansible-collections/overview/blob/master/collection_requirements.rst#feedback).
+
+
+
+(Internal link to keep track of issues: ansible-collections/overview#102)
