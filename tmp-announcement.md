@@ -3,34 +3,31 @@ This will be created as an issue in all collection repositories mentioned in htt
 
 # Inclusion of this collection in Ansible 2.10
 
-This collection will be included in Ansible 2.10 because it contains modules and/or plugins that were included in Ansible 2.9. The following links provide you with information on the requirements for inclusion in Ansible and for the current roadmap.
+This collection will be included in Ansible 2.10 because it contains modules and/or plugins that were included in Ansible 2.9. Please review:
 
-* A complete list of requirements for inclusion into Ansible can be found here: https://github.com/ansible-collections/overview/blob/master/collection_requirements.rst
-* The roadmap with all important dates for Ansible 2.10 can be found here: https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/roadmap/COLLECTIONS_2_10.rst
+* The list of requirements for inclusion in Ansible: https://github.com/ansible-collections/overview/blob/master/collection_requirements.rst
+* The roadmap with all important dates for Ansible 2.10: https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/roadmap/COLLECTIONS_2_10.rst
 
-The next sections contain the more important points for now.
+## DEADLINE: 2020-08-18
 
-## Important date: 2020-08-18
+The latest version of the collection available on August 18 will be included in Ansible 2.10.0, except possibly newer versions which differ only in the patch level. (For details, see [the roadmap](https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/roadmap/COLLECTIONS_2_10.rst)). Please release version 1.0.0 of your collection by this date! **If 1.0.0 does not exist, the same 0.x.y version will be used in all of Ansible 2.10 without updates,** and your 1.x.y release will not be included until Ansible 2.11 (unless you request an exception at a [community working group meeting](https://github.com/ansible/community/issues/539) and go through a demanding manual process to vouch for backwards compatibility . . . you want to avoid this!).
 
-The latest version of the collection by this date will be used in Ansible 2.10.0, except possibly newer versions which differ only in the patch level. (For details, see [the roadmap](https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/roadmap/COLLECTIONS_2_10.rst)). In particular, by this date, version 1.0.0 of your collection should be released. **If not, the same 0.x.y version will be used in all of Ansible 2.10 without updates,** and a 1.x.y will only be included in Ansible 2.11 (except if you can vouch for backwards compatibility with the included version, and then it's a manual process we really want to avoid).
+## Follow semantic versioning rules
 
-## Your collection versioning must stick to the semantic versioning rules
-
-This means:
+Your collection versioning must follow all [semver rules](https://semver.org/). This means:
 
 * Patch level releases can only contain bugfixes;
 * Minor releases can contain new features, new modules and plugins, and bugfixes, but must not break backwards compatibility;
 * Major releases can break backwards compatibility.
 
-The detailed rules can be found [here](https://semver.org/).
-
 ## Changelogs and Porting Guide
 
-For Ansible 2.10, the changelog and porting guide are automatically generated from the changelog and porting guide of ansible-base, and from the changelogs of the included collections.
+Your collection should provide data for the Ansible 2.10 changelog and porting guide. The changelog and porting guide are automatically generated from ansible-base, and from the changelogs of the included collections. All changes from the `breaking_changes`, `major_changes`, `removed_features` and `deprecated_features` sections will appear in both the changelog and the porting guide. You have two options for providing changelog fragments to include:
 
-If possible, you should use the [antsibull-changelog tool](https://github.com/ansible-community/antsibull-changelog/), which uses the same changelog fragment as the ansible/ansible repository (see the [documentation](https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelogs.rst)). Alternatively, you can provide the changelog in a machine-readable format as `changelogs/changelog.yaml` inside your collection (see the [documentation of changelogs/changelog.yaml format](https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md)). For such changelogs, the content of the sections `breaking_changes`, `major_changes`, `removed_features` and `deprecated_features` will be also used for the Ansible porting guide.
+1. If possible, use the [antsibull-changelog tool](https://github.com/ansible-community/antsibull-changelog/), which uses the same changelog fragment as the ansible/ansible repository (see the [documentation](https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelogs.rst)).
+  #. If you cannot use antsibull-changelog, you can provide the changelog in a machine-readable format as `changelogs/changelog.yaml` inside your collection (see the [documentation of changelogs/changelog.yaml format](https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md)).
 
-These two methods are the only way to integrate your changelog into the Ansible changelog and porting guide. If you do not want to use them, you can provide us with a link to your changelog, so we can link to it from the Ansible changelog. To provide a link, please create an issue in https://github.com/ansible-community/ansible-build-data/. If you do not provide a link, users will not be able to find out what changed in your collection from the Ansible changelog and porting guide.
+If you cannot contribute to the integrated Ansible changelog using one of these methods, please provide a link to your collection's changelog by creating an issue in https://github.com/ansible-community/ansible-build-data/. If you do not provide `changelogs/changelog.yml` or a link, users will not be able to find out what changed in your collection from the Ansible changelog and porting guide.
 
 ## Make sure your collection passes the sanity tests
 
