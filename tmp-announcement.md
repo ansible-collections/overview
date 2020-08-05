@@ -22,12 +22,12 @@ Your collection versioning must follow all [semver rules](https://semver.org/). 
 
 ## Changelogs and Porting Guide
 
-Your collection should provide fragments for the Ansible 2.10 changelog and porting guide. The changelog and porting guide are automatically generated from ansible-base, and from the changelogs of the included collections. All fragments marked `breaking_changes`, `major_changes`, `removed_features` and `deprecated_features` will appear in both the changelog and the porting guide. You have two options for providing changelog fragments to include:
+Your collection should provide data for the Ansible 2.10 changelog and porting guide. The changelog and porting guide are automatically generated from ansible-base, and from the changelogs of the included collections. All changes from the `breaking_changes`, `major_changes`, `removed_features` and `deprecated_features` sections will appear in both the changelog and the porting guide. You have two options for providing changelog fragments to include:
 
-  #. If possible, use the [antsibull-changelog tool](https://github.com/ansible-community/antsibull-changelog/), which uses the same changelog fragment as the ansible/ansible repository (see the [documentation](https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelogs.rst)).
+1. If possible, use the [antsibull-changelog tool](https://github.com/ansible-community/antsibull-changelog/), which uses the same changelog fragment as the ansible/ansible repository (see the [documentation](https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelogs.rst)).
   #. If you cannot use antsibull-changelog, you can provide the changelog in a machine-readable format as `changelogs/changelog.yaml` inside your collection (see the [documentation of changelogs/changelog.yaml format](https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md)).
 
-If you cannot contribute to the integrated Ansible changelog using one of these methods, please provide a link to your collection's changelog by creating an issue in https://github.com/ansible-community/ansible-build-data/. If you do not provide changelog fragments or a link, users will not be able to find out what changed in your collection from the Ansible changelog and porting guide.
+If you cannot contribute to the integrated Ansible changelog using one of these methods, please provide a link to your collection's changelog by creating an issue in https://github.com/ansible-community/ansible-build-data/. If you do not provide `changelogs/changelog.yml` or a link, users will not be able to find out what changed in your collection from the Ansible changelog and porting guide.
 
 ## Make sure your collection passes the sanity tests
 
