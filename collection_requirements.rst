@@ -27,7 +27,7 @@ Keeping informed
 
 Be sure you're subscribed to:
 
-* `Changes impacting Collections <https://github.com/ansible-collections/overview/issues/45>` to track changes that Collection maintainers should be aware of
+* `Changes impacting Collections <https://github.com/ansible-collections/overview/issues/45>`_ to track changes that Collection maintainers should be aware of
 * The Bullhorn, a newsletter for the Ansible developer community, `back issues and how to add content <https://github.com/ansible/community/issues/546>`_
 
 Why is this needed
@@ -152,6 +152,8 @@ Also:
 
 * change M(), examples, seealso, extended_documentation_fragments to use actual FQCNs (in moved content and in other collections that have references to the content)
 * move all related issues / pull requests / wiki pages
+
+See `Migrating content to a different collection <https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#migrating-ansible-content-to-a-different-collection>`_ for complete details.
 
 
 Other things
