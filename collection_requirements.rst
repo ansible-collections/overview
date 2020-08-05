@@ -107,7 +107,7 @@ For collections under ansible-collections the repo SHOULD be named ``NAMESPACE.C
 Branch name and configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All new repositories under `ansible-collections <https://github.com/ansible-collections>`_ MUST have `main`` as the default branch.
+All new repositories under `ansible-collections <https://github.com/ansible-collections>`_ MUST have ``main`` as the default branch.
 
 Existing repositories SHOULD be converted to use ``main``
 
