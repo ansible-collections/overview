@@ -273,36 +273,7 @@ Details around versioning and deprecation policy are still being worked on, we w
 Q: What should I do to move plugins across collections during migration?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**PR1** Create PR against old collection repo to remove
-
-* all modules, module_utils, docs_fragments, etc
-* if it is an action plugin, remember to include the corresponding module with documentation.
-* if it is a module, check if it has a corresponding action plugin that should carry with it.
-* ensure ``meta/`` has updates to action_groups.yml and runtime.yml if they did in step #1.
-* sanity ignore lines from ``tests/sanity/ignore*.txt``
-* integration tests: ``tests/integrations/targets/``
-* unit tests: ``tests/units/plugins/``
-* if moving from community.general remove entries from ``.github/BOTMETA.yml``
-* Carefully review ``meta/runtime.yml`` for any entries, in particular deprecated
-* Update ``meta/runtime.yml`` to contain redirects for EVERY PLUGIN, pointing to the new collection name.
-
-**PR2:** Create PR against new collection repo to add the files removed in step 1, as well as:
-
-This PR MUST add all the items removed by PR1.
-
-* if it is an action plugin, remember to include the corresponding module with documentation.
-* if it is a module, check if it has a corresponding action plugin that should carry with it.
-* check meta/ for relevant updates to action_groups.yml and runtime.yml if they exist.
-* Carefully check ``tests/integration``, ``tests/units``
-* ``tests/sanity/ignore-*.txt`` entries
-* ``meta/runtime.yml``
-
-**PR3:** Update ``ansible/ansible:devel``
-
-For every module and plugin mentioned in PR1 and PR2:
-
-* ``lib/ansible/config/ansible_builtin_runtime.yml`` (redirect entry)
-* IGNORE: ``.github/BOTMETA.yml``, this isn't used anymore
+See `Migrating content to a different collection <https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#migrating-ansible-content-to-a-different-collection>`_ .
 
 
 Q: How can I fix bugs in Ansible 2.9?
