@@ -114,10 +114,12 @@ For collections under ansible-collections the repository SHOULD be named ``NAMES
 
 For collections created for working with a particular entity, they should contain the entity name, for example ``community.mysql``.
 
-We should avoid:
+For corporate maintained collections, the repository can be named ``COMPANY_NAME.PRODUCT_NAME``, for example ``ibm.db2``.
 
-* too long FQCN names: try to make it compact but clear
-* nested namespaces if this is not really necessary, especially namespaces with repetitive parts
+We should avoid FQCN / repository names:
+
+* which are unnecessary long: try to make it compact but clear
+* contain repetitive parts
 
 Branch name and configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
