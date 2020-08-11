@@ -119,7 +119,7 @@ For corporate maintained collections, the repository can be named ``COMPANY_NAME
 We should avoid FQCN / repository names:
 
 * which are unnecessary long: try to make it compact but clear
-* contain repetitive parts
+* contain the same words / collocations in ``NAMESPACE`` and ``COLLECTION`` parts, for example ``my_system.my_system``
 
 Branch name and configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
