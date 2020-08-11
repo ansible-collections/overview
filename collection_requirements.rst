@@ -104,11 +104,8 @@ Versioning and deprecation
 * We recommend to announce your policy of releasing, versioning and deprecation to contributors and users in some way. For an example of how to do this, see `the announcement in community.general <https://github.com/ansible-collections/community.general/issues/582>`_. You could also do this in the README.
 
 
-Repository management
-=====================
-
-Repository name
----------------
+Naming
+======
 
 For collections under ansible-collections the repository SHOULD be named ``NAMESPACE.COLLECTION``.
 
@@ -120,6 +117,10 @@ We should avoid FQCN / repository names:
 
 * which are unnecessary long: try to make it compact but clear
 * contain the same words / collocations in ``NAMESPACE`` and ``COLLECTION`` parts, for example ``my_system.my_system``
+
+
+Repository management
+=====================
 
 Branch name and configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
