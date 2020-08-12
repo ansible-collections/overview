@@ -109,10 +109,12 @@ Naming
 
 For collections under ansible-collections the repository SHOULD be named ``NAMESPACE.COLLECTION``.
 
+`Namespace limitations <https://galaxy.ansible.com/docs/contributing/namespaces.html#galaxy-namespace-limitations>`_  lists requirements for namespaces in Galaxy.
+
 For collections created for working with a particular entity, they should contain the entity name, for example ``community.mysql``.
 
 For corporate maintained collections, the repository can be named ``COMPANY_NAME.PRODUCT_NAME``, for example ``ibm.db2``.
-`Namspace limitations <https://galaxy.ansible.com/docs/contributing/namespaces.html#galaxy-namespaces>`_  lists requirements for namespaces in Galaxy.
+
 We should avoid FQCN / repository names:
 
 * which are unnecessary long: try to make it compact but clear
