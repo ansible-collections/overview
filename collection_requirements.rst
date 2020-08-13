@@ -62,7 +62,9 @@ Documentation
 All module and plugin ``DOCUMENTATION`` and ``RETURN`` MUST:
 
 * Use the FQCN for ``M(...)`` and ``- module:`` references of ``seealso`` subsections. See `Linking within module documentation <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-within-module-documentation>`_
-* Use collection version numbers for `version_added` (otherwise `version_added_collection` must be provided, but this is discouraged)
+* Use collection version numbers for ``version_added``, and not Ansible version numbers or other unrelated version numbers.
+  * If you for some reason really have to specify version numbers of Ansible or of another collection, you have to provide ``version_added_collection``. We strongly recommend to NOT do this.
+  * Not every option, module or plugin must have ``version_added``. You should use it to mark when new content (modules, plugins, options) were added to the module. The values are shown in the documentation, and this can be very useful for your users.
 
 All module and plugin ``EXAMPLES`` MUST:
 
