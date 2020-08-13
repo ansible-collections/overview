@@ -41,7 +41,9 @@ galaxy.yml
 ----------
 
 * tags MUST be set
-* dependencies MUST be set to ``'>=1.0.0'`` (Might have to think about dependency order when publishing)
+* dependencies MUST be set to ``'>=1.0.0'``
+  * This means that all dependencies have to specify lower bounds on the versions, and these lower bounds should be proper releases, and not versions of the form 0.x.y.
+  * When creating new collections where dependencies are also under development, you have to release the collection dependency first as 1.0.0, and then update the dependency version to 1.0.0 and publish the dependent collection as 1.0.0 since Galaxy checks whether the dependencies already exist on Galaxy.
 
 meta/runtime.yml
 ----------------
