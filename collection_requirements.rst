@@ -104,20 +104,25 @@ Versioning and deprecation
 * We recommend to announce your policy of releasing, versioning and deprecation to contributors and users in some way. For an example of how to do this, see `the announcement in community.general <https://github.com/ansible-collections/community.general/issues/582>`_. You could also do this in the README.
 
 
-Repository management
-=====================
-
-Repository name
----------------
+Naming
+======
 
 For collections under ansible-collections the repository SHOULD be named ``NAMESPACE.COLLECTION``.
 
+`Namespace limitations <https://galaxy.ansible.com/docs/contributing/namespaces.html#galaxy-namespace-limitations>`_  lists requirements for namespaces in Galaxy.
+
 For collections created for working with a particular entity, they should contain the entity name, for example ``community.mysql``.
 
-We should avoid:
+For corporate maintained collections, the repository can be named ``COMPANY_NAME.PRODUCT_NAME``, for example ``ibm.db2``.
 
-* too long FQCN names: try to make it compact but clear
-* nested namespaces if this is not really necessary, especially namespaces with repetitive parts
+We should avoid FQCN / repository names:
+
+* which are unnecessary long: try to make it compact but clear
+* contain the same words / collocations in ``NAMESPACE`` and ``COLLECTION`` parts, for example ``my_system.my_system``
+
+
+Repository management
+=====================
 
 Branch name and configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
