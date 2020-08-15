@@ -48,7 +48,7 @@ galaxy.yml
 
     1. Assume that ``foo.bar`` depends on ``foo.baz``
     2. First release ``foo.baz`` as 1.0.0.
-    3. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'` for ``foo.baz``
+    3. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'`` for ``foo.baz``
     4. Finally release ``foo.bar`` as 1.0.0
 
 meta/runtime.yml
