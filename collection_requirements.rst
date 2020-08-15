@@ -44,7 +44,12 @@ galaxy.yml
 * Collection dependencies used are expected to be stable, hence MUST be set to ``'>=1.0.0'``
 
   * This means that all collection dependencies have to specify lower bounds on the versions, and these lower bounds should be stable releases, and not versions of the form 0.x.y.
-  * When creating new collections where collection dependencies are also under development, you have to release the collection dependency first as 1.0.0, and then update the collection dependency version to 1.0.0 and publish the dependent collection as 1.0.0 since Galaxy checks whether the collection dependencies already exist on Galaxy.
+  * When creating new collections where collection dependencies are also under development, you need to watch out since Galaxy checks whether dependencies exist in the required versions:
+
+    1. Assume that ``foo.bar`` depends on ``foo.baz``
+    2. First release ``foo.baz`` as 1.0.0.
+    3. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'` for ``foo.baz``
+    4. Finally release ``foo.bar`` as 1.0.0
 
 meta/runtime.yml
 ----------------
