@@ -42,6 +42,7 @@ galaxy.yml
 
 * The ``tags`` field MUST be set
 * Collection dependencies used are expected to be stable, hence MUST be set to ``'>=1.0.0'``
+
   * This means that all collection dependencies have to specify lower bounds on the versions, and these lower bounds should be stable releases, and not versions of the form 0.x.y.
   * When creating new collections where collection dependencies are also under development, you have to release the collection dependency first as 1.0.0, and then update the collection dependency version to 1.0.0 and publish the dependent collection as 1.0.0 since Galaxy checks whether the collection dependencies already exist on Galaxy.
 
@@ -63,6 +64,7 @@ All module and plugin ``DOCUMENTATION`` and ``RETURN`` MUST:
 
 * Use the FQCN for ``M(...)`` and ``- module:`` references of ``seealso`` subsections. See `Linking within module documentation <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-within-module-documentation>`_
 * Use the field ``version_added`` to document the version of the collection for which an option, module or plugin was added.
+
   * Use collection version numbers for ``version_added``, and not Ansible version numbers or other unrelated version numbers.
   * If you for some reason really have to specify version numbers of Ansible or of another collection, you have to provide ``version_added_collection``. We strongly recommend to NOT do this.
   * Not every option, module or plugin must have ``version_added``. You should use it to mark when new content (modules, plugins, options) were added to the collection. The values are shown in the documentation, and this can be very useful for your users.
