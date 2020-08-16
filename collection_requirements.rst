@@ -40,8 +40,16 @@ Repo structure
 galaxy.yml
 ----------
 
-* tags MUST be set
-* dependencies MUST be set to ``'>=1.0.0'`` (Might have to think about dependency order when publishing)
+* The ``tags`` field MUST be set
+* Collection dependencies used are expected to be stable, hence MUST be set to ``'>=1.0.0'``
+
+  * This means that all collection dependencies have to specify lower bounds on the versions, and these lower bounds should be stable releases, and not versions of the form 0.x.y.
+  * When creating new collections where collection dependencies are also under development, you need to watch out since Galaxy checks whether dependencies exist in the required versions:
+
+    1. Assume that ``foo.bar`` depends on ``foo.baz``
+    2. First release ``foo.baz`` as 1.0.0.
+    3. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'`` for ``foo.baz``
+    4. Finally release ``foo.bar`` as 1.0.0
 
 meta/runtime.yml
 ----------------
@@ -60,7 +68,11 @@ Documentation
 All module and plugin ``DOCUMENTATION`` and ``RETURN`` MUST:
 
 * Use the FQCN for ``M(...)`` and ``- module:`` references of ``seealso`` subsections. See `Linking within module documentation <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-within-module-documentation>`_
-* Use collection version numbers for `version_added` (otherwise `version_added_collection` must be provided, but this is discouraged)
+* Use the field ``version_added`` to document the version of the collection for which an option, module or plugin was added.
+
+  * Use collection version numbers for ``version_added``, and not Ansible version numbers or other unrelated version numbers.
+  * If you for some reason really have to specify version numbers of Ansible or of another collection, you have to provide ``version_added_collection``. We strongly recommend to NOT do this.
+  * Not every option, module or plugin must have ``version_added``. You should use it to mark when new content (modules, plugins, options) were added to the collection. The values are shown in the documentation, and this can be very useful for your users.
 
 All module and plugin ``EXAMPLES`` MUST:
 
