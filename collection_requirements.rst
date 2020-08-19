@@ -121,6 +121,8 @@ Naming
 
 For collections under ansible-collections the repository SHOULD be named ``NAMESPACE.COLLECTION``.
 
+To create a new collection and corresponding repository, first, a new namespace in Galaxy has to be created via submitting `Request a namespace <https://github.com/ansible/galaxy/issues/new/choose>`_.
+
 `Namespace limitations <https://galaxy.ansible.com/docs/contributing/namespaces.html#galaxy-namespace-limitations>`_  lists requirements for namespaces in Galaxy.
 
 For collections created for working with a particular entity, they should contain the entity name, for example ``community.mysql``.
