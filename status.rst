@@ -91,7 +91,6 @@ ACD Proposal
 FIXME: Link to proposal
 
 
-
 Automatic push to Galaxy on Git tag
 -----------------------------------
 
@@ -140,7 +139,6 @@ The main pending documentation changes include:
 * Update user/developer guides to reflect collections now.
 
 
-
 The other documentation issues related to collections on docs.ansible.com are being tracked with the `docs and collections labels
 <https://github.com/ansible/ansible/issues?q=is%3Aopen+is%3Aissue+label%3Adocs+label%3Acollection>`_.
 
@@ -155,3 +153,7 @@ A list of items can be found in the `Community Collection Project Board <https:/
 
 Limitations and known issues
 ============================
+
+
+incorrect
+~~~~~~~~~
