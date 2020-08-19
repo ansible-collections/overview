@@ -139,7 +139,7 @@ Repository management
 =====================
 
 Branch name and configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 All new repositories under `ansible-collections <https://github.com/ansible-collections>`_ MUST have ``main`` as the default branch.
 
