@@ -153,7 +153,3 @@ A list of items can be found in the `Community Collection Project Board <https:/
 
 Limitations and known issues
 ============================
-
-
-incorrect
-~~~~~~~~~
