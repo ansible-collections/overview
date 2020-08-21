@@ -91,7 +91,6 @@ ACD Proposal
 FIXME: Link to proposal
 
 
-
 Automatic push to Galaxy on Git tag
 -----------------------------------
 
@@ -138,7 +137,6 @@ The main pending documentation changes include:
 * Define the `recommended changelog strategy <https://github.com/ansible-collections/overview/issues/18>`_ for individual collections and how that feeds into an ACD changelog (`draft mockup <https://github.com/samccann/ansible/blob/test-changelog/docs/docsite/rst/changelog_acd.rst>`_).
 * `update examples to use FQCN <https://github.com/ansible/ansible/issues/67486>`_.
 * Update user/developer guides to reflect collections now.
-
 
 
 The other documentation issues related to collections on docs.ansible.com are being tracked with the `docs and collections labels
