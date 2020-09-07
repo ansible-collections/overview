@@ -58,7 +58,7 @@ Remaining big ticket items
 ===========================
 
 The following section details the remaining large blocks of work remaining before Ansible 2.10 can be released.
-Some of these item are proposals, or work in progress (WIP) Pull Requests. As Collecions is a large change to development, community and end-users it's really important to us that
+Some of these item are proposals, or work in progress (WIP) Pull Requests. As Collections is a large change to development, community and end-users it's really important to us that
 
 Collection redirection/tombstoning
 -----------------------------------

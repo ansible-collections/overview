@@ -15,7 +15,7 @@ Feedback
 
 As with any project it's very important that we get feedback from users, contributors and maintainers. We recognize that the move to Collections is a big change in how Ansible is developed and delivered. Therefore you should expect that **the devel branch may be broken** on occasion.
 
-See the `Ansible Communication channels <https://docs.ansible.com/ansible/latest/community/communication.html>`_ for a list of IRC channels and email lists you can use to join the discussion. F
+See the `Ansible Communication channels <https://docs.ansible.com/ansible/latest/community/communication.html>`_ for a list of IRC channels and email lists you can use to join the discussion.
 
 * Discussing in ``#ansible-community`` in Freenode IRC
 * Adding to the `Community Working Group IRC meeting <https://github.com/ansible/community/issues/539>`_
@@ -70,7 +70,7 @@ Collection
 
 
 ``ansible`` (the package)
-  A replacement software package (Python, deb, rpm, etc) which contains a select group of Collections. It contains the collections to ensure that Ansible 2.9 playbooks don't require any extra collections to be be installed. This list of what's included can be found at `ansible-build-data <https://github.com/ansible-community/ansible-build-data/tree/master/2.10>`_. Will depend on the ``ansible-base`` package. Was previously refered to as ``ACD`` (Ansible Community Distribution).
+  A replacement software package (Python, deb, rpm, etc) which contains a select group of Collections. It contains the collections to ensure that Ansible 2.9 playbooks don't require any extra collections to be be installed. This list of what's included can be found at `ansible-build-data <https://github.com/ansible-community/ansible-build-data/tree/master/2.10>`_. Will depend on the ``ansible-base`` package. Was previously referred to as ``ACD`` (Ansible Community Distribution).
 
  ``ansible-base``
   New for 2.10. The codebase that is now contained in github.com/ansible/ansible for the Ansible 2.10 release. It contains a minimal amount of modules and plugins and allows other collections to be installed. Similar to Ansible 2.9 though without any content that has since moved into a collection. The devel branch of ``ansible/ansible`` is now ansible-base.
