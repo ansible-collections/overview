@@ -199,7 +199,7 @@ If the collections are parts of Ansible distribution:
 3. When the next major release comes:
 
   * remove the module/plugin from the source collection
-  * add ``redirect`` to the inscription in ``meta/runtime.yml``
+  * add ``redirect`` to the corresponding entry in ``meta/runtime.yml``
   * remove ``removal_version`` from there
 
 4. In 1-2 years, revisit the redirect
