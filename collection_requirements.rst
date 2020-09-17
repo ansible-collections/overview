@@ -189,7 +189,10 @@ Also:
 
 See `Migrating content to a different collection <https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#migrating-ansible-content-to-a-different-collection>`_ for complete details.
 
-Deprecation, redirection, and removing of moved content if the collections are parts of Ansible distribution:
+Deprecation, redirection, and removing of moved content
+-------------------------------------------------------
+
+If the collections are parts of Ansible distribution:
 
 1. Copy content from the source collection to the target collection.
 2. Deprecate the module/plugin with ``removal_version`` scheduled for the next major version in ``meta/runtime.yml`` of the source collection. If the target collection has been released with the new content as a new minor version for the same major version that is currently included in Ansible, this ensures that users can resolve the deprecation warning without having to install something manually that potentially breaks backwards compatibility.
@@ -201,7 +204,7 @@ Deprecation, redirection, and removing of moved content if the collections are p
 
 4. In 1-2 years, revisit the redirect
 
-Deprecation, redirection, and removing of moved content if the target colleciton is **not** contained in Ansible: TBD
+If the target colleciton is **not** contained in Ansible: TBD
 
 Other things
 ============
