@@ -202,8 +202,6 @@ If the collections are parts of Ansible distribution:
   * add ``redirect`` to the corresponding entry in ``meta/runtime.yml``
   * remove ``removal_version`` from there
 
-4. In 1-2 years, revisit the redirect.
-
 If the target colleciton is **not** contained in Ansible: TBD
 
 Other things
