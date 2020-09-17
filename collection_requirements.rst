@@ -198,6 +198,7 @@ Deprecation, redirection, and removing of moved content if the collections are p
   * remove the module/plugin from the source collection
   * add ``redirect`` to the inscription in ``meta/runtime.yml``
   * remove ``removal_version`` from there
+
 4. In 1-2 years, revisit the redirect
 
 Deprecation, redirection, and removing of moved content if the target colleciton is **not** contained in Ansible: TBD
