@@ -191,7 +191,10 @@ See `Migrating content to a different collection <https://docs.ansible.com/ansib
 
 After moving a module/plugin between collections:
 
-1) we deprecate the module/plugin once it has been added to the target collection and that has been released (as a minor release that will also get included in the next Ansible version), with removal scheduled for the next major version
+1) we deprecate the module/plugin with removal scheduled for the next major version once the following is satisfied:
+   - if the target collection is also contained in Ansible: if the target collection has been released with the new content as a new minor version for the same major version that is currently included in Ansible
+   - this ensures that users can resolve the deprecation warning without having to install something manually that potentially breaks backwards compatibility
+   - if the target colleciton is **not** contained in Ansible: TBD
 2) in the next major version, we remove the module/plugin and add a redirect with deprecation that has no removal date/version
 3) in 1-2 years, we revisit this redirect
 
