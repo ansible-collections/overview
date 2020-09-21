@@ -170,7 +170,7 @@ Unit Testing
 Collections and Working Groups
 ==============================
 
-* Working group page(s) on a corresponding wiki (if needed. Makes sense if there is a group of modules for working with one common entity, e.g. postgresql, zabbix, grafana, etc.)
+* Working group page(s) on a corresponding wiki (if needed. Makes sense if there is a group of modules for working with one common entity, for example postgresql, zabbix, grafana, and so on.)
 * Issue for agenda (or pinboard if there aren't regular meetings) as pinned issue in the repository
 
 When moving modules between collections
@@ -186,6 +186,7 @@ Also:
 
 * change M(), examples, seealso, extended_documentation_fragments to use actual FQCNs (in moved content and in other collections that have references to the content)
 * move all related issues / pull requests / wiki pages
+* look through ``docs/docsite`` directory of `ansible-base GitHub repository <https://github.com/ansible/ansible>`_ (for example, using the ``grep`` command-line utility) to check if there are examples using the moved modules / plugins to update their FQCNs
 
 See `Migrating content to a different collection <https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#migrating-ansible-content-to-a-different-collection>`_ for complete details.
 
