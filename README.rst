@@ -90,10 +90,10 @@ Collection name
   In the second part of a Fully Qualified Collection Name, the collection name further divides the functional characteristics of the collection content and denotes ownership.  For example, the cisco namespace might contain  ``cisco.ios``, ``cisco.ios_community``, and ``cisco.ios_prc``, containing content for managing ios network devices maintained by Cisco.
 
 community.general (collection)
-  A special collection managed by the Ansible Community Team containing all the modules and plugins which shipped in Ansible 2.9 that don't have their own dedicated Collection. See community.general on `Galaxy <https://galaxy.ansible.com/community/general>`_ or it's `GitHub repository <https://github.com/ansible-collection/community.general/>`_ .
+  A special collection managed by the Ansible Community Team containing all the modules and plugins which shipped in Ansible 2.9 that don't have their own dedicated Collection. See community.general on `Galaxy <https://galaxy.ansible.com/community/general>`_ or it's `GitHub repository <https://github.com/ansible-collections/community.general/>`_ .
 
 community.network (collection)
-  Similar to ``community.general``, though focusing on Network modules. See community.network on `Galaxy <https://galaxy.ansible.com/community/network>`_ or it's `GitHub repository <https://github.com/ansible-collection/community.network/>`_ .
+  Similar to ``community.general``, though focusing on Network modules. See community.network on `Galaxy <https://galaxy.ansible.com/community/network>`_ or it's `GitHub repository <https://github.com/ansible-collections/community.network/>`_ .
 
 Repository
   The location of the source code included in a collection. Contributors make suggestions, fix bugs, and add features through the repository. Collection owners can host repositories on GitHub, Gerrit, or any other source code repository platform they choose.
