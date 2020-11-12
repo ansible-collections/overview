@@ -72,7 +72,7 @@ Collection
 ``ansible`` (the package)
   A replacement software package (Python, deb, rpm, etc) which contains a select group of Collections. It contains the collections to ensure that Ansible 2.9 playbooks don't require any extra collections to be be installed. This list of what's included can be found at `ansible-build-data <https://github.com/ansible-community/ansible-build-data/tree/master/2.10>`_. Will depend on the ``ansible-base`` package. Was previously referred to as ``ACD`` (Ansible Community Distribution).
 
- ``ansible-base``
+``ansible-base``
   New for 2.10. The codebase that is now contained in github.com/ansible/ansible for the Ansible 2.10 release. It contains a minimal amount of modules and plugins and allows other collections to be installed. Similar to Ansible 2.9 though without any content that has since moved into a collection. The devel branch of ``ansible/ansible`` is now ansible-base.
 
 There will be an ``ansible-base`` package (RPM/Python/Deb package)with only the minimal set of modules and plugins).
