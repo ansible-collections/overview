@@ -191,6 +191,17 @@ Also:
 See `Migrating content to a different collection <https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#migrating-ansible-content-to-a-different-collection>`_ for complete details.
 
 
+List of requirements for collections to be included in Ansible
+==============================================================
+
+To become a part of Ansible, collections must correspond the following criteria:
+
+* `development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html>`_
+* `Ansible documentation format <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html>`_ and the `style guide <https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide>`_
+* to pass the Ansible `sanity tests <https://docs.ansible.com/ansible/devel/dev_guide/testing_sanity.html#testing-sanity>`_
+* to have `unit <https://docs.ansible.com/ansible/devel/dev_guide/testing_units.html#testing-units>`_ and / or `integration tests <https://docs.ansible.com/ansible/devel/dev_guide/testing_integration.html#testing-integration>`_
+
+
 Other things
 ============
 
