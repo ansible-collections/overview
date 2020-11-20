@@ -195,3 +195,4 @@ Other things
 ============
 
 * ansible-base's runtime.yml
+* after a moved / new collection satisfies all the requirements, add the collection to the ``ansible.in`` file in a corresponding directory of `ansible-build-data repository <https://github.com/ansible-community/ansible-build-data/>`_
