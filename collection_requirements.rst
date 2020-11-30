@@ -201,7 +201,6 @@ To be included in the `ansible` package, collections must meet the following cri
 * `Ansible documentation format <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html>`_ and the `style guide <https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide>`_
 * to pass the Ansible `sanity tests <https://docs.ansible.com/ansible/devel/dev_guide/testing_sanity.html#testing-sanity>`_
 * to have `unit <https://docs.ansible.com/ansible/devel/dev_guide/testing_units.html#testing-units>`_ and / or `integration tests <https://docs.ansible.com/ansible/devel/dev_guide/testing_integration.html#testing-integration>`_
-* Public bug tracker and accept Pull Requests.
 
 
 Other things
