@@ -191,8 +191,8 @@ Also:
 See `Migrating content to a different collection <https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#migrating-ansible-content-to-a-different-collection>`_ for complete details.
 
 
-List of requirements for collections to be included in Ansible
-==============================================================
+Requirements for collections to be included in the Ansible Package
+==================================================================
 
 To be included in the `ansible` package, collections must meet the following criteria:
 
