@@ -182,7 +182,7 @@ All related entities must be moved / copied including:
 * CI and unit tests
 * corresponding documentation fragments from plugins/doc_fragments
 
-Also:requi
+Also:
 
 * change M(), examples, seealso, extended_documentation_fragments to use actual FQCNs (in moved content and in other collections that have references to the content)
 * move all related issues / pull requests / wiki pages
