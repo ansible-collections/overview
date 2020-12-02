@@ -33,6 +33,10 @@ Be sure you're subscribed to:
 Why is this needed
 ===================
 
+Collection Infrastructure
+=========================
+
+* MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
 
 Repo structure
 ===============
