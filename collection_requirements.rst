@@ -37,6 +37,7 @@ Collection Infrastructure
 =========================
 
 * MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
+* MUST have a CoC (or if not fall back to Ansible's: https://docs.ansible.com/ansible/latest/community/code_of_conduct.html )
 
 Repo structure
 ===============
