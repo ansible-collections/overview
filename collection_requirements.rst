@@ -135,6 +135,12 @@ We should avoid FQCN / repository names:
 * contain the same words / collocations in ``NAMESPACE`` and ``COLLECTION`` parts, for example ``my_system.my_system``
 
 
+Licensing
+=========
+
+At the moment, module_utils must be licensed under the BSD-3-clause or GPLv3+ license and all other content must be licensed under the GPLv3+.  We will have a list of other open source licenses which are allowed as soon as we get red hat legal to approve such a list for us.
+
+
 Repository management
 =====================
 
