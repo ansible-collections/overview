@@ -138,7 +138,7 @@ We should avoid FQCN / repository names:
 Licensing
 =========
 
-At the moment, module_utils must be licensed under the BSD-3-clause or GPLv3+ license and all other content must be licensed under the GPLv3+.  We will have a list of other open source licenses which are allowed as soon as we get red hat legal to approve such a list for us.
+At the moment, module_utils must be licensed under the BSD-3-clause or GPLv3+ license and all other content must be licensed under the GPLv3+.  We will have a list of other open source licenses which are allowed as soon as we get Red Hat's legal team to approve such a list for us.
 
 
 Repository management
@@ -169,12 +169,11 @@ For most repository GitHub actions are sufficient, see `example <https://github.
 
 The sanity tests MUST pass but adding some tests to the ignore.txt file is an allowed method of getting them to pass.  All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
 
-All CI test MUST run against every PR & commit to the repo
+All CI test MUST run against every PR & commit to the repo.
 
 All CI tests MUST run against at nightly to ensure that repos without regular commits are tested against latest version of ansible-test from each ansible-base version tested. `Ansible Collection Template <https://github.com/ansible-collections/collection_template/blob/main/.github/workflows/ansible-test.yml>`_. includes an example of how to achieve this
 
-
-FIXME to write a guide "How to write CI tests" (from scratch / add to existing) and put the reference here
+FIXME to write a guide "How to write CI tests" (from scratch / add to existing) and put the reference here.
 
 Unit Testing
 ============
