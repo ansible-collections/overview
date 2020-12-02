@@ -161,6 +161,8 @@ At a minimum ``ansible-test sanity`` MUST be run from the `latest stable ansible
 
 For most repository GitHub actions are sufficient, see `example <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_
 
+The sanity tests MUST pass but adding some tests to the ignore.txt file is an allowed method of getting them to pass.  All entries in ignores.txt MUST have a justification, preferably a comment in the ignore.txt file for each entry.  Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
+
 FIXME to write a guide "How to write CI tests" (from scratch / add to existing) and put the reference here
 
 Unit Testing
