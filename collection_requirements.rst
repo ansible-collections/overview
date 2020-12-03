@@ -168,15 +168,15 @@ Branch protections MUST be enforced:
 CI Testing
 ===========
 
-At a minimum ``ansible-test sanity`` MUST be run from the `latest stable ansible-base branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. We suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier, as well as all version of ``ansible-base`` that the collection supports. For example ``plugins/modules/docker_container.py use-argspec-type-path # uses colon-separated paths, can't use type=path``
+At a minimum ``ansible-test sanity`` MUST be run from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. We suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier, as well as all version of ``ansible-base``/``ansible-core`` that the collection supports.
 
 For most repository GitHub actions are sufficient, see `example <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_
 
-The sanity tests MUST pass but adding some tests to the ignore.txt file is an allowed method of getting them to pass.  All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
+The sanity tests MUST pass but adding some entries to the ignore.txt file is an allowed method of getting them to pass.  All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  For example ``plugins/modules/docker_container.py use-argspec-type-path # uses colon-separated paths, can't use type=path``. Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
 
 All CI test MUST run against every PR & commit to the repo.
 
-All CI tests MUST run against at nightly to ensure that repos without regular commits are tested against latest version of ansible-test from each ansible-base version tested. `Ansible Collection Template <https://github.com/ansible-collections/collection_template/blob/main/.github/workflows/ansible-test.yml>`_. includes an example of how to achieve this
+All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repos without regular commits are tested against latest version of ansible-test from each ansible-base/ansible-core version tested. `Ansible Collection Template <https://github.com/ansible-collections/collection_template/blob/main/.github/workflows/ansible-test.yml>`_. includes an example of how to achieve this.
 
 FIXME to write a guide "How to write CI tests" (from scratch / add to existing) and put the reference here.
 
