@@ -33,6 +33,11 @@ Be sure you're subscribed to:
 Why is this needed
 ===================
 
+Collection Infrastructure
+=========================
+
+* MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
+* MUST use the `Ansible Code of Conduct (CoC) <https://docs.ansible.com/ansible/latest/community/code_of_conduct.html>`_ by copying `CODE_OF_CONDUCT.md <https://raw.githubusercontent.com/ansible-collections/.github/main/CODE_OF_CONDUCT.md>`_ into the root of your Git repository
 
 Repo structure
 ===============
@@ -135,6 +140,12 @@ We should avoid FQCN / repository names:
 * contain the same words / collocations in ``NAMESPACE`` and ``COLLECTION`` parts, for example ``my_system.my_system``
 
 
+Licensing
+=========
+
+At the moment, module_utils must be licensed under the BSD-3-clause or GPLv3+ license and all other content must be licensed under the GPLv3+.  We will have a list of other open source licenses which are allowed as soon as we get Red Hat's legal team to approve such a list for us.
+
+
 Repository management
 =====================
 
@@ -157,11 +168,22 @@ Branch protections MUST be enforced:
 CI Testing
 ===========
 
-At a minimum ``ansible-test sanity`` MUST be run from the `latest stable ansible-base branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. We suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
+* You MUST run ``ansible-test sanity`` from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
+* You MUST run CI against all versions of ``ansible-base``/``ansible-core`` that the collection supports.
+* You SHOULD suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
+* The sanity tests MUST pass.
 
-For most repository GitHub actions are sufficient, see `example <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_
+  * Adding some entries to the ``test/sanity/ignore*.txt`` file is an allowed method of getting them to pass. 
+  * All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  For example ``plugins/modules/docker_container.py use-argspec-type-path # uses colon-separated paths, can't use type=path``.
+  * Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
 
-FIXME to write a guide "How to write CI tests" (from scratch / add to existing) and put the reference here
+* All CI tests MUST run against every PR & commit to the repo.
+* All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repos without regular commits are tested against the latest version of ansible-test from each ansible-base/ansible-core version tested. 
+
+All of the above can be achieved by using the following GitHub Action template, see `example <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_.
+
+
+FIXME to write a guide "How to write CI tests" (from scratch / add to existing) and put the reference here.
 
 Unit Testing
 ============
