@@ -40,6 +40,7 @@ Collection Infrastructure
 
 * MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
 * MUST use the `Ansible Code of Conduct (CoC) <https://docs.ansible.com/ansible/latest/community/code_of_conduct.html>`_ by copying `CODE_OF_CONDUCT.md <https://raw.githubusercontent.com/ansible-collections/.github/main/CODE_OF_CONDUCT.md>`_ into the root of your Git repository
+* MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>_.
 
 Repo structure
 ===============
@@ -57,6 +58,11 @@ galaxy.yml
     2. First release ``foo.baz`` as 1.0.0.
     3. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'`` for ``foo.baz``
     4. Finally release ``foo.bar`` as 1.0.0
+
+README.md
+---------
+
+MUST have a ``README.md`` in the root of the Collection, see `collection_template/README.md <https://github.com/ansible-collections/collection_template/blob/main/README.md>`_ for an example
 
 meta/runtime.yml
 ----------------
