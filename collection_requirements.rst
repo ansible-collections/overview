@@ -8,8 +8,10 @@ Overview
 ========
 This document is for maintainers of collections to provide them help, advice, and guidance on making sure their collections are correct.
 
-**Warning:** Subject to frequent updates
-       This is a "living document", expect it to change as we progress with the Collections work over the next few months.
+**Warning:** Subject to frequent updates. This is a "living document", expect it to change as we progress with the Collections work over the next few months.
+
+**Note:** Inclusion of a new collection in the Ansible package is ultimately at the discretion of the Ansible community review committee. Every rejected candidate will get feedback. Differences of opinion should be taken to the community irc meeting for discussion and a final vote.
+
 
 Feedback
 ========
