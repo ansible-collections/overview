@@ -143,7 +143,7 @@ We should avoid FQCN / repository names:
 Licensing
 =========
 
-At the moment, module_utils must be licensed under the BSD-2-clause or GPLv3+ license and all other content must be licensed under the GPLv3+.  We will have a list of other open source licenses which are allowed as soon as we get Red Hat's legal team to approve such a list for us.
+At the moment, module_utils must be licensed under the `BSD-2-clause <https://opensource.org/licenses/BSD-2-Clause>`_ or `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_ license and all other content must be licensed under the `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  We will have a list of other open source licenses which are allowed as soon as we get Red Hat's legal team to approve such a list for us.
 
 
 Repository management
