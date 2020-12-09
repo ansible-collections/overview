@@ -175,7 +175,6 @@ CI Testing
 ===========
 
 * You MUST run ``ansible-test sanity`` from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
-* You MUST run CI against all versions of ``ansible-base``/``ansible-core`` that the collection supports.
 * You SHOULD suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 * The sanity tests MUST pass.
 
@@ -183,7 +182,6 @@ CI Testing
   * All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  For example ``plugins/modules/docker_container.py use-argspec-type-path # uses colon-separated paths, can't use type=path``.
   * Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
 
-* All CI tests MUST run against every PR & commit to the repo.
 * All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repos without regular commits are tested against the latest version of ansible-test from each ansible-base/ansible-core version tested. 
 
 All of the above can be achieved by using the following GitHub Action template, see `example <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_.
