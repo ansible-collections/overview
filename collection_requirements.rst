@@ -95,7 +95,7 @@ All module and plugin ``EXAMPLES`` MUST:
 Other items:
 
 * You MUST Use the FQCN for ``extends_documentation_fragment:``, unless you are referring to doc_fragments from ansible-base
-* The ``CONTRIBUTING.md`` (or ``README.md``) file MUST state what types of contributions (PRs, feature requests,) are accepted and any relevant contributor guidance. Issues (bugs and feature request) reports must always be accepted
+* The ``CONTRIBUTING.md`` (or ``README.md``) file MUST state what types of contributions (pull requests, feature requests, and so on) are accepted and any relevant contributor guidance. Issues (bugs and feature request) reports must always be accepted
 
 Contributor Workflow
 ====================
