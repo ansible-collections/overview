@@ -62,7 +62,7 @@ galaxy.yml
 README.md
 ---------
 
-MUST have a ``README.md`` in the root of the Collection, see `collection_template/README.md <https://github.com/ansible-collections/collection_template/blob/main/README.md>`_ for an example
+MUST have a ``README.md`` in the root of the Collection, see `collection_template/README.md <https://github.com/ansible-collections/collection_template/blob/main/README.md>`_ for an example.
 
 meta/runtime.yml
 ----------------
