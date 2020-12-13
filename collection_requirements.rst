@@ -179,7 +179,7 @@ CI Testing
 * You SHOULD suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 * The sanity tests MUST pass.
 
-  * Adding some entries to the ``test/sanity/ignore*.txt`` file is an allowed method of getting them to pass., except cases listed below.
+  * Adding some entries to the ``test/sanity/ignore*.txt`` file is an allowed method of getting them to pass, except cases listed below.
 
   * You MUST not add the following entries to ``test/sanity/ignore*.txt`` files, for the sake of documentation completeness and accuracy:
       * validate-modules:doc-choices-do-not-match-spec
