@@ -182,15 +182,15 @@ CI Testing
   * Adding some entries to the ``test/sanity/ignore*.txt`` file is an allowed method of getting them to pass, except cases listed below.
 
   * You MUST not add the following entries to ``test/sanity/ignore*.txt`` files, for the sake of documentation completeness and accuracy:
-      * validate-modules:doc-choices-do-not-match-spec
-      * validate-modules:doc-default-does-not-match-spec
-      * validate-modules:doc-missing-type
-      * validate-modules:doc-required-mismatch
-      * validate-modules:mutually_exclusive-unknown
-      * validate-modules:nonexistent-parameter-documented
-      * validate-modules:parameter-list-no-elements
-      * validate-modules:parameter-type-not-in-doc
-      * validate-modules:undocumented-parameter
+      * ``validate-modules:doc-choices-do-not-match-spec``
+      * ``validate-modules:doc-default-does-not-match-spec``
+      * ``validate-modules:doc-missing-type``
+      * ``validate-modules:doc-required-mismatch``
+      * ``validate-modules:mutually_exclusive-unknown``
+      * ``validate-modules:nonexistent-parameter-documented``
+      * ``validate-modules:parameter-list-no-elements``
+      * ``validate-modules:parameter-type-not-in-doc``
+      * ``validate-modules:undocumented-parameter``
 
   * All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  For example ``plugins/modules/docker_container.py use-argspec-type-path # uses colon-separated paths, can't use type=path``.
   * Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
