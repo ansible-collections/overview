@@ -62,7 +62,7 @@ galaxy.yml
 README.md
 ---------
 
-MUST have a ``README.md`` in the root of the Collection, see `collection_template/README.md <https://github.com/ansible-collections/collection_template/blob/main/README.md>`_ for an example
+MUST have a ``README.md`` in the root of the Collection, see `collection_template/README.md <https://github.com/ansible-collections/collection_template/blob/main/README.md>`_ for an example.
 
 meta/runtime.yml
 ----------------
@@ -95,7 +95,7 @@ All module and plugin ``EXAMPLES`` MUST:
 Other items:
 
 * You MUST Use the FQCN for ``extends_documentation_fragment:``, unless you are referring to doc_fragments from ansible-base
-* The ``CONTRIBUTING.md`` (or ``README.md``) file MUST state what types of contributions (PRs, feature requests,) are accepted and any relevant contributor guidance. Issues (bugs and feature request) reports must always be accepted
+* The ``CONTRIBUTING.md`` (or ``README.md``) file MUST state what types of contributions (pull requests, feature requests, and so on) are accepted and any relevant contributor guidance. Issues (bugs and feature request) reports must always be accepted
 
 Contributor Workflow
 ====================
@@ -149,7 +149,7 @@ We should avoid FQCN / repository names:
 Licensing
 =========
 
-At the moment, module_utils must be licensed under the `BSD-2-clause <https://opensource.org/licenses/BSD-2-Clause>`_ or `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_ license and all other content must be licensed under the `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  We will have a list of other open source licenses which are allowed as soon as we get Red Hat's legal team to approve such a list for us.
+At the moment, ``module_utils`` must be licensed under the `BSD-2-clause <https://opensource.org/licenses/BSD-2-Clause>`_ or `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_ license and all other content must be licensed under the `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  We will have a list of other open source licenses which are allowed as soon as we get Red Hat's legal team to approve such a list for us.
 
 
 Repository management
@@ -178,7 +178,20 @@ CI Testing
 * You SHOULD suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 * The sanity tests MUST pass.
 
-  * Adding some entries to the ``test/sanity/ignore*.txt`` file is an allowed method of getting them to pass. 
+  * Adding some entries to the ``test/sanity/ignore*.txt`` file is an allowed method of getting them to pass, except cases listed below.
+  * You SHOULD not have ignored test entries.  A reviewer can manually evaluate and approve your collection if they deem an ignored entry to be valid.
+
+  * You MUST not ignore the following validations. They must be fixed before approval:
+      * ``validate-modules:doc-choices-do-not-match-spec``
+      * ``validate-modules:doc-default-does-not-match-spec``
+      * ``validate-modules:doc-missing-type``
+      * ``validate-modules:doc-required-mismatch``
+      * ``validate-modules:mutually_exclusive-unknown``
+      * ``validate-modules:nonexistent-parameter-documented``
+      * ``validate-modules:parameter-list-no-elements``
+      * ``validate-modules:parameter-type-not-in-doc``
+      * ``validate-modules:undocumented-parameter``
+
   * All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  For example ``plugins/modules/docker_container.py use-argspec-type-path # uses colon-separated paths, can't use type=path``.
   * Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
 
@@ -231,7 +244,7 @@ To be included in the `ansible` package, collections must meet the following cri
 * `Collection requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ (this document)
 * `Ansible documentation format <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html>`_ and the `style guide <https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide>`_
 * to pass the Ansible `sanity tests <https://docs.ansible.com/ansible/devel/dev_guide/testing_sanity.html#testing-sanity>`_
-* to have `unit <https://docs.ansible.com/ansible/devel/dev_guide/testing_units.html#unit-tests>`_ and / or `integration tests <https://docs.ansible.com/ansible/devel/dev_guide/testing_integration.html#integration-tests>`_
+* to have `unit <https://docs.ansible.com/ansible/devel/dev_guide/testing_units.html#unit-tests>`_ and / or `integration tests <https://docs.ansible.com/ansible/devel/dev_guide/testing_integration.html#integration-tests>`_ according to the corresponding sections of this document
 
 
 Other things
