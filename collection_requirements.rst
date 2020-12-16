@@ -174,17 +174,30 @@ Branch protections MUST be enforced:
 CI Testing
 ===========
 
-* You MUST run ``ansible-test sanity`` from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
+* You MUST run ``ansible-test sanity`` from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_.
 * You MUST run CI against all versions of ``ansible-base``/``ansible-core`` that the collection supports.
 * You SHOULD suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 * The sanity tests MUST pass.
 
-  * Adding some entries to the ``test/sanity/ignore*.txt`` file is an allowed method of getting them to pass. 
+  * Adding some entries to the ``test/sanity/ignore*.txt`` file is an allowed method of getting them to pass, except cases listed below.
+  * You SHOULD not have ignored test entries.  A reviewer can manually evaluate and approve your collection if they deem an ignored entry to be valid.
+
+  * You MUST not ignore the following validations. They must be fixed before approval:
+      * ``validate-modules:doc-choices-do-not-match-spec``
+      * ``validate-modules:doc-default-does-not-match-spec``
+      * ``validate-modules:doc-missing-type``
+      * ``validate-modules:doc-required-mismatch``
+      * ``validate-modules:mutually_exclusive-unknown``
+      * ``validate-modules:nonexistent-parameter-documented``
+      * ``validate-modules:parameter-list-no-elements``
+      * ``validate-modules:parameter-type-not-in-doc``
+      * ``validate-modules:undocumented-parameter``
+
   * All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  For example ``plugins/modules/docker_container.py use-argspec-type-path # uses colon-separated paths, can't use type=path``.
   * Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
 
 * All CI tests MUST run against every PR & commit to the repo.
-* All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repos without regular commits are tested against the latest version of ansible-test from each ansible-base/ansible-core version tested. 
+* All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repos without regular commits are tested against the latest version of ansible-test from each ansible-base/ansible-core version tested.
 
 All of the above can be achieved by using the following GitHub Action template, see `example <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_.
 
