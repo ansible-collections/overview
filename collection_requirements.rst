@@ -40,6 +40,7 @@ Collection Infrastructure
 
 * MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
 * Collections MUST have a Code of Conduct (CoC)
+
   * The collection's CoC MUST be compatible with the Ansible CoC
   * Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better
   * The Diversity and Inclusion working group may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents
