@@ -180,8 +180,9 @@ CI Testing
 * The sanity tests MUST pass.
 
   * Adding some entries to the ``test/sanity/ignore*.txt`` file is an allowed method of getting them to pass, except cases listed below.
+  * You SHOULD not have ignored test entries.  A reviewer can manually evaluate and approve your collection if they deem an ignored entry to be valid.
 
-  * You MUST not add the following entries to ``test/sanity/ignore*.txt`` files, for the sake of documentation completeness and accuracy:
+  * You MUST not ignore the following validations. They must be fixed before approval:
       * ``validate-modules:doc-choices-do-not-match-spec``
       * ``validate-modules:doc-default-does-not-match-spec``
       * ``validate-modules:doc-missing-type``
