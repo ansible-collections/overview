@@ -45,7 +45,7 @@ Collection Infrastructure
   * Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better
   * The Diversity and Inclusion working group may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents
   
-* MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>_.
+* MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
 
 Repo structure
 ===============
@@ -207,7 +207,7 @@ CI Testing
  
 * All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repos without regular commits are tested against the latest version of ansible-test from each ansible-base/ansible-core version tested. 
 
-All of the above can be achieved by using the following GitHub Action template, see `example <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_.
+All of the above can be achieved by using the following GitHub Action template, see this `example <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_.
 
 
 FIXME to write a guide "How to write CI tests" (from scratch / add to existing) and put the reference here.
