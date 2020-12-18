@@ -39,7 +39,12 @@ Collection Infrastructure
 =========================
 
 * MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
-* MUST use the `Ansible Code of Conduct (CoC) <https://docs.ansible.com/ansible/latest/community/code_of_conduct.html>`_ by copying `CODE_OF_CONDUCT.md <https://raw.githubusercontent.com/ansible-collections/.github/main/CODE_OF_CONDUCT.md>`_ into the root of your Git repository
+* Collections MUST have a Code of Conduct (CoC)
+
+  * The collection's CoC MUST be compatible with the Ansible CoC
+  * Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better
+  * The Diversity and Inclusion working group may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents
+  
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>_.
 
 Repo structure
