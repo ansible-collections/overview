@@ -163,7 +163,9 @@ Repository management
 Branch name and configuration
 -----------------------------
 
-All new repositories under `ansible-collections <https://github.com/ansible-collections>`_ MUST have ``main`` as the default branch.
+This subsection is **only** for repositories under `ansible-collections <https://github.com/ansible-collections>`_! Other collection repositories can also follow these guidelines, but do not have to.
+
+All new repositories MUST have ``main`` as the default branch.
 
 Existing repositories SHOULD be converted to use ``main``
 
