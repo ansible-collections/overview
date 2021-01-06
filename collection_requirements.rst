@@ -64,6 +64,10 @@ galaxy.yml
     3. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'`` for ``foo.baz``
     4. Finally release ``foo.bar`` as 1.0.0
 
+* The ``ansible`` package MUST NOT depend on collections not shipped in the package.
+* If you plan to split up your collection, the new collection must be approved for inclusion before the smaller collections replace the larger in Ansible.
+* If you plan to add other collections as dependencies, they must run through the formal application process.
+
 README.md
 ---------
 
