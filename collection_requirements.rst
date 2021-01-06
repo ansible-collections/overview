@@ -120,6 +120,7 @@ Please note that the porting guide is compiled from ``changelogs/changelog.yaml`
 Versioning and deprecation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+* Collections MUST adhere to `semantic versioning <https://semver.org/>`_.
 * To preserve backward compatibility for users, every ansible minor version series (2.10.x) will keep the major version of a collection constant. If ansible 2.10.0 includes ``community.general`` 1.2.0, then each 2.10.x release will include the latest ``community.general`` 1.y.z release available at build time. Ansible 2.10.x will **never** include a ``community.general`` 2.y.x release, even if it is available. Major collection version changes will be included in the next ansible minor release (2.11.0, 2.12.0, and so on).
 * Therefore, please make sure that the current major release of your collection included in 2.10.0 receives at least bugfixes as long new 2.10.x releases are produced.
 * Since new minor releases are included, you can include new features, modules and plugins. You must make sure that you do not break backwards compatibility! (See `semantic versioning <https://semver.org/>`_.) This means in particular:
