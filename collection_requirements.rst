@@ -54,7 +54,7 @@ galaxy.yml
 ----------
 
 * The ``tags`` field MUST be set
-* Collection dependencies used are expected to be stable, hence MUST be set to ``'>=1.0.0'``
+* Collection dependencies must have a lower bound on the version which is at least 1.0.0.
 
   * This means that all collection dependencies have to specify lower bounds on the versions, and these lower bounds should be stable releases, and not versions of the form 0.x.y.
   * When creating new collections where collection dependencies are also under development, you need to watch out since Galaxy checks whether dependencies exist in the required versions:
@@ -63,6 +63,10 @@ galaxy.yml
     2. First release ``foo.baz`` as 1.0.0.
     3. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'`` for ``foo.baz``
     4. Finally release ``foo.bar`` as 1.0.0
+
+* The ``ansible`` package MUST NOT depend on collections not shipped in the package.
+* If you plan to split up your collection, the new collection must be approved for inclusion before the smaller collections replace the larger in Ansible.
+* If you plan to add other collections as dependencies, they must run through the formal application process.
 
 README.md
 ---------
@@ -120,6 +124,7 @@ Please note that the porting guide is compiled from ``changelogs/changelog.yaml`
 Versioning and deprecation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+* Collections MUST adhere to `semantic versioning <https://semver.org/>`_.
 * To preserve backward compatibility for users, every ansible minor version series (2.10.x) will keep the major version of a collection constant. If ansible 2.10.0 includes ``community.general`` 1.2.0, then each 2.10.x release will include the latest ``community.general`` 1.y.z release available at build time. Ansible 2.10.x will **never** include a ``community.general`` 2.y.x release, even if it is available. Major collection version changes will be included in the next ansible minor release (2.11.0, 2.12.0, and so on).
 * Therefore, please make sure that the current major release of your collection included in 2.10.0 receives at least bugfixes as long new 2.10.x releases are produced.
 * Since new minor releases are included, you can include new features, modules and plugins. You must make sure that you do not break backwards compatibility! (See `semantic versioning <https://semver.org/>`_.) This means in particular:
