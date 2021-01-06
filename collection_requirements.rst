@@ -54,7 +54,7 @@ galaxy.yml
 ----------
 
 * The ``tags`` field MUST be set
-* Collection dependencies used are expected to be stable, hence MUST be set to ``'>=1.0.0'``
+* Collection dependencies must have a lower bound on the version which is at least 1.0.0.
 
   * This means that all collection dependencies have to specify lower bounds on the versions, and these lower bounds should be stable releases, and not versions of the form 0.x.y.
   * When creating new collections where collection dependencies are also under development, you need to watch out since Galaxy checks whether dependencies exist in the required versions:
