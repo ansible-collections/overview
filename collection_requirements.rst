@@ -44,6 +44,7 @@ Collection Infrastructure
   * The collection's CoC MUST be compatible with the Ansible CoC
   * Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better
   * The Diversity and Inclusion working group may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents
+  * The CoC must be linked from the README.md file, or must be present or linked from a CODE_OF_CONDUCT.md file in the collection root.
   
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
 
