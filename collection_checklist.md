@@ -2,6 +2,8 @@
 
 _For details about the following points, refer to the [Collection Requirements](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst)._
 
+Every comment should say whether the reviewer expects it to be addressed, or whether it's optional.
+
 **Public availability and communication:**
 - [ ] published on Ansible Galaxy [Ansible Galaxy](https://galaxy.ansible.com) with version 1.0.0 or later
 - [ ] has a policy of releasing, versioning and deprecation announced to contributors and users in some way

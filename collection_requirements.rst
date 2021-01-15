@@ -44,6 +44,7 @@ Collection Infrastructure
   * The collection's CoC MUST be compatible with the Ansible CoC
   * Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better
   * The Diversity and Inclusion working group may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents
+  * The CoC must be linked from the README.md file, or must be present or linked from a CODE_OF_CONDUCT.md file in the collection root.
   
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
 
@@ -187,6 +188,9 @@ CI Testing
 ===========
 
 * You MUST run ``ansible-test sanity`` from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
+
+  * Collections must run an equivalent of ``ansible-test sanity --docker``. If they do not use ``--docker``, they must make sure that all tests run, in particular the compile and import tests (which should run for all Python versions). Collections can choose to skip certain Python versions that they explicitly do not support; this needs to be documented in ``README.md`` and in every module and plugin (hint: use a docs fragment).
+
 * You SHOULD suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 * The sanity tests MUST pass.
 
