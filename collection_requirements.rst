@@ -86,7 +86,7 @@ Example: `meta/runtime.yml <https://github.com/ansible-collections/collection_te
 Modules & Plugins
 ------------------
 
-* Collections MUST only put plugin types recognized by ansible-core into the ``plugins/`` directory at this time.  The recognized plugin types are listed on https://docs.ansible.com/ansible/devel/plugins/plugins.html plus ``terminal``, ``modules``, ``doc_fragments`` and ``module_utils``.
+* Collections MUST only put plugin types recognized by ansible-core into the ``plugins/`` directory at this time.  The recognized plugin types are listed on https://docs.ansible.com/ansible/devel/plugins/plugins.html plus ``terminal``, ``modules``, ``doc_fragments`` and ``module_utils``.  This list can be verified by looking at the last element of the package argument of each ``*_loader`` in https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/loader.py#L1126
 
   * The following collections have a temporary exception to use the ``plugin_utils``, ``cli_parsers``, ``fact_diff``, and ``validate`` directories for additional plugins during the 2.10 and 3 release cycles.  We will figure out a final policy which these collections will need to comply with before ansible-4:
 
