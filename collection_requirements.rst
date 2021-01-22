@@ -88,7 +88,7 @@ Modules & Plugins
 
 * Collections MUST only put plugin types recognized by ansible-core into the :file:`plugins/` directory at this time.  The recognized plugin types are listed on https://docs.ansible.com/ansible/devel/plugins/plugins.html plus ``terminal``, ``modules``, and ``module_utils``.
 
-  * The following collections have a temporary exception to use the ``plugin_utils``, ``cli_parsers``, ``fact_diff``, and ``validate`` directories for additional plugins during the 2.10 and 3.0 release cycles.  We will figure out a final policy which these collections will need to comply with before ansible-4.0:
+  * The following collections have a temporary exception to use the ``plugin_utils``, ``cli_parsers``, ``fact_diff``, and ``validate`` directories for additional plugins during the 2.10 and 3 release cycles.  We will figure out a final policy which these collections will need to comply with before ansible-4:
 
     * ansible.utils
     * ansible.netcommon
