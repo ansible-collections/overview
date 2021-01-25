@@ -15,6 +15,7 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] follows licensing rules
 - [ ] follows the [Ansible documentation standards](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html) and the [style guide](https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide)
 - [ ] follows [development conventions](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html)
+- [ ] supports Python 2.6 or greater and Python 3.5 or greater
 - [ ] Only uses recognized plugin types in the `plugins/` directory.
 - [ ] has `README.md`
 - [ ] documentation, examples, and return use FQCNs for `M(..)`, examples, and `seealso` subsections
