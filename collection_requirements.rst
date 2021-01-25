@@ -48,6 +48,12 @@ Collection Infrastructure
   
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
 
+Python Compatibility
+====================
+
+Collection should be developed and tested against both Python 2.6(or greater) and Python 3.5(or greater) as Ansible supports wide variety of machines and also it should adhere to the tips mentioned in the official Ansible Development Guide [here](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3).
+
+
 Repo structure
 ===============
 
@@ -199,7 +205,7 @@ CI Testing
 
 * You MUST run ``ansible-test sanity`` from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
 
-  * Collections must run an equivalent of ``ansible-test sanity --docker``. If they do not use ``--docker``, they must make sure that all tests run, in particular the compile and import tests (which should run for all Python versions). Collections can choose to skip certain Python versions that they explicitly do not support; this needs to be documented in ``README.md`` and in every module and plugin (hint: use a docs fragment).
+  * Collections must run an equivalent of ``ansible-test sanity --docker``. If they do not use ``--docker``, they must make sure that all tests run, in particular the compile and import tests (which should run for all Python versions). However, collections can choose to skip certain Python versions that they explicitly do not support; this needs to be documented in ``README.md`` and in every module and plugin (hint: use a docs fragment) but we always recommend to review our [Python Compatibility](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) section for more details.
 
 * You SHOULD suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 * The sanity tests MUST pass.
