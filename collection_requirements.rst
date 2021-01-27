@@ -86,15 +86,16 @@ Example: `meta/runtime.yml <https://github.com/ansible-collections/collection_te
 Modules & Plugins
 ------------------
 
-* Collections MUST only put plugin types recognized by ansible-core into the ``plugins/`` directory at this time.  The recognized plugin types are listed on https://docs.ansible.com/ansible/devel/plugins/plugins.html plus ``terminal``, ``modules``, ``doc_fragments`` and ``module_utils``.  This list can be verified by looking at the last element of the package argument of each ``*_loader`` in https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/loader.py#L1126
+* Collections MUST only use the directories specified below in the ``plugins/`` directory and
+  only for the purposes listed:
 
-  * The following collections have a temporary exception to use the ``plugin_utils``, ``cli_parsers``, ``fact_diff``, and ``validate`` directories for additional plugins during the 2.10 and 3 release cycles.  We will figure out a final policy which these collections will need to comply with before ansible-4:
+  :Those recognized by ansible-core: ``doc_fragments``, ``modules``, ``module_utils``, ``terminal``, and those listed on https://docs.ansible.com/ansible/devel/plugins/plugins.html  This list can be verified by looking at the last element of the package argument of each ``*_loader`` in https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/loader.py#L1126
+  :plugin_utils: For shared code which is only used controller-side, not in modules.
+  :sub_plugins: For other plugins which are managed by plugins inside of collections instead of ansible-core.  We use a subfolder so there aren't conflicts when ansible-core adds new plugin types.
 
-    * ansible.utils
-    * ansible.netcommon
-    * community.crypto
-    * community.docker
-    * community.sops
+  The core team (which maintains ansible-core) has committed not to use these directories for
+  anything which would conflict with the uses we've specified.
+
 
 Documentation
 ~~~~~~~~~~~~~~
