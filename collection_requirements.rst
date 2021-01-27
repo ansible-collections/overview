@@ -91,7 +91,7 @@ Modules & Plugins
 
   :Those recognized by ansible-core: ``doc_fragments``, ``modules``, ``module_utils``, ``terminal``, and those listed on https://docs.ansible.com/ansible/devel/plugins/plugins.html  This list can be verified by looking at the last element of the package argument of each ``*_loader`` in https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/loader.py#L1126
   :plugin_utils: For shared code which is only used controller-side, not in modules.
-  :sub_plugins: For other plugins which are managed by action plugins inside of collections instead of ansible-core.  We use a subfolder so there aren't conflicts when ansible-core adds new plugin types.
+  :sub_plugins: For other plugins which are managed by plugins inside of collections instead of ansible-core.  We use a subfolder so there aren't conflicts when ansible-core adds new plugin types.
 
   The core team (which maintains ansible-core) has committed not to use these directories for
   anything which would conflict with the uses we've specified.
