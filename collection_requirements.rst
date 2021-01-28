@@ -115,7 +115,7 @@ Other items:
 
 * The ``CONTRIBUTING.md`` (or ``README.md``) file MUST state what types of contributions (pull requests, feature requests, and so on) are accepted and any relevant contributor guidance. Issues (bugs and feature request) reports must always be accepted.
 * Collections are encouraged to use `links and formatting macros <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-and-other-format-macros-within-module-documentation>`_
-* Including a `RETURN <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#return-block>`_ block for modules is encouraged but not required.
+* Including a `RETURN <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#return-block>`_ block for modules is strongly encouraged but not required.
 
 Contributor Workflow
 ====================
