@@ -227,7 +227,7 @@ CI Testing
 * All CI tests MUST run against every pull request and SHOULD pass before merge.
 * All CI tests MUST pass for the commit that releases the collection.
  
-* All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repos without regular commits are tested against the latest version of ansible-test from each ansible-base/ansible-core version tested. 
+* All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repositories without regular commits are tested against the latest version of ansible-test from each ansible-base/ansible-core version tested. The results from the regular CI runs MUST be checked regularly.
 
 All of the above can be achieved by using the following GitHub Action template, see this `example <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_.
 
