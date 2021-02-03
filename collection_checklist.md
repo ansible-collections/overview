@@ -9,6 +9,7 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] has a policy of releasing, versioning and deprecation announced to contributors and users in some way
 - [ ] have a Code of Conduct (CoC) compatible with the [Ansible Code of Conduct (CoC)](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
 - [ ] have a publicly available issue tracker that does not require a paid level of service to create an account or view issues
+- [ ] have a public SCM repository, releases of the collection are tagged in this repository
 
 **Standards and documentation:**
 - [ ] adheres to [semantic versioning](https://semver.org/)

@@ -177,6 +177,8 @@ At the moment, ``module_utils`` must be licensed under the `BSD-2-clause <https:
 Repository management
 =====================
 
+Every collection MUST have a public SCM repository, and releases of the collection MUST be tagged in this repository.
+
 Branch name and configuration
 -----------------------------
 
