@@ -108,7 +108,7 @@ All modules and plugins MUST:
 When using ``version_added`` in the documentation:
 
 * It must be used to declare the version of the collection in which the options were added -- NOT the version of Ansible.
-* If you for some reason really have to specify version numbers of Ansible or of another collection, you have to provide ``version_added_collection``. We strongly recommend to NOT do this.
+* If you for some reason really have to specify version numbers of Ansible or of another collection, you also have to provide ``version_added_collection: collection_name``. We strongly recommend to NOT do this.
 * Not every option, module or plugin must have ``version_added``. You should use it to mark when new content (modules, plugins, options) were added to the collection. The values are shown in the documentation, and this can be very useful for your users.
 
 Other items:
