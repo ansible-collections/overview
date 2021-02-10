@@ -51,8 +51,15 @@ Collection Infrastructure
 Python Compatibility
 ====================
 
-Collection should be developed and tested against both Python 2.6 (or greater) and Python 3.5 (or greater) as Ansible supports wide variety of machines and also it should adhere to the tips mentioned in the official Ansible Development Guide [here](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3).
+Collection SHOULD be developed and tested against both Python 2.6 (or greater) and Python 3.5 (or greater) as Ansible supports wide variety of machines and also it should adhere to the tips mentioned in the official Ansible Development Guide [here](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3).
 
+Also note, if the Collections does not support Python 2.6 and Python 3.5 explicitly then kindly take the below points into consideration:
+
+- Not supporting Python 2.6 means that you are dropping support for RHEL6, which has extended support until 2024. 
+
+- Not supporting Python 3.5 means that Python 2.7 has to be installed on Ubuntu Xenial (16.04) and that you have to support Python 2.7. 
+
+- Also, note that dropping support for a Python version for an existing module/plugin is a breaking change, and thus requires a major release.
 
 Repo structure
 ===============
