@@ -51,7 +51,7 @@ Collection Infrastructure
 Python Compatibility
 ====================
 
-Collection should be developed and tested against both Python 2.6(or greater) and Python 3.5(or greater) as Ansible supports wide variety of machines and also it should adhere to the tips mentioned in the official Ansible Development Guide [here](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3).
+Collection should be developed and tested against both Python 2.6 (or greater) and Python 3.5 (or greater) as Ansible supports wide variety of machines and also it should adhere to the tips mentioned in the official Ansible Development Guide [here](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3).
 
 
 Repo structure
