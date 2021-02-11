@@ -101,7 +101,7 @@ Documentation
 
 All modules and plugins MUST:
 
-* Have a `DOCUMENTATION <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#documentation-block>`_ block
+* Include a `DOCUMENTATION <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#documentation-block>`_ block
 * Have an `EXAMPLES <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#examples-block>`_ block (except where not relevant for the plugin type)
 * Use FQCNs when referring to modules, plugins and documentation fragments inside and outside the collection (including ``ansible.builtin.`` for the listed entities from `Ansible-base <https://docs.ansible.com/ansible/devel/collections/ansible/builtin/>`_)
 
