@@ -99,24 +99,24 @@ Modules & Plugins
 
 Documentation
 ~~~~~~~~~~~~~~
-All module and plugin ``DOCUMENTATION`` and ``RETURN`` MUST:
 
-* Use the FQCN for ``M(...)`` and ``- module:`` references of ``seealso`` subsections. See `Linking within module documentation <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-within-module-documentation>`_
-* Use the field ``version_added`` to document the version of the collection for which an option, module or plugin was added.
+All modules and plugins MUST:
 
-  * Use collection version numbers for ``version_added``, and not Ansible version numbers or other unrelated version numbers.
-  * If you for some reason really have to specify version numbers of Ansible or of another collection, you have to provide ``version_added_collection``. We strongly recommend to NOT do this.
-  * Not every option, module or plugin must have ``version_added``. You should use it to mark when new content (modules, plugins, options) were added to the collection. The values are shown in the documentation, and this can be very useful for your users.
+* Include a `DOCUMENTATION <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#documentation-block>`_ block
+* Include an `EXAMPLES <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#examples-block>`_ block (except where not relevant for the plugin type)
+* Use FQCNs when referring to modules, plugins and documentation fragments inside and outside the collection (including ``ansible.builtin.`` for the listed entities from `Ansible-base <https://docs.ansible.com/ansible/devel/collections/ansible/builtin/>`_)
 
-All module and plugin ``EXAMPLES`` MUST:
+When using ``version_added`` in the documentation:
 
-* Use FQCN for module (or plugin) name.
-* For modules (or plugins) left in ansible-base use ``ansible.builtin.`` as a FQCN prefix, for example, ``ansible.builtin.template``
+* Declare the version of the collection in which the options were added -- NOT the version of Ansible.
+* If you for some reason really have to specify version numbers of Ansible or of another collection, you also have to provide ``version_added_collection: collection_name``. We strongly recommend to NOT do this.
+* Include ``version_added`` when you add new content (modules, plugins, options) to an existing collection. The values are shown in the documentation, and can be useful, but you do not need to add ``version_added`` to every option, module, and plugin when creating a new collection.
 
 Other items:
 
-* You MUST Use the FQCN for ``extends_documentation_fragment:``, unless you are referring to doc_fragments from ansible-base
-* The ``CONTRIBUTING.md`` (or ``README.md``) file MUST state what types of contributions (pull requests, feature requests, and so on) are accepted and any relevant contributor guidance. Issues (bugs and feature request) reports must always be accepted
+* The ``CONTRIBUTING.md`` (or ``README.md``) file MUST state what types of contributions (pull requests, feature requests, and so on) are accepted and any relevant contributor guidance. Issues (bugs and feature request) reports must always be accepted.
+* Collections are encouraged to use `links and formatting macros <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#linking-and-other-format-macros-within-module-documentation>`_
+* Including a `RETURN <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#return-block>`_ block for modules is strongly encouraged but not required.
 
 Contributor Workflow
 ====================
