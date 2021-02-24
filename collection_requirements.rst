@@ -39,11 +39,11 @@ Collection Infrastructure
 =========================
 
 * MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
-* Collections MUST have a Code of Conduct (CoC)
+* Collections MUST have a Code of Conduct (CoC).
 
-  * The collection's CoC MUST be compatible with the Ansible CoC
-  * Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better
-  * The Diversity and Inclusion working group may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents
+  * The collection's CoC MUST be compatible with the Ansible CoC.
+  * Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better.
+  * The Diversity and Inclusion working group may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents.
   * The CoC must be linked from the README.md file, or must be present or linked from a CODE_OF_CONDUCT.md file in the collection root.
   
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
@@ -78,10 +78,10 @@ meta/runtime.yml
 ----------------
 Example: `meta/runtime.yml <https://github.com/ansible-collections/collection_template/blob/main/meta/runtime.yml>`_
 
-* MUST define the minimum version of Ansible which this collection works with
+* MUST define the minimum version of Ansible which this collection works with.
 
-  * If the collection works with Ansible 2.9, then this should be set to `>=2.9.10`
-  * It's usually better to avoid adding `<2.11` as a restriction, since this for example makes it impossible to use the collection with the current ansible-base devel branch (which has version 2.11.0.dev0)
+  * If the collection works with Ansible 2.9, then this should be set to `>=2.9.10`.
+  * It's usually better to avoid adding `<2.11` as a restriction, since this for example makes it impossible to use the collection with the current ansible-base devel branch (which has version 2.11.0.dev0).
 
 Modules & Plugins
 ------------------
@@ -95,6 +95,11 @@ Modules & Plugins
 
   The core team (which maintains ansible-core) has committed not to use these directories for
   anything which would conflict with the uses we've specified.
+
+test/integration
+----------------
+
+* MUST NOT contain any package installers (binaries, archives, tarballs, and so on) and other large files used, in particular, for integration tests.
 
 
 Documentation

@@ -28,6 +28,7 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] collection dependencies must have a lower bound on the version which is at least 1.0.0, and are all part of the `ansible` package
 - [ ] `meta/runtime.yml` defines the minimal version of Ansible which the collection works with
 - [ ] has changelog, preferably with `changelogs/changelog.yaml`
+- [ ] `tests/integration/` does not contain any package installers (binaries, tarballs, archives, and so on) and other large objects used for integration tests
 
 **Tests:**
 - [ ] passed `ansible-test sanity`
