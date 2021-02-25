@@ -101,8 +101,8 @@ Collection artifacts
 
 Collection Galaxy artifacts (tarballs):
 
-* SHOULD NOT contain any large objects (binaries) comparatively to the tarball size limit of 20 MB. If you need to include such files in your collection repository, make sure to exclude them from the collection build and, if a purpose of presence is testing, make sure that your tests also work without the files (for example, by loading them from a remote repository)
-* MUST contain objects that follow :ref:`licensing rules <Licensing>`
+* SHOULD NOT contain any large objects (binaries) comparatively to the tarball size limit of 20 MB. If you need to include such files in your collection repository, make sure to exclude them from the collection build and, if a purpose of presence is testing, make sure that your tests also work without the files (for example, by loading them from a remote repository).
+* MUST only contain objects that follow the :ref:`licensing rules <Licensing>`.
 
 
 Documentation
