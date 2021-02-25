@@ -96,10 +96,13 @@ Modules & Plugins
   The core team (which maintains ansible-core) has committed not to use these directories for
   anything which would conflict with the uses we've specified.
 
-test/integration
-----------------
+Collection artifacts
+--------------------
 
-* MUST NOT contain any package installers (binaries, archives, tarballs, and so on) and other large files used, in particular, for integration tests.
+Collection Galaxy artifacts (tarballs):
+
+* SHOULD NOT contain any large objects (binaries) comparatively to the tarball size limit of 20 MB. If you need to include such files in your collection repository, make sure to exclude them from the collection build and, if a purpose of presence is testing, make sure that your tests also work without the files (for example, by loading them from a remote repository)
+* MUST contain objects that follow :ref:`licensing rules <Licensing>`
 
 
 Documentation
@@ -172,6 +175,7 @@ We should avoid FQCN / repository names:
 * which are unnecessary long: try to make it compact but clear
 * contain the same words / collocations in ``NAMESPACE`` and ``COLLECTION`` parts, for example ``my_system.my_system``
 
+.. _Licensing:
 
 Licensing
 =========

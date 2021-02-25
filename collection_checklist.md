@@ -28,7 +28,8 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] collection dependencies must have a lower bound on the version which is at least 1.0.0, and are all part of the `ansible` package
 - [ ] `meta/runtime.yml` defines the minimal version of Ansible which the collection works with
 - [ ] has changelog, preferably with `changelogs/changelog.yaml`
-- [ ] `tests/integration/` does not contain any package installers (binaries, tarballs, archives, and so on) and other large objects used for integration tests
+- [ ] collection Galaxy artifact (tarball) should not contain any large objects (binaries) comparatively to the current tarball size limit of 20 MB
+- [ ] if a collection Galaxy artifact contains objects mentioned above, they must follow [licensing rules](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#licensing)
 
 **Tests:**
 - [ ] passed `ansible-test sanity`
