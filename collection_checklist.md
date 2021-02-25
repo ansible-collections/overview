@@ -29,7 +29,7 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] `meta/runtime.yml` defines the minimal version of Ansible which the collection works with
 - [ ] has changelog, preferably with `changelogs/changelog.yaml`
 - [ ] collection Galaxy artifact (tarball) should not contain any large objects (binaries) comparatively to the current tarball size limit of 20 MB
-- [ ] if a collection Galaxy artifact contains objects mentioned above, they must follow [licensing rules](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#licensing)
+- [ ] any objects in a collection Galaxy artifact including the mentioned above must follow [licensing rules](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#licensing)
 
 **Tests:**
 - [ ] passed `ansible-test sanity`
