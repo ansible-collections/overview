@@ -216,6 +216,7 @@ CI Testing
       * ``validate-modules:doc-missing-type``
       * ``validate-modules:doc-required-mismatch``
       * ``validate-modules:mutually_exclusive-unknown``
+      * ``validate-modules:no-log-needed`` (use ``no_log=False`` in the argument spec to flag false positives!)
       * ``validate-modules:nonexistent-parameter-documented``
       * ``validate-modules:parameter-list-no-elements``
       * ``validate-modules:parameter-type-not-in-doc``
