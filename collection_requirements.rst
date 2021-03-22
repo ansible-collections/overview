@@ -169,7 +169,7 @@ We should avoid FQCN / repository names:
 
 If a collection is published on both Galaxy and Red Hat Automation Hub,
 it is desirable that the Galaxy and Automation Hub collection names are identical if possible.
-
+Having two different names makes it impossible to mention the correct FQCNs in books, tutorials, documents, and in other sources since there is no single FQCN that always works, and it will cause confusion for users.
 
 Licensing
 =========
