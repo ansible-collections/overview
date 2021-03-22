@@ -167,7 +167,7 @@ We should avoid FQCN / repository names:
 * which are unnecessary long: try to make it compact but clear
 * contain the same words / collocations in ``NAMESPACE`` and ``COLLECTION`` parts, for example ``my_system.my_system``
 
-If a collection is published on Galaxy and is going to be published on Red Hat Automation Hub and vice versa,
+If a collection is published on both Galaxy and Red Hat Automation Hub,
 it is desirable that the Galaxy and Automation Hub collection names are identical if possible.
 
 
