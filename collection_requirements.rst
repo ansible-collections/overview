@@ -56,7 +56,7 @@ Collection SHOULD be developed and tested using the below Python recommendations
 Python Requirements
 -------------------
 
-Python requirements for a collection varies between controller-environment and other-environment. On the controller-environment, the python versions required may be higher than what is required on the other-environment's. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment that will help choose Python versions accordingly: 
+Python requirements for a collection varies between controller-environment and other-environment. On the controller-environment, the Python versions required may be higher than what is required on the other-environment's. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment that will help choose Python versions accordingly: 
 
 - `controller-environment`: The plugins/modules always run in the same environment (Python interpreter, venv, host, etc) as ansible-core itself.
 - `other-environment`: It is possible, even if uncommon in practice, for the plugins/modules to run in a different environment than ansible-core itself.
@@ -73,7 +73,7 @@ In the other environment, collections MUST support Python 2 (version 2.7) and Py
 
 **Note**
 
-If the Collections does not support Python 2.6 and/or Python 3.5 explicitly then kindly take the below points into consideration:
+If the collection does not support Python 2.6 and/or Python 3.5 explicitly then kindly take the below points into consideration:
 
 - Not supporting Python 2.6 on the managed node means that you are dropping support for RHEL6, which has extended support until 2024. 
 
