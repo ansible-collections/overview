@@ -81,10 +81,10 @@ If the collection does not support Python 2.6 and/or Python 3.5 explicitly then 
 
 Also, note that dropping support for a Python version for an existing module/plugin is a breaking change, and thus requires a major release. Hence, a collection MUST announce dropping support for Python versions in their changelog, if possible in advance (for example, in previous versions before support is dropped).
 
-Standards and conventions for developing module utilities in a collection
---------------------------------------------------------------------------
+Standards for developing module and plugin utilities
+----------------------------------------------------
 
-- `module_utils` can be marked for only internal use in the collection, but they MUST document this and MUST use a leading underscore for filenames.
+- `module_utils` and `plugin_utils` can be marked for only internal use in the collection, but they MUST document this and MUST use a leading underscore for filenames.
 
 - It is a breaking change when you make an existing `module_utils` private and in that case the collection requires a major version bump.
 

@@ -15,7 +15,7 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] follows licensing rules
 - [ ] follows the [Ansible documentation standards](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html) and the [style guide](https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide)
 - [ ] follows [development conventions](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html)
-- [ ] supports Python 2.6 or greater and Python 3.5 or greater. If it does not, unsupported [Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) are documented in ``README.md`` and in every module and plugin (or in doc fragments)
+- [ ] supports Python 2.6 or greater and Python 3.5 or greater. If it does not, read the [full guidelines](link to Python compatibility section) to see if you qualify for an exception and document the unsupported [Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) in the collection ``README.md`` and in every module and plugin (or in doc fragments)
 - [ ] Only uses recognized plugin types in the `plugins/` directory.
 - [ ] has `README.md`
 - [ ] documentation, examples, and return use FQCNs for `M(..)`, examples, and `seealso` subsections
