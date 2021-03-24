@@ -51,17 +51,17 @@ Collection Infrastructure
 Python Compatibility
 ====================
 
-Collection SHOULD be developed and tested using the below Python recommendations as Ansible supports wide variety of machines and also it should adhere to the tips mentioned in the official [Ansible Development Guide](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3).
+A collection MUST be developed and tested using the below Python recommendations as Ansible supports a wide variety of machines. The collection should adhere to the tips mentioned in the official [Ansible Development Guide](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3).
 
 Python Requirements
 -------------------
 
-Python requirements for a collection varies between controller-environment and other-environment. On the controller-environment, the Python versions required may be higher than what is required on the other-environment's. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment that will help choose Python versions accordingly: 
+Python requirements for a collection varies between controller-environment and other-environment. On the controller-environment, the Python versions required may be higher than what is required on the other-environment. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment to help you choose Python versions accordingly: 
 
 - `controller-environment`: The plugins/modules always run in the same environment (Python interpreter, venv, host, etc) as ansible-core itself.
 - `other-environment`: It is possible, even if uncommon in practice, for the plugins/modules to run in a different environment than ansible-core itself.
 
-One ideal scenario where the `even if` clause comes into play is when using Cloud modules. These modules mostly run on the controller node but in some environments, the controller might run on one machine inside a demilitarized zone which can't directly access the cloud machines. The user has to have the cloud modules run on a bastion host/jump server which has access to the cloud machines.
+One example scenario where the `even if` clause comes into play is when using Cloud modules. These modules mostly run on the controller node but in some environments, the controller might run on one machine inside a demilitarized zone which cannot directly access the cloud machines. The user has to have the cloud modules run on a bastion host/jump server which has access to the cloud machines.
 
 **Controller-environment**
 
@@ -75,13 +75,13 @@ In the other environment, collections MUST support Python 2 (version 2.7) and Py
 
 If the collection does not support Python 2.6 and/or Python 3.5 explicitly then kindly take the below points into consideration:
 
-- Not supporting Python 2.6 on the managed node means that you are dropping support for RHEL6, which has extended support until 2024. 
+- Not supporting Python 2.6 in the other environment means that you are dropping support for RHEL6, which has extended support until 2024. 
 
 - Not supporting Python 3.5 means that Python 2.7 has to be installed on Ubuntu Xenial (16.04) and that you have to support Python 2.7.
 
-- Also, note that dropping support for a Python version for an existing module/plugin is a breaking change, and thus requires a major release. Hence, a collection MUST announce dropping support for Python versions in their changelog, if possible to announce in advance (i.e. in previous versions when support will be dropped).
+Also, note that dropping support for a Python version for an existing module/plugin is a breaking change, and thus requires a major release. Hence, a collection MUST announce dropping support for Python versions in their changelog, if possible in advance (for example, in previous versions before support is dropped).
 
-Standards and conventions while developing module utilities for collection
+Standards and conventions for developing module utilities in a collection
 --------------------------------------------------------------------------
 
 - `module_utils` can be marked for only internal use in the collection, but they MUST document this and MUST use a leading underscore for filenames.
@@ -89,9 +89,10 @@ Standards and conventions while developing module utilities for collection
 - It is a breaking change when you make an existing `module_utils` private and in that case the collection requires a major version bump.
 
 - Below are some recommendations for `module_utils` documentation: 
-1. no docstring = everything we recommend for `other-environment` is supported
-2. docstring 'Python versions supported: as for controller-environment' = everything we recommend for `controller-environment` is supported
-3. docstring with specific versions otherwise: 'Python versions supported: '
+
+  *  no docstring: everything we recommend for `other-environment` is supported
+  *  docstring `'Python versions supported: same as for controller-environment'`: everything we recommend for `controller-environment` is supported
+  * docstring with specific versions otherwise: `'Python versions supported: '`
 
 Repo structure
 ===============
@@ -245,7 +246,7 @@ CI Testing
 
 * You MUST run ``ansible-test sanity`` from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
 
-  * Collections must run an equivalent of ``ansible-test sanity --docker``. If they do not use ``--docker``, they must make sure that all tests run, in particular the compile and import tests (which should run for all [supported Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3). Collections can choose to skip certain Python versions that they explicitly do not support; this needs to be documented in ``README.md`` and in every module and plugin (hint: use a docs fragment). However we strongly recommend to follow [Ansible Python Compatibility](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) section for more details.
+  * Collections must run an equivalent of ``ansible-test sanity --docker``. If they do not use ``--docker``, they must make sure that all tests run, in particular the compile and import tests (which should run for all [supported Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3). Collections can choose to skip certain Python versions that they explicitly do not support; this needs to be documented in ``README.md`` and in every module and plugin (hint: use a docs fragment). However we strongly recommend you follow the [Ansible Python Compatibility](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) section for more details.
 
 * You SHOULD suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 * The sanity tests MUST pass.
