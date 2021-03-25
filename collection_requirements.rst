@@ -51,17 +51,17 @@ Collection Infrastructure
 Python Compatibility
 ====================
 
-A collection MUST be developed and tested using the below Python recommendations as Ansible supports a wide variety of machines. The collection should adhere to the tips mentioned in the official [Ansible Development Guide](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3).
+A collection MUST be developed and tested using the below Python recommendations as Ansible supports a wide variety of machines. The collection should adhere to the tips mentioned in the official `Ansible Development Guide <https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3>`_.
 
 Python Requirements
 -------------------
 
 Python requirements for a collection varies between controller-environment and other-environment. On the controller-environment, the Python versions required may be higher than what is required on the other-environment. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment to help you choose Python versions accordingly: 
 
-- `controller-environment`: The plugins/modules always run in the same environment (Python interpreter, venv, host, etc) as ansible-core itself.
-- `other-environment`: It is possible, even if uncommon in practice, for the plugins/modules to run in a different environment than ansible-core itself.
+- ``controller-environment``: The plugins/modules always run in the same environment (Python interpreter, venv, host, etc) as ansible-core itself.
+- ``other-environment``: It is possible, even if uncommon in practice, for the plugins/modules to run in a different environment than ansible-core itself.
 
-One example scenario where the `even if` clause comes into play is when using Cloud modules. These modules mostly run on the controller node but in some environments, the controller might run on one machine inside a demilitarized zone which cannot directly access the cloud machines. The user has to have the cloud modules run on a bastion host/jump server which has access to the cloud machines.
+One example scenario where the ``even if`` clause comes into play is when using Cloud modules. These modules mostly run on the controller node but in some environments, the controller might run on one machine inside a demilitarized zone which cannot directly access the cloud machines. The user has to have the cloud modules run on a bastion host/jump server which has access to the cloud machines.
 
 **Controller-environment**
 
@@ -71,28 +71,28 @@ In the controller environment, collections MUST support Python 2 (version 2.7) a
 
 In the other environment, collections MUST support Python 2 (version 2.7) and Python 3 (Version 3.6 and higher), unless required libraries do not support these versions. Collections SHOULD also support Python v2.6 and v3.5 if all required libraries support this version.
 
-**Note**
+.. note::
 
-If the collection does not support Python 2.6 and/or Python 3.5 explicitly then kindly take the below points into consideration:
+    If the collection does not support Python 2.6 and/or Python 3.5 explicitly then kindly take the below points into consideration:
 
-- Not supporting Python 2.6 in the other environment means that you are dropping support for RHEL6, which has extended support until 2024. 
+    - Not supporting Python 2.6 in the other environment means that you are dropping support for RHEL6, which has extended support until 2024. 
 
-- Not supporting Python 3.5 means that Python 2.7 has to be installed on Ubuntu Xenial (16.04) and that you have to support Python 2.7.
+    - Not supporting Python 3.5 means that Python 2.7 has to be installed on Ubuntu Xenial (16.04) and that you have to support Python 2.7.
 
-Also, note that dropping support for a Python version for an existing module/plugin is a breaking change, and thus requires a major release. Hence, a collection MUST announce dropping support for Python versions in their changelog, if possible in advance (for example, in previous versions before support is dropped).
+    Also, note that dropping support for a Python version for an existing module/plugin is a breaking change, and thus requires a major release. Hence, a collection MUST announce dropping support for Python versions in their changelog, if possible in advance (for example, in previous versions before support is dropped).
 
 Standards for developing module and plugin utilities
 ----------------------------------------------------
 
-- `module_utils` and `plugin_utils` can be marked for only internal use in the collection, but they MUST document this and MUST use a leading underscore for filenames.
+- ``module_utils`` and ``plugin_utils`` can be marked for only internal use in the collection, but they MUST document this and MUST use a leading underscore for filenames.
 
-- It is a breaking change when you make an existing `module_utils` private and in that case the collection requires a major version bump.
+- It is a breaking change when you make an existing ``module_utils`` private and in that case the collection requires a major version bump.
 
-- Below are some recommendations for `module_utils` documentation: 
+- Below are some recommendations for ``module_utils`` documentation: 
 
-  *  no docstring: everything we recommend for `other-environment` is supported
-  *  docstring `'Python versions supported: same as for controller-environment'`: everything we recommend for `controller-environment` is supported
-  * docstring with specific versions otherwise: `'Python versions supported: '`
+  * no docstring: everything we recommend for ``other-environment`` is supported
+  * docstring ``'Python versions supported: same as for controller-environment'``: everything we recommend for ``controller-environment`` is supported
+  * docstring with specific versions otherwise: ``'Python versions supported: '``
 
 Repo structure
 ===============
