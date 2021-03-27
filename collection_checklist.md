@@ -19,7 +19,7 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] supports Python 2.6 or greater and Python 3.5 or greater. If it does not, read the [full guidelines](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#python-compatibility) to see if you qualify for an exception and document the unsupported [Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) in the collection ``README.md`` and in every module and plugin (or in doc fragments)
 - [ ] only uses the [allowed plugin types](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#modules-plugins) in the `plugins/` directory
 - [ ] has `README.md`
-- [ ] documentation, examples, and return sections use FQCNs for `M(..)` when referring to modules
+- [ ] documentation, examples, and return sections use FQCNs for the `M(..)` [format macros](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_documenting.html#linking-and-other-format-macros-within-module-documentation) when referring to modules
 - [ ] modules (or plugins) from ansible-core use `ansible.builtin.` as a FQCN prefix
 - [ ] documentation and return sections use `version_added:` containing the *collection* version for which an option, module or plugin was added
 - [ ] FQCNs are used for `extends_documentation_fragment:`, unless you are referring to doc_fragments from ansible-core
