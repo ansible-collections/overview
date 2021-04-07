@@ -220,25 +220,30 @@ Licensing
 **Note**: The guidelines below are more restrictive than strictly necessary.  We will try to add
 a larger list of acceptable licenses once we have approval from Red Hat Legal.
 
-There are three types of plugin code in collections which licensing has to address in different
+There are four types of content in collections which licensing has to address in different
 ways:
 
-:modules: must be licensed compatibly with the `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_
-:module_utils: must be licensed compatibly with the `GPL-3.0-or-later
-               <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  Ansible itself typically
-               uses the `BSD-2-clause <https://opensource.org/licenses/BSD-2-Clause>`_ license to
-               make it possible for third-party modules which are licensed incompatibly with the
-               GPLv3 to use them.  Please consider this use case when licensing your own
-               ``module_utils``.
-:All other plugin code: All other code must be under the `GPL-3.0-or-later
+:modules: must be licensed with a free software license that is compatible with the
+          `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_
+:module_utils: must be licensed with a free software license that is compatible with the
+               `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  Ansible
+               itself typically uses the `BSD-2-clause
+               <https://opensource.org/licenses/BSD-2-Clause>`_ license to make it possible for
+               third-party modules which are licensed incompatibly with the GPLv3 to use them.
+               Please consider this use case when licensing your own ``module_utils``.
+:All other code: All other code must be under the `GPL-3.0-or-later
                  <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  These plugins are run
                  inside of the Ansible controller process which is licensed under the GPLv3+ and
                  often must import code from the controller.  For these reasons, the GPLv3+ must be
                  used.
+:Non code content: At the moment, these must also be under the `GPL-3.0-or-later       
+                   <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.
 
-Please use `this table of licenses from the Fedora Project
+Use `this table of licenses from the Fedora Project
 <https://fedoraproject.org/wiki/Licensing:Main#Software_License_List>`_ to find which licenses are
-compatible with the GPLv3+.
+compatible with the GPLv3+.  The license must be considered open source on both the Fedora License
+table and the `Debian Free Software Guidelines <https://wiki.debian.org/DFSGLicenses>`_ to be
+allowed.
 
 These guidelines are the policy for inclusion in the Ansible package and are in addition to any
 licensing and legal concerns that may otherwise affect your code.
