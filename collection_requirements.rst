@@ -217,7 +217,30 @@ We should avoid FQCN / repository names:
 Licensing
 =========
 
-At the moment, ``module_utils`` must be licensed under the `BSD-2-clause <https://opensource.org/licenses/BSD-2-Clause>`_ or `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_ license and all other content must be licensed under the `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  We will have a list of other open source licenses which are allowed as soon as we get Red Hat's legal team to approve such a list for us.
+**Note**: The guidelines below are more restrictive than strictly necessary.  We will try to add
+a larger list of acceptable licenses once we have approval from Red Hat Legal.
+
+There are three types of plugin code in collections which licensing has to address in different
+ways:
+
+:modules: must be licensed compatibly with the `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_
+:module_utils: must be licensed compatibly with the `GPL-3.0-or-later
+               <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  Ansible itself typically
+               `BSD-2-clause <https://opensource.org/licenses/BSD-2-Clause>`_ to make it possible
+               for third-party modules which are licensed incompatibly with the GPLv3 to use them.
+               Please consider this use case when licensing your own ``module_utils``.
+:All other plugin code: All other code must be under the `GPL-3.0-or-later
+                 <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  These plugins are run
+                 inside of the Ansible controller process which is licensed under the GPLv3+ and
+                 often must import code from the controller.  For these reasons, the GPLv3+ must be
+                 used.
+
+Please use `this table of licenses from the Fedora Project
+<https://fedoraproject.org/wiki/Licensing:Main#Software_License_List>`_ to find which licenses are
+compatible with the GPLv3+.
+
+These guidelines are the policy for inclusion in the Ansible package and are in addition to any
+licensing and legal concerns that may otherwise affect your code.
 
 
 Repository management
