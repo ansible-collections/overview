@@ -39,11 +39,11 @@ Collection Infrastructure
 =========================
 
 * MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
-* Collections MUST have a Code of Conduct (CoC)
+* Collections MUST have a Code of Conduct (CoC).
 
-  * The collection's CoC MUST be compatible with the Ansible CoC
-  * Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better
-  * The Diversity and Inclusion working group may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents
+  * The collection's CoC MUST be compatible with the Ansible CoC.
+  * Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better.
+  * The Diversity and Inclusion working group may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents.
   * The CoC must be linked from the README.md file, or must be present or linked from a CODE_OF_CONDUCT.md file in the collection root.
   
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
@@ -124,10 +124,10 @@ meta/runtime.yml
 ----------------
 Example: `meta/runtime.yml <https://github.com/ansible-collections/collection_template/blob/main/meta/runtime.yml>`_
 
-* MUST define the minimum version of Ansible which this collection works with
+* MUST define the minimum version of Ansible which this collection works with.
 
-  * If the collection works with Ansible 2.9, then this should be set to `>=2.9.10`
-  * It's usually better to avoid adding `<2.11` as a restriction, since this for example makes it impossible to use the collection with the current ansible-base devel branch (which has version 2.11.0.dev0)
+  * If the collection works with Ansible 2.9, then this should be set to `>=2.9.10`.
+  * It's usually better to avoid adding `<2.11` as a restriction, since this for example makes it impossible to use the collection with the current ansible-base devel branch (which has version 2.11.0.dev0).
 
 Modules & Plugins
 ------------------
@@ -141,6 +141,14 @@ Modules & Plugins
 
   The core team (which maintains ansible-core) has committed not to use these directories for
   anything which would conflict with the uses we've specified.
+
+Collection artifacts
+--------------------
+
+Collection Galaxy artifacts (tarballs):
+
+* SHOULD NOT contain any large objects (binaries) comparatively to the tarball size limit of 20 MB. If you need to include such files in your collection repository, make sure to exclude them from the collection build and, if a purpose of presence is testing, make sure that your tests also work without the files (for example, by loading them from a remote repository).
+* MUST only contain objects that follow the :ref:`licensing rules <Licensing>`.
 
 
 Documentation
@@ -213,6 +221,7 @@ We should avoid FQCN / repository names:
 * which are unnecessary long: try to make it compact but clear
 * contain the same words / collocations in ``NAMESPACE`` and ``COLLECTION`` parts, for example ``my_system.my_system``
 
+.. _Licensing:
 
 Licensing
 =========
