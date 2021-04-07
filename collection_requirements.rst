@@ -69,13 +69,11 @@ In the controller environment, collections MUST support Python 2 (version 2.7) a
 
 **Other-environment**
 
-In the other environment, collections MUST support Python 2 (version 2.7) and Python 3 (Version 3.6 and higher), unless required libraries do not support these versions. Collections SHOULD also support Python v2.6 and v3.5 if all required libraries support this version.
+In the other environment, collections MUST support Python 2 (version 2.7) and Python 3 (Version 3.6 and higher), unless required libraries do not support these versions. Collections SHOULD also support Python v3.5 if all required libraries support this version.
 
 .. note::
 
-    If the collection does not support Python 2.6 and/or Python 3.5 explicitly then kindly take the below points into consideration:
-
-    - Not supporting Python 2.6 in the other environment means that you are dropping support for RHEL6, which has extended support until 2024. 
+    If the collection does not support Python 3.5 explicitly then kindly take the below points into consideration:
 
     - Not supporting Python 3.5 means that Python 2.7 has to be installed on Ubuntu Xenial (16.04) and that you have to support Python 2.7.
 
