@@ -13,7 +13,7 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 
 **Standards and documentation:**
 - [ ] adheres to [semantic versioning](https://semver.org/)
-- [ ] follows licensing rules
+- [ ] follows [licensing rules](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#licensing)
 - [ ] follows the [Ansible documentation standards](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html) and the [style guide](https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide)
 - [ ] follows [development conventions](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html)
 - [ ] supports Python 2.6 or greater and Python 3.5 or greater. If it does not, read the [full guidelines](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#python-compatibility) to see if you qualify for an exception and document the unsupported [Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) in the collection ``README.md`` and in every module and plugin (or in doc fragments)
