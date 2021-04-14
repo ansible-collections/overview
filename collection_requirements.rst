@@ -75,9 +75,9 @@ In the other environment, collections MUST support Python 2 (version 2.7) and Py
 
     If the collection does not support Python 2.6 and/or Python 3.5 explicitly then kindly take the below points into consideration:
 
-    - Not supporting Python 2.6 in the other environment means that you are dropping support for RHEL6, which has extended support until 2024. 
+    - Dropping support for Python 2.6 in the other environment means that you are dropping support for RHEL6.  RHEL6 ended full support in November, 2020, but some users are still using RHEL6 under extended support contracts (ELS) until 2024.  ELS is not full support; not all CVEs of the python-2.6 interpreter are fixed, for instance.
 
-    - Not supporting Python 3.5 means that Python 2.7 has to be installed on Ubuntu Xenial (16.04) and that you have to support Python 2.7.
+    - Dropping support for Python 3.5 means that Python 2.7 has to be installed on Ubuntu Xenial (16.04) and that you have to support Python 2.7.
 
     Also, note that dropping support for a Python version for an existing module/plugin is a breaking change, and thus requires a major release. Hence, a collection MUST announce dropping support for Python versions in their changelog, if possible in advance (for example, in previous versions before support is dropped).
 
