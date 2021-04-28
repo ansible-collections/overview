@@ -349,6 +349,7 @@ To be included in the `ansible` package, collections must meet the following cri
 
 * `development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html>`_
 * `Collection requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ (this document)
+* `Collection Inclusion Criteria Checklist <https://github.com/ansible-collections/overview/blob/main/collection_checklist.md>`_
 * `Ansible documentation format <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html>`_ and the `style guide <https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide>`_
 * to pass the Ansible `sanity tests <https://docs.ansible.com/ansible/devel/dev_guide/testing_sanity.html#testing-sanity>`_
 * to have `unit <https://docs.ansible.com/ansible/devel/dev_guide/testing_units.html#unit-tests>`_ and / or `integration tests <https://docs.ansible.com/ansible/devel/dev_guide/testing_integration.html#integration-tests>`_ according to the corresponding sections of this document
