@@ -221,7 +221,7 @@ If your collection is planned to be certified on Automation Hub, please consult 
 Module naming
 -------------
 
-Modules that only gather information MUST be named ``<something>_info`` or ``<something>_facts``.
+Modules that only gather information MUST be named ``<something>_info``. Modules that return ``ansible_facts`` are named ``<something>_facts`` and do not return non-facts.
 For more information, refer to the `Developing modules guidelines <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_general.html#creating-an-info-or-a-facts-module>`_.
 
 Licensing
