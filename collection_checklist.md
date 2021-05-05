@@ -16,7 +16,8 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] follows [licensing rules](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#licensing)
 - [ ] follows the [Ansible documentation standards](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html) and the [style guide](https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide)
 - [ ] follows [development conventions](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html); as well as these other requirements:
-  - [ ] modules that only gather information are named `<something>_info` or `<something>_facts`
+  - [ ] modules that only gather information are named `<something>_info`
+  - [ ] modules that return `ansible_facts` are named `<something>_facts` and do not return non-facts
   - [ ] modules do not allow to query information using specific `state` option values, or similar mechanisms (like `state=get` or `state=query`)
   - [ ] `check_mode` is supported in all `_info` and `_facts` modules
 - [ ] supports Python 2.6 or greater and Python 3.5 or greater. If it does not, read the [full guidelines](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#python-compatibility) to see if you qualify for an exception and document the unsupported [Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) in the collection ``README.md`` and in every module and plugin (or in doc fragments)
