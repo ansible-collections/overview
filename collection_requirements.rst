@@ -198,6 +198,9 @@ Versioning and deprecation
 Naming
 ======
 
+Collection naming
+-----------------
+
 For collections under ansible-collections the repository SHOULD be named ``NAMESPACE.COLLECTION``.
 
 To create a new collection and corresponding repository, first, a new namespace in Galaxy has to be created via submitting `Request a namespace <https://github.com/ansible/galaxy/issues/new/choose>`_.
@@ -215,6 +218,11 @@ We should avoid FQCN / repository names:
 
 If your collection is planned to be certified on Automation Hub, please consult with Red Hat Partner Engineering to ensure collection naming compatibility between the community collection on **Galaxy**.
 
+Module naming
+-------------
+
+Modules that only gather information MUST be named ``<something>_info``. Modules that return ``ansible_facts`` are named ``<something>_facts`` and do not return non-facts.
+For more information, refer to the `Developing modules guidelines <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_general.html#creating-an-info-or-a-facts-module>`_.
 
 Licensing
 =========
@@ -340,6 +348,15 @@ Also:
 * look through ``docs/docsite`` directory of `ansible-base GitHub repository <https://github.com/ansible/ansible>`_ (for example, using the ``grep`` command-line utility) to check if there are examples using the moved modules / plugins to update their FQCNs
 
 See `Migrating content to a different collection <https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#migrating-ansible-content-to-a-different-collection>`_ for complete details.
+
+Development conventions
+=======================
+
+Besides all the requirements listed in the `Development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html>`_, be sure:
+
+* Your modules do not query information using special ``state`` option values like ``get``, ``list``, ``query``, or ``info`` -
+  create new ``_info`` or ``_facts`` modules instead (for more information, refer to the `Developing modules guidelines <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_general.html#creating-an-info-or-a-facts-module>`_)
+* ``check_mode`` is supported in all ``*_info`` and ``*_facts`` modules (for more information, refer to the `Development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html#following-ansible-conventions>`_)
 
 
 Requirements for collections to be included in the Ansible Package
