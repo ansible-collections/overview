@@ -15,7 +15,7 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] adheres to [semantic versioning](https://semver.org/)
 - [ ] follows [licensing rules](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#licensing)
 - [ ] follows the [Ansible documentation standards](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html) and the [style guide](https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide)
-- [ ] follows [development conventions](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html); besides the other requirements:
+- [ ] follows [development conventions](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html); as well as these other requirements:
   - [ ] modules that only gather information are named `<something>_info` or `<something>_facts`
   - [ ] modules do not allow to query information using specific `state` option values, or similar mechanisms (like `state=get` or `state=query`)
   - [ ] `check_mode` is supported in all `_info` and `_facts` modules
