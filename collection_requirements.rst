@@ -20,9 +20,9 @@ As with any project it's very important that we get feedback from users, contrib
 
 Please raise feedback by:
 
-* Discussing in ``#ansible-community`` in Freenode IRC
-* Adding to the `Community Working Group IRC meeting <https://github.com/ansible/community/issues/539>`_
-* Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ against this repository
+* Discussing in the ``#ansible-community`` `libera.chat <https://libera.chat/>`_ IRC channel.
+* Adding to the `Community Working Group IRC meeting <https://github.com/ansible/community/issues/539>`_.
+* Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ against this repository.
 
 Keeping informed
 ================
