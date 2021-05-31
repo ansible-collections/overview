@@ -183,14 +183,14 @@ Versioning and deprecation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Collections MUST adhere to `semantic versioning <https://semver.org/>`_.
-* To preserve backward compatibility for users, every ansible minor version series (2.10.x) will keep the major version of a collection constant. If ansible 2.10.0 includes ``community.general`` 1.2.0, then each 2.10.x release will include the latest ``community.general`` 1.y.z release available at build time. Ansible 2.10.x will **never** include a ``community.general`` 2.y.x release, even if it is available. Major collection version changes will be included in the next ansible minor release (2.11.0, 2.12.0, and so on).
-* Therefore, please make sure that the current major release of your collection included in 2.10.0 receives at least bugfixes as long new 2.10.x releases are produced.
+* To preserve backward compatibility for users, every Ansible minor version series (x.Y.z) will keep the major version of a collection constant. If ansible 3.0.0 includes ``community.general`` 2.2.0, then each 3.Y.z (3.1.z, 3.2.z, and so on) release will include the latest ``community.general`` 2.y.z release available at build time. Ansible 3.y.z will **never** include a ``community.general`` 3.y.z release, even if it is available. Major collection version changes will be included in the next Ansible major release (4.0.0 in this example).
+* Therefore, please make sure that the current major release of your collection included in 3.0.0 receives at least bugfixes as long as new 3.Y.Z releases are produced.
 * Since new minor releases are included, you can include new features, modules and plugins. You must make sure that you do not break backwards compatibility! (See `semantic versioning <https://semver.org/>`_.) This means in particular:
 
   * You can fix bugs in patch releases, but not add new features or deprecate things.
   * You can add new features and deprecate things in minor releases, but not remove things or change behavior of existing features.
   * You can only remove things or make breaking changes in major releases.
-* We recommend to make sure that if a deprecation is added in a collection version that is included in 2.10.x, but not in 2.10.0, that the removal itself will only happen in a collection version included in 2.12.0 or later, but not in a collection version included in 2.11.0.
+* We recommend to make sure that if a deprecation is added in a collection version that is included in Ansible 3.y.z, the removal itself will only happen in a collection version included in Ansible 5.0.0 or later, but not in a collection version included in Ansible 4.0.0.
 * Content moved from ansible/ansible that was scheduled for removal in 2.11 or later MUST NOT be removed in the current major release  available when ansible 2.10.0 is released. Otherwise it would already be removed in 2.10, unexpectedly for users! Deprecation cycles can be shortened (since they are now uncoupled from ansible or ansible-base versions), but existing ones must not be unexpectedly terminated.
 * We recommend to announce your policy of releasing, versioning and deprecation to contributors and users in some way. For an example of how to do this, see `the announcement in community.general <https://github.com/ansible-collections/community.general/issues/582>`_. You could also do this in the README.
 
