@@ -216,23 +216,17 @@ Q: I'd like to submit a new module or plugin to Ansible. How shall I proceed?
 
 If you're a vendor/partner and you're writing Ansible content to interact with your software, we recommend writing your own collection. This will allow you to pursue certification against the Ansible Automation Platform. For more info on certification, read the `Partners Page <http://ansible.com/partners>`_.
 
-If you want to submit your module to the ``community.general`` Collection, please wait till this repo has been created. FIXME, Possible direct to dedicated collection, otherwise fallback to c.general
-
 If you want to submit your module to an existing collection, you'll want to coordinate with the maintainers of those collections and follow their guidelines. 
 
-As of today **ansible-base (github.com/ansible/ansible) will no longer accept new modules.**
+As of today **ansible-core (github.com/ansible/ansible) will no longer accept new modules or plugins.**
 
 Q: I'd like to submit a pull request to an existing Ansible module. How will I know where this module will live?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We will have a `mapping <https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#migrating-ansible-content-to-a-collection>`_ of old modules to their new homes. Should you submit a PR to the wrong repository, we will close it and point you to the correct repository.
-
-For new PRs please wait for the new Collections to be created. FIXME
+We will have a `mapping <https://docs.ansible.com/ansible/devel/dev_guide/developing_collections_migrating.html>`_ of old modules to their new homes. Should you submit a PR to the wrong repository, we will close it and point you to the correct repository.
 
 Q: I have existing pull requests to existing modules that will become part of the Ansible Community Collection. What will happen to those?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-FIXME Pull requests merged before ``ansible/ansible:devel`` is frozen will end up in the new collections.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Pull requests not merged before the freeze, will need to be recreated in the corresponding new Collection Repo. We will have a tool to help move PRs from one repo to another.
 
@@ -279,15 +273,12 @@ See `Migrating content to a different collection <https://docs.ansible.com/ansib
 Q: How can I fix bugs in Ansible 2.9?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `previous policy <https://docs.ansible.com/ansible/latest/community/development_process.html#making-your-pr-merge-worthy>`_ was:
+Please note that Ansible 2.9 no longer receives bugfixes. Only security issues can be fixed, and eventually it will be end of life with no more fixes accepted. See `ansible-core release cycle <https://docs.ansible.com/ansible/devel/reference_appendices/release_and_maintenance.html#ansible-core-release-cycle>`_ for whether 2.9 is still accepting security fixes or not.
 
-1. PR for bug fix including ``changelog/fragment`` file
-2. PR gets merged into ``devel``
-3. Backport (``git cherry-pick -x``) PR against the ``stable-2.9`` branch
-
-
-Once content has been removed from the ``devel`` branch, the process will be:
+The process for fixing a security issue is as follows:
 
 1. PR for bug fix made against the Collection
 2. PR gets merged into Collection
-3. Raise PR directly against ``ansible/ansible:stable-2.9`` (ie not a backport) including a ``changelog/fragment`` file
+3. Raise PR directly against ``ansible/ansible:stable-2.9`` (ie not a backport) including a ``changelogs/fragments/`` file
+
+The changes in the PR against ``ansible/ansible:stable-2.9`` should be as close as possible to the changes in the collection original PR, and you should add a reference to the collection PR in the ``ansible/ansible`` PR.
