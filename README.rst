@@ -281,4 +281,4 @@ The process for fixing a security issue is as follows:
 2. PR gets merged into Collection
 3. Raise PR directly against ``ansible/ansible:stable-2.9`` (ie not a backport) including a ``changelogs/fragments/`` file
 
-The changes in the PR should be as close as possible to the changes in the PR, and you should add a reference to the collection PR in the ansible/ansible PR.
+The changes in the PR against ``ansible/ansible:stable-2.9`` should be as close as possible to the changes in the collection original PR, and you should add a reference to the collection PR in the ``ansible/ansible`` PR.
