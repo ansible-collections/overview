@@ -279,15 +279,12 @@ See `Migrating content to a different collection <https://docs.ansible.com/ansib
 Q: How can I fix bugs in Ansible 2.9?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `previous policy <https://docs.ansible.com/ansible/latest/community/development_process.html#making-your-pr-merge-worthy>`_ was:
+Please note that Ansible 2.9 no longer receives bugfixes. Only security issues can be fixed, and eventually it will be end of line with no more fixes accepted. See `ansible-core release cycle <https://docs.ansible.com/ansible/devel/reference_appendices/release_and_maintenance.html#ansible-core-release-cycle>`_ for whether 2.9 is still accepting security fixes or not.
 
-1. PR for bug fix including ``changelog/fragment`` file
-2. PR gets merged into ``devel``
-3. Backport (``git cherry-pick -x``) PR against the ``stable-2.9`` branch
-
-
-Once content has been removed from the ``devel`` branch, the process will be:
+The process for fixing a security issue is as follows:
 
 1. PR for bug fix made against the Collection
 2. PR gets merged into Collection
-3. Raise PR directly against ``ansible/ansible:stable-2.9`` (ie not a backport) including a ``changelog/fragment`` file
+3. Raise PR directly against ``ansible/ansible:stable-2.9`` (ie not a backport) including a ``changelogs/fragments/`` file
+
+The changes in the PR should be as close as possible to the changes in the PR, and you should add a reference to the collection PR in the ansible/ansible PR.
