@@ -81,6 +81,11 @@ In the other environment, collections MUST support Python 2 (version 2.7) and Py
 
     Also, note that dropping support for a Python version for an existing module/plugin is a breaking change, and thus requires a major release. Hence, a collection MUST announce dropping support for Python versions in their changelog, if possible in advance (for example, in previous versions before support is dropped).
 
+Documentation
+~~~~~~~~~~~~~
+
+If the majority of the content in the collection does not support Python 2.7 or Python 3.5, or other Python versions Ansible currently supports, this MUST be documented in the collection's README. It SHOULD also be documented in every module's and plugin's documentation. If the Python requirements are stricter for a minority of the content, these restrictions MUST be documented in every affected module's and plugin's documentation.
+
 Standards for developing module and plugin utilities
 ----------------------------------------------------
 
