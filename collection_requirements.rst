@@ -84,7 +84,7 @@ In the other environment, collections MUST support Python 2 (version 2.7) and Py
 Documentation
 ~~~~~~~~~~~~~
 
-* If everything in your collection supports the same Python versions as the current version of ansible-core, you do not need to document Python versions.
+* If everything in your collection supports the same Python versions as the collection-supported versions of ansible-core, you do not need to document Python versions.
 * If your collection does not support those Python versions, you MUST document which versions it supports in the README.
 * If most of your collection supports the same Python versions as ansible-core, but some modules and plugins do not, you MUST include the supported Python versions in the documentation for those modules and plugins.
 
