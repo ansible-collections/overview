@@ -88,6 +88,8 @@ Documentation
 * If your collection does not support those Python versions, you MUST document which versions it supports in the README.
 * If most of your collection supports the same Python versions as ansible-core, but some modules and plugins do not, you MUST include the supported Python versions in the documentation for those modules and plugins.
 
+For example, if your collection supports Ansible 2.9 to ansible-core 2.13, the Python versions supported for modules are 2.6, 2.7, and 3.5 and newer (until at least 3.10), while the Python versions supported for plugins are 2.7 and 3.5 and newer (until at least 3.10). So if the modules in your collection do not support Python 2.6, you have to document this in the README, for example `The content in this collection supports Python 2.7, Python 3.5 and newer.`.
+
 Standards for developing module and plugin utilities
 ----------------------------------------------------
 
