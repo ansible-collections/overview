@@ -1,27 +1,27 @@
-*****************************
-Ansible Collections Checklist
-*****************************
+******************************************
+Ansible Community Collections Requirements
+******************************************
 
 .. contents:: Topics
 
 Overview
 ========
-This document is for maintainers of collections to provide them help, advice, and guidance on making sure their collections are correct.
+
+This document is for maintainers of Ansible Community collections (hereinafter the Collections) to provide them help, advice, and guidance on making sure their collections are correct.
 
 **Warning:** Subject to frequent updates. This is a "living document", expect it to change as we progress with the Collections work over the next few months.
 
-**Note:** Inclusion of a new collection in the Ansible package is ultimately at the discretion of the Ansible community review committee. Every rejected candidate will get feedback. Differences of opinion should be taken to the community irc meeting for discussion and a final vote.
-
+**Note:** `Inclusion of a new collection <https://github.com/ansible-collections/ansible-inclusion>`_ in the Ansible package is ultimately at the discretion of the `Ansible Community Steering Committee <https://github.com/ansible/community-docs/blob/main/ansible_community_steering_committee.rst>`_. Every rejected candidate will get feedback. Differences of opinion should be taken to a dedicated `Community Topic <https://github.com/ansible-community/community-topics/issues>`_ for discussion and a final vote.
 
 Feedback
 ========
 
-As with any project it's very important that we get feedback from users, contributors and maintainers. We recognize that the move to Collections is a big change in how Ansible is developed and delivered.
+As with any project it's very important that we get feedback from users, contributors, and maintainers. We recognize that the move to Collections is a big change in how Ansible is developed and delivered.
 
 Please raise feedback by:
 
-* Discussing in the ``#ansible-community`` `libera.chat <https://libera.chat/>`_ IRC channel.
-* Adding to the `Community Working Group IRC meeting <https://github.com/ansible/community/issues/539>`_.
+* Discussing in the ``#ansible-community`` Matrix/IRC `channel <https://docs.ansible.com/ansible/latest/community/communication.html#real-time-chat>`_.
+* Discussing in the `Community Working Group meeting <https://github.com/ansible/community/blob/main/meetings/README.md#wednesdays>`_.
 * Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ against this repository.
 
 Keeping informed
@@ -29,22 +29,21 @@ Keeping informed
 
 Be sure you're subscribed to:
 
-* `Changes impacting Collections <https://github.com/ansible-collections/overview/issues/45>`_ to track changes that Collection maintainers should be aware of
-* The Bullhorn, a newsletter for the Ansible developer community, `back issues and how to add content <https://github.com/ansible/community/issues/546>`_
-
-Why is this needed
-===================
+* The `news-for-maintainers repository <https://github.com/ansible-collections/news-for-maintainers>`_ to track changes that Collection maintainers should be aware of.
+* The `Bullhorn <https://github.com/ansible/community/wiki/News#the-bullhorn>`_ Ansible contributor newsletter.
 
 Collection Infrastructure
 =========================
 
-* MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
-* Collections MUST have a Code of Conduct (CoC)
+Community collections
 
-  * The collection's CoC MUST be compatible with the Ansible CoC
-  * Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better
-  * The Diversity and Inclusion working group may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents
-  * The CoC must be linked from the README.md file, or must be present or linked from a CODE_OF_CONDUCT.md file in the collection root.
+* MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
+* MUST have a Code of Conduct (hereinafter the CoC).
+
+  * The collection's CoC MUST be compatible with the `Ansible Code of Conduct <https://docs.ansible.com/ansible/latest/community/code_of_conduct.html>`_.
+  * The Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better.
+  * The `Diversity and Inclusion working group <https://docs.ansible.com/ansible/latest/community/communication.html#working-groups>` may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents
+  * The CoC MUST be linked from the ``README.md`` file, or MUST be present or linked from the ``CODE_OF_CONDUCT.md`` file in the collection root.
   
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
 
@@ -58,16 +57,18 @@ Python Requirements
 
 Python requirements for a collection varies between controller-environment and other-environment. On the controller-environment, the Python versions required may be higher than what is required on the other-environment. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment to help you choose Python versions accordingly: 
 
-- ``controller-environment``: The plugins/modules always run in the same environment (Python interpreter, venv, host, etc) as ansible-core itself.
-- ``other-environment``: It is possible, even if uncommon in practice, for the plugins/modules to run in a different environment than ansible-core itself.
+* ``controller-environment``: The plugins/modules always run in the same environment (Python interpreter, venv, host, etc) as ansible-core itself.
+* ``other-environment``: It is possible, even if uncommon in practice, for the plugins/modules to run in a different environment than ansible-core itself.
 
 One example scenario where the ``even if`` clause comes into play is when using Cloud modules. These modules mostly run on the controller node but in some environments, the controller might run on one machine inside a demilitarized zone which cannot directly access the cloud machines. The user has to have the cloud modules run on a bastion host/jump server which has access to the cloud machines.
 
-**Controller-environment**
+Controller-environment
+~~~~~~~~~~~~~~~~~~~~~~
 
 In the controller environment, collections MUST support Python 2 (version 2.7) and Python 3 (Version 3.6 and higher), unless required libraries do not support these versions. Collections SHOULD also support Python v3.5 if all required libraries support this version. 
 
-**Other-environment**
+Other-environment
+~~~~~~~~~~~~~~~~~
 
 In the other environment, collections MUST support Python 2 (version 2.7) and Python 3 (Version 3.6 and higher), unless required libraries do not support these versions. Collections SHOULD also support Python v2.6 and v3.5 if all required libraries support this version.
 
@@ -88,20 +89,18 @@ Documentation
 * If your collection does not support those Python versions, you MUST document which versions it supports in the README.
 * If most of your collection supports the same Python versions as ansible-core, but some modules and plugins do not, you MUST include the supported Python versions in the documentation for those modules and plugins.
 
-For example, if your collection supports Ansible 2.9 to ansible-core 2.13, the Python versions supported for modules are 2.6, 2.7, and 3.5 and newer (until at least 3.10), while the Python versions supported for plugins are 2.7 and 3.5 and newer (until at least 3.10). So if the modules in your collection do not support Python 2.6, you have to document this in the README, for example `The content in this collection supports Python 2.7, Python 3.5 and newer.`.
+For example, if your collection supports Ansible 2.9 to ansible-core 2.13, the Python versions supported for modules are 2.6, 2.7, and 3.5 and newer (until at least 3.10), while the Python versions supported for plugins are 2.7 and 3.5 and newer (until at least 3.10). So if the modules in your collection do not support Python 2.6, you have to document this in the README, for example ``The content in this collection supports Python 2.7, Python 3.5 and newer.``.
 
 Standards for developing module and plugin utilities
-----------------------------------------------------
+====================================================
 
-- ``module_utils`` and ``plugin_utils`` can be marked for only internal use in the collection, but they MUST document this and MUST use a leading underscore for filenames.
+* ``module_utils`` and ``plugin_utils`` can be marked for only internal use in the collection, but they MUST document this and MUST use a leading underscore for filenames.
+* It is a breaking change when you make an existing ``module_utils`` private and in that case the collection requires a major version bump.
+* Below are some recommendations for ``module_utils`` documentation: 
 
-- It is a breaking change when you make an existing ``module_utils`` private and in that case the collection requires a major version bump.
-
-- Below are some recommendations for ``module_utils`` documentation: 
-
-  * no docstring: everything we recommend for ``other-environment`` is supported
-  * docstring ``'Python versions supported: same as for controller-environment'``: everything we recommend for ``controller-environment`` is supported
-  * docstring with specific versions otherwise: ``'Python versions supported: '``
+  * No docstring: everything we recommend for ``other-environment`` is supported.
+  * The docstring ``'Python versions supported: same as for controller-environment'``: everything we recommend for ``controller-environment`` is supported.
+  * The docstring with specific versions otherwise: ``'Python versions supported: '``.
 
 Repo structure
 ===============
@@ -109,20 +108,20 @@ Repo structure
 galaxy.yml
 ----------
 
-* The ``tags`` field MUST be set
+* The ``tags`` field MUST be set.
 * Collection dependencies must have a lower bound on the version which is at least 1.0.0.
 
   * This means that all collection dependencies have to specify lower bounds on the versions, and these lower bounds should be stable releases, and not versions of the form 0.x.y.
   * When creating new collections where collection dependencies are also under development, you need to watch out since Galaxy checks whether dependencies exist in the required versions:
 
-    1. Assume that ``foo.bar`` depends on ``foo.baz``
-    2. First release ``foo.baz`` as 1.0.0.
-    3. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'`` for ``foo.baz``
-    4. Finally release ``foo.bar`` as 1.0.0
+    #. Assume that ``foo.bar`` depends on ``foo.baz``.
+    #. First release ``foo.baz`` as 1.0.0.
+    #. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'`` for ``foo.baz``.
+    #. Finally release ``foo.bar`` as 1.0.0.
 
 * The ``ansible`` package MUST NOT depend on collections not shipped in the package.
-* If you plan to split up your collection, the new collection must be approved for inclusion before the smaller collections replace the larger in Ansible.
-* If you plan to add other collections as dependencies, they must run through the formal application process.
+* If you plan to split up your collection, the new collection MUST be approved for inclusion before the smaller collections replace the larger in Ansible.
+* If you plan to add other collections as dependencies, they MUST run through the formal application process.
 
 README.md
 ---------
@@ -157,9 +156,9 @@ Documentation
 
 All modules and plugins MUST:
 
-* Include a `DOCUMENTATION <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#documentation-block>`_ block
-* Include an `EXAMPLES <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#examples-block>`_ block (except where not relevant for the plugin type)
-* Use FQCNs when referring to modules, plugins and documentation fragments inside and outside the collection (including ``ansible.builtin.`` for the listed entities from `Ansible-base <https://docs.ansible.com/ansible/devel/collections/ansible/builtin/>`_)
+* Include a `DOCUMENTATION <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#documentation-block>`_ block.
+* Include an `EXAMPLES <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html#examples-block>`_ block (except where not relevant for the plugin type).
+* Use FQCNs when referring to modules, plugins and documentation fragments inside and outside the collection (including ``ansible.builtin.`` for the listed entities from `Ansible-base <https://docs.ansible.com/ansible/devel/collections/ansible/builtin/>`_).
 
 When using ``version_added`` in the documentation:
 
@@ -181,10 +180,9 @@ Changelogs
 
 Collections are required to include a changelog.  To give a consistent feel for changelogs across collections and ensure changelogs exist for collections included in the ``ansible`` package we suggest you use `antsibull-changelog <https://github.com/ansible-community/antsibull-changelog>`_ to maintain and generate this but other options exist.  Preferred (in descending order):
 
-
-1. Use antsibull-changelog (preferred)
-2. Provide ``changelogs/changelog.yaml`` in the `correct format <https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md>`_
-3. Provide a link to the changelog file (self-hosted) (not recommended)
+#. Use antsibull-changelog (preferred).
+#. Provide ``changelogs/changelog.yaml`` in the `correct format <https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md>`_.
+#. Provide a link to the changelog file (self-hosted) (not recommended).
 
 Please note that the porting guide is compiled from ``changelogs/changelog.yaml`` (sections ``breaking_changes``, ``major_changes``, ``deprecated_features``, ``removed_features``). So if you use option 3, you will not be able to add something to the porting guide.
 
@@ -202,7 +200,6 @@ Versioning and deprecation
 * We recommend to make sure that if a deprecation is added in a collection version that is included in Ansible 3.y.z, the removal itself will only happen in a collection version included in Ansible 5.0.0 or later, but not in a collection version included in Ansible 4.0.0.
 * Content moved from ansible/ansible that was scheduled for removal in 2.11 or later MUST NOT be removed in the current major release  available when ansible 2.10.0 is released. Otherwise it would already be removed in 2.10, unexpectedly for users! Deprecation cycles can be shortened (since they are now uncoupled from ansible or ansible-base versions), but existing ones must not be unexpectedly terminated.
 * We recommend to announce your policy of releasing, versioning and deprecation to contributors and users in some way. For an example of how to do this, see `the announcement in community.general <https://github.com/ansible-collections/community.general/issues/582>`_. You could also do this in the README.
-
 
 Naming
 ======
@@ -236,8 +233,9 @@ For more information, refer to the `Developing modules guidelines <https://docs.
 Licensing
 =========
 
-**Note**: The guidelines below are more restrictive than strictly necessary.  We will try to add
-a larger list of acceptable licenses once we have approval from Red Hat Legal.
+.. note::
+
+  The guidelines below are more restrictive than strictly necessary. We will try to add a larger list of acceptable licenses once we have approval from Red Hat Legal.
 
 There are four types of content in collections which licensing has to address in different
 ways:
@@ -267,11 +265,10 @@ allowed.
 These guidelines are the policy for inclusion in the Ansible package and are in addition to any
 licensing and legal concerns that may otherwise affect your code.
 
-
 Repository management
 =====================
 
-Every collection MUST have a public SCM repository, and releases of the collection MUST be tagged in this repository.
+Every Community collection MUST have a public SCM repository, and releases of the collection MUST be tagged in this repository.
 
 Branch name and configuration
 -----------------------------
@@ -280,7 +277,7 @@ This subsection is **only** for repositories under `ansible-collections <https:/
 
 All new repositories MUST have ``main`` as the default branch.
 
-Existing repositories SHOULD be converted to use ``main``
+Existing repositories SHOULD be converted to use ``main``.
 
 Repository Protections:
 
@@ -296,7 +293,7 @@ CI Testing
 
 * You MUST run ``ansible-test sanity`` from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
 
-  * Collections must run an equivalent of ``ansible-test sanity --docker``. If they do not use ``--docker``, they must make sure that all tests run, in particular the compile and import tests (which should run for all [supported Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3). Collections can choose to skip certain Python versions that they explicitly do not support; this needs to be documented in ``README.md`` and in every module and plugin (hint: use a docs fragment). However we strongly recommend you follow the [Ansible Python Compatibility](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) section for more details.
+  * Collections MUST run an equivalent of ``ansible-test sanity --docker``. If they do not use ``--docker``, they must make sure that all tests run, in particular the compile and import tests (which should run for all [supported Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3). Collections can choose to skip certain Python versions that they explicitly do not support; this needs to be documented in ``README.md`` and in every module and plugin (hint: use a docs fragment). However we strongly recommend you follow the [Ansible Python Compatibility](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) section for more details.
 
 * You SHOULD suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 * The sanity tests MUST pass.
@@ -319,27 +316,27 @@ CI Testing
   * All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  For example ``plugins/modules/docker_container.py use-argspec-type-path # uses colon-separated paths, can't use type=path``.
   * Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
 
-* You MUST run CI against each of the "major versions" (2.10, 2.11, 2.12, etc) of ``ansible-base``/``ansible-core`` that the collection supports. (Usually the ``HEAD`` of the stable-xxx branches.)
+* You MUST run CI against each of the ``major versions`` (2.10, 2.11, 2.12, etc) of ``ansible-base``/``ansible-core`` that the collection supports. (Usually the ``HEAD`` of the stable-xxx branches.)
 
 * All CI tests MUST run against every pull request and SHOULD pass before merge.
 * All CI tests MUST pass for the commit that releases the collection.
  
 * All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repositories without regular commits are tested against the latest version of ansible-test from each ansible-base/ansible-core version tested. The results from the regular CI runs MUST be checked regularly.
 
-All of the above can be achieved by using the following GitHub Action template, see this `example <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_.
+All of the above can be achieved by using the `GitHub Action template <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_.
 
+To learn how to add tests to your collection, see:
 
-FIXME to write a guide "How to write CI tests" (from scratch / add to existing) and put the reference here.
-
-Unit Testing
-============
-
+* `Quick-start integration testing guide <https://github.com/ansible/community-docs/blob/main/integration_tests_quick_start_guide.rst>`_
+* `Quick-start unit testing guide <https://github.com/ansible/community-docs/blob/main/unit_tests_quick_start_guide.rst>`_
 
 Collections and Working Groups
 ==============================
 
-* Working group page(s) on a corresponding wiki (if needed. Makes sense if there is a group of modules for working with one common entity, for example postgresql, zabbix, grafana, and so on.)
-* Issue for agenda (or pinboard if there aren't regular meetings) as pinned issue in the repository
+The Collections have:
+
+* Working group page(s) on a corresponding wiki if needed. Makes sense if there is a group of modules for working with one common entity, for example postgresql, zabbix, grafana, and so on.
+* Issue for agenda (or pinboard if there are not regular meetings) as a pinned issue in the repository.
 
 When moving modules between collections
 =======================================
@@ -371,7 +368,7 @@ Besides all the requirements listed in the `Development conventions <https://doc
 Requirements for collections to be included in the Ansible Package
 ==================================================================
 
-To be included in the `ansible` package, collections must meet the following criteria:
+To be included in the `ansible` package, Community collections must meet the following criteria:
 
 * `Development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html>`_.
 * `Collection requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ (this document).
@@ -386,5 +383,6 @@ Other things
 ============
 
 * ansible-base's runtime.yml
-* After content is (moved out of community.general or community.network) OR new collection satisfies all the requirements
+* After content is moved out of another currently included collection such as ``community.general`` or ``community.network`` OR a new collection satisfies all the requirements
+
     * Add the collection to the ``ansible.in`` file in a corresponding directory of `ansible-build-data repository <https://github.com/ansible-community/ansible-build-data/>`_
