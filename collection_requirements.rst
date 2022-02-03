@@ -224,7 +224,7 @@ We should avoid FQCN / repository names:
 * which are unnecessary long: try to make it compact but clear
 * contain the same words / collocations in ``NAMESPACE`` and ``COLLECTION`` parts, for example ``my_system.my_system``
 
-If your collection is planned to be certified on Automation Hub, please consult with Red Hat Partner Engineering to ensure collection naming compatibility between the community collection on **Galaxy**.
+If your collection is planned to be certified on **Automation Hub**, please consult with Red Hat Partner Engineering through ``ansiblepartners@redhat.com`` to ensure collection naming compatibility between the community collection on **Galaxy**.
 
 Module naming
 -------------
