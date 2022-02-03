@@ -9,9 +9,9 @@ Overview
 
 This document is for maintainers of Ansible Community collections (hereinafter the Collections) to provide them help, advice, and guidance on making sure their collections are correct.
 
-**Warning:** Subject to frequent updates. This is a "living document", expect it to change as we progress with the Collections work over the next few months.
+.. note::
 
-**Note:** `Inclusion of a new collection <https://github.com/ansible-collections/ansible-inclusion>`_ in the Ansible package is ultimately at the discretion of the `Ansible Community Steering Committee <https://github.com/ansible/community-docs/blob/main/ansible_community_steering_committee.rst>`_. Every rejected candidate will get feedback. Differences of opinion should be taken to a dedicated `Community Topic <https://github.com/ansible-community/community-topics/issues>`_ for discussion and a final vote.
+  `Inclusion of a new collection <https://github.com/ansible-collections/ansible-inclusion>`_ in the Ansible package is ultimately at the discretion of the `Ansible Community Steering Committee <https://github.com/ansible/community-docs/blob/main/ansible_community_steering_committee.rst>`_. Every rejected candidate will get feedback. Differences of opinion should be taken to a dedicated `Community Topic <https://github.com/ansible-community/community-topics/issues>`_ for discussion and a final vote.
 
 Feedback
 ========
@@ -22,12 +22,12 @@ Please raise feedback by:
 
 * Discussing in the ``#ansible-community`` Matrix/IRC `channel <https://docs.ansible.com/ansible/latest/community/communication.html#real-time-chat>`_.
 * Discussing in the `Community Working Group meeting <https://github.com/ansible/community/blob/main/meetings/README.md#wednesdays>`_.
-* Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ against this repository.
+* Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ in this repository.
 
 Keeping informed
 ================
 
-Be sure you're subscribed to:
+Be sure you are subscribed to:
 
 * The `news-for-maintainers repository <https://github.com/ansible-collections/news-for-maintainers>`_ to track changes that Collection maintainers should be aware of.
 * The `Bullhorn <https://github.com/ansible/community/wiki/News#the-bullhorn>`_ Ansible contributor newsletter.
@@ -37,7 +37,7 @@ Collection Infrastructure
 
 Community collections
 
-* MUST have a publicly available issue tracker, that does not require a paid level of service to create an account or view issues.
+* MUST have a publicly available issue tracker that does not require a paid level of service to create an account or view issues.
 * MUST have a Code of Conduct (hereinafter the CoC).
 
   * The collection's CoC MUST be compatible with the `Ansible Code of Conduct <https://docs.ansible.com/ansible/latest/community/code_of_conduct.html>`_.
@@ -50,12 +50,14 @@ Community collections
 Python Compatibility
 ====================
 
-A collection MUST be developed and tested using the below Python recommendations as Ansible supports a wide variety of machines. The collection should adhere to the tips mentioned in the official `Ansible Development Guide <https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3>`_.
+A collection MUST be developed and tested using the below Python requirements as Ansible supports a wide variety of machines.
+
+The collection should adhere to the tips mentioned in the official `Ansible Development Guide <https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3>`_.
 
 Python Requirements
 -------------------
 
-Python requirements for a collection varies between controller-environment and other-environment. On the controller-environment, the Python versions required may be higher than what is required on the other-environment. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment to help you choose Python versions accordingly: 
+Python requirements for a collection vary between ``controller-environment`` and ``other-environment``. On the controller-environment, the Python versions required may be higher than what is required on the other-environment. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment to help you choose Python versions accordingly: 
 
 * ``controller-environment``: The plugins/modules always run in the same environment (Python interpreter, venv, host, etc) as ansible-core itself.
 * ``other-environment``: It is possible, even if uncommon in practice, for the plugins/modules to run in a different environment than ansible-core itself.
@@ -291,9 +293,11 @@ Branch protections MUST be enforced:
 CI Testing
 ===========
 
-* You MUST run ``ansible-test sanity`` from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
+* You MUST run the ``ansible-test sanity`` command from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
 
-  * Collections MUST run an equivalent of ``ansible-test sanity --docker``. If they do not use ``--docker``, they must make sure that all tests run, in particular the compile and import tests (which should run for all [supported Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3). Collections can choose to skip certain Python versions that they explicitly do not support; this needs to be documented in ``README.md`` and in every module and plugin (hint: use a docs fragment). However we strongly recommend you follow the [Ansible Python Compatibility](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) section for more details.
+  * Collections MUST run an equivalent of the ``ansible-test sanity --docker`` command.
+  * If they do not use ``--docker``, they must make sure that all tests run, in particular the compile and import tests (which should run for all `supported Python versions <https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3>`_).
+  * Collections can choose to skip certain Python versions that they explicitly do not support; this needs to be documented in ``README.md`` and in every module and plugin (hint: use a docs fragment). However we strongly recommend you follow the `Ansible Python Compatibility <https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3>`_ section for more details.
 
 * You SHOULD suggest to *additionally* run ``ansible-test sanity`` from the ansible/ansible ``devel`` branch so that you find out about new linting requirements earlier.
 * The sanity tests MUST pass.
@@ -341,17 +345,17 @@ The Collections have:
 When moving modules between collections
 =======================================
 
-All related entities must be moved / copied including:
+All related entities must be moved/copied including:
 
-* related plugins/module_utils/ files (moving be sure it is not used by other modules, otherwise copy)
-* CI and unit tests
-* corresponding documentation fragments from plugins/doc_fragments
+* Related plugins and module_utils files (when moving, be sure it is not used by other modules, otherwise copy).
+* CI and unit tests.
+* Corresponding documentation fragments from ``plugins/doc_fragments``.
 
 Also:
 
-* change M(), examples, seealso, extended_documentation_fragments to use actual FQCNs (in moved content and in other collections that have references to the content)
-* move all related issues / pull requests / wiki pages
-* look through ``docs/docsite`` directory of `ansible-base GitHub repository <https://github.com/ansible/ansible>`_ (for example, using the ``grep`` command-line utility) to check if there are examples using the moved modules / plugins to update their FQCNs
+* Change ``M()``, examples, ``seealso``, ``extended_documentation_fragments`` to use actual FQCNs in moved content and in other collections that have references to the content.
+* Move all related issues, pull requests, and wiki pages.
+* Look through ``docs/docsite`` directory of `ansible-base GitHub repository <https://github.com/ansible/ansible>`_ (for example, using the ``grep`` command-line utility) to check if there are examples using the moved modules and plugins to update their FQCNs.
 
 See `Migrating content to a different collection <https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#migrating-ansible-content-to-a-different-collection>`_ for complete details.
 
@@ -382,7 +386,5 @@ To be included in the `ansible` package, Community collections must meet the fol
 Other things
 ============
 
-* ansible-base's runtime.yml
-* After content is moved out of another currently included collection such as ``community.general`` or ``community.network`` OR a new collection satisfies all the requirements
-
-    * Add the collection to the ``ansible.in`` file in a corresponding directory of `ansible-build-data repository <https://github.com/ansible-community/ansible-build-data/>`_
+* ansible-core's runtime.yml
+* After content is moved out of another currently included collection such as ``community.general`` or ``community.network`` OR a new collection satisfies all the requirements, add the collection to the ``ansible.in`` file in a corresponding directory of the `ansible-build-data repository <https://github.com/ansible-community/ansible-build-data/>`_.
