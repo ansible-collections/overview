@@ -42,7 +42,7 @@ Collections included in the Ansible community package
 
   * The collection's CoC MUST be compatible with the `Ansible Code of Conduct <https://docs.ansible.com/ansible/latest/community/code_of_conduct.html>`_.
   * The Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better.
-  * The `Diversity and Inclusion working group <https://docs.ansible.com/ansible/latest/community/communication.html#working-groups>` may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents
+  * The `Diversity and Inclusion working group <https://docs.ansible.com/ansible/latest/community/communication.html#working-groups>`_ may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents.
   * The CoC MUST be linked from the ``README.md`` file, or MUST be present or linked from the ``CODE_OF_CONDUCT.md`` file in the collection root.
   
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
