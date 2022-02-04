@@ -20,7 +20,7 @@ As with any project it's very important that we get feedback from users, contrib
 
 Please raise feedback by:
 
-* Discussing in the `#community:ansible.com <https://matrix.to/#/#community:ansible.com>`_ Matrix channel bridget with the ``#ansible-community`` channel on Libera.Chat IRC. See the `Ansible Communication Guide <https://docs.ansible.com/ansible/latest/community/communication.html#real-time-chat>`_ for details.
+* Discussing in the `#community:ansible.com Matrix room <https://matrix.to/#/#community:ansible.com>`_, which is bridged with the ``#ansible-community`` channel on Libera.Chat IRC. See the `Ansible Communication Guide <https://docs.ansible.com/ansible/latest/community/communication.html#real-time-chat>`_ for details.
 * Discussing in the ``#ansible-community`` Matrix/IRC `channel <https://docs.ansible.com/ansible/latest/community/communication.html#real-time-chat>`_.
 * Discussing in the `Community Working Group meeting <https://github.com/ansible/community/blob/main/meetings/README.md#wednesdays>`_.
 * Creating `GitHub Issues <https://github.com/ansible-collections/overview/issues>`_ in this repository.
