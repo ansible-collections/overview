@@ -1,5 +1,5 @@
 ******************************************
-Ansible Community Collections Requirements
+Ansible Community Package Collections Requirements
 ******************************************
 
 .. contents:: Topics
