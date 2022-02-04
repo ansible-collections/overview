@@ -1,6 +1,6 @@
-******************************************
+**************************************************
 Ansible Community Package Collections Requirements
-******************************************
+**************************************************
 
 .. contents:: Topics
 
@@ -293,6 +293,10 @@ Branch protections MUST be enforced:
 
 CI Testing
 ===========
+
+.. note::
+
+  You can copy the free-to-use `GitHub action workflow file <https://github.com/ansible-collections/collection_template/blob/main/.github/workflows/ansible-test.yml>`_ from the `Collection Template repository <https://github.com/ansible-collections/collection_template/>`_ to the `.github/workflows` directory in your collection to set up testing through GitHub actions. The workflow covers all the requirements below.
 
 * You MUST run the ``ansible-test sanity`` command from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
 
