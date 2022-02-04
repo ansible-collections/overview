@@ -7,7 +7,7 @@ Ansible Community Collections Requirements
 Overview
 ========
 
-This document is for maintainers of Ansible Community collections (hereinafter the Collections) to provide them help, advice, and guidance on making sure their collections are correct.
+This document is for maintainers of Ansible Community collections, living in the `ansible-collections <https://github.com/ansible-collections>`_ repository or included in the Ansible community package (hereinafter the Collections), to provide them help, advice, and guidance on making sure their collections are correct.
 
 .. note::
 
@@ -35,7 +35,7 @@ Be sure you are subscribed to:
 Collection Infrastructure
 =========================
 
-Collections included in the Ansible community package
+Collections
 
 * MUST have a publicly available issue tracker that does not require a paid level of service to create an account or view issues.
 * MUST have a Code of Conduct (hereinafter the CoC).
@@ -270,7 +270,7 @@ licensing and legal concerns that may otherwise affect your code.
 Repository management
 =====================
 
-Every Community collection MUST have a public SCM repository, and releases of the collection MUST be tagged in this repository.
+Every collection MUST have a public SCM repository and releases of the collection MUST be tagged in this repository.
 
 Branch name and configuration
 -----------------------------
@@ -320,7 +320,7 @@ CI Testing
   * All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  For example ``plugins/modules/docker_container.py use-argspec-type-path # uses colon-separated paths, can't use type=path``.
   * Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
 
-* You MUST run CI against each of the "major versions" (2.10, 2.11, 2.12, etc) of ``ansible-base``/``ansible-core`` that the collection supports. (Usually the ``HEAD`` of the stable-xxx branches.)
+* You MUST run CI against each of the "major versions" (2.10, 2.11, 2.12, etc) of ``ansible-core`` that the collection supports. (Usually the ``HEAD`` of the stable-xxx branches.)
 
 * All CI tests MUST run against every pull request and SHOULD pass before merge.
 * All CI tests MUST pass for the commit that releases the collection.
@@ -372,7 +372,7 @@ Besides all the requirements listed in the `Development conventions <https://doc
 Requirements for collections to be included in the Ansible Package
 ==================================================================
 
-To be included in the `ansible` package, Community collections must meet the following criteria:
+To be included in the `ansible` package, Collections must meet the following criteria:
 
 * `Development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html>`_.
 * `Collection requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ (this document).
@@ -386,5 +386,4 @@ To be included in the `ansible` package, Community collections must meet the fol
 Other things
 ============
 
-* ansible-core's runtime.yml
 * After content is moved out of another currently included collection such as ``community.general`` or ``community.network`` OR a new collection satisfies all the requirements, add the collection to the ``ansible.in`` file in a corresponding directory of the `ansible-build-data repository <https://github.com/ansible-community/ansible-build-data/>`_.
