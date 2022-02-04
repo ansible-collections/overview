@@ -35,7 +35,7 @@ Be sure you are subscribed to:
 Collection Infrastructure
 =========================
 
-Community collections
+Collections included in the Ansible community package
 
 * MUST have a publicly available issue tracker that does not require a paid level of service to create an account or view issues.
 * MUST have a Code of Conduct (hereinafter the CoC).
