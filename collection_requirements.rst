@@ -29,7 +29,7 @@ Keeping informed
 
 Be sure you are subscribed to:
 
-* The `news-for-maintainers repository <https://github.com/ansible-collections/news-for-maintainers>`_ to track changes that Collection maintainers should be aware of.
+* The `news-for-maintainers repository <https://github.com/ansible-collections/news-for-maintainers>`_ to track changes that Collection maintainers should be aware of. Subscribe only to issues if you want less traffic.
 * The `Bullhorn <https://github.com/ansible/community/wiki/News#the-bullhorn>`_ Ansible contributor newsletter.
 
 Collection Infrastructure
