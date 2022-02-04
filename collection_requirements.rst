@@ -57,7 +57,7 @@ The collection should adhere to the tips mentioned in the official `Ansible Deve
 Python Requirements
 -------------------
 
-Python requirements for a collection vary between ``controller-environment`` and ``other-environment``. On the controller-environment, the Python versions required may be higher than what is required on the other-environment. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment to help you choose Python versions accordingly: 
+Python requirements for a collection vary between **controller-environment** and **other-environment**. On the controller-environment, the Python versions required may be higher than what is required on the other-environment. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment to help you choose Python versions accordingly: 
 
 * ``controller-environment``: The plugins/modules always run in the same environment (Python interpreter, venv, host, etc) as ansible-core itself.
 * ``other-environment``: It is possible, even if uncommon in practice, for the plugins/modules to run in a different environment than ansible-core itself.
