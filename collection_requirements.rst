@@ -183,7 +183,7 @@ Changelogs
 Collections are required to include a changelog.  To give a consistent feel for changelogs across collections and ensure changelogs exist for collections included in the ``ansible`` package we suggest you use `antsibull-changelog <https://github.com/ansible-community/antsibull-changelog>`_ to maintain and generate this but other options exist.  Preferred (in descending order):
 
 #. Use antsibull-changelog (preferred).
-#. Provide ``changelogs/changelog.yaml`` in the `correct format <https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md>`_.
+#. Provide ``changelogs/changelog.yaml`` in the `correct format <https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md>`_. (You can use ``antsibull-lint changelog-yaml /path/to/changelog.yaml`` to validate the format.)
 #. Provide a link to the changelog file (self-hosted) (not recommended).
 
 Please note that the porting guide is compiled from ``changelogs/changelog.yaml`` (sections ``breaking_changes``, ``major_changes``, ``deprecated_features``, ``removed_features``). So if you use option 3, you will not be able to add something to the porting guide.
