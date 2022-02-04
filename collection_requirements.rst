@@ -62,7 +62,7 @@ Python requirements for a collection vary between ``controller-environment`` and
 * ``controller-environment``: The plugins/modules always run in the same environment (Python interpreter, venv, host, etc) as ansible-core itself.
 * ``other-environment``: It is possible, even if uncommon in practice, for the plugins/modules to run in a different environment than ansible-core itself.
 
-One example scenario where the ``even if`` clause comes into play is when using Cloud modules. These modules mostly run on the controller node but in some environments, the controller might run on one machine inside a demilitarized zone which cannot directly access the cloud machines. The user has to have the cloud modules run on a bastion host/jump server which has access to the cloud machines.
+One example scenario where the "even if" clause comes into play is when using Cloud modules. These modules mostly run on the controller node but in some environments, the controller might run on one machine inside a demilitarized zone which cannot directly access the cloud machines. The user has to have the cloud modules run on a bastion host/jump server which has access to the cloud machines.
 
 Controller-environment
 ~~~~~~~~~~~~~~~~~~~~~~
