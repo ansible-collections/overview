@@ -320,7 +320,7 @@ CI Testing
   * All entries in ignores.txt MUST have a justification in a comment in the ignore.txt file for each entry.  For example ``plugins/modules/docker_container.py use-argspec-type-path # uses colon-separated paths, can't use type=path``.
   * Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
 
-* You MUST run CI against each of the ``major versions`` (2.10, 2.11, 2.12, etc) of ``ansible-base``/``ansible-core`` that the collection supports. (Usually the ``HEAD`` of the stable-xxx branches.)
+* You MUST run CI against each of the "major versions" (2.10, 2.11, 2.12, etc) of ``ansible-base``/``ansible-core`` that the collection supports. (Usually the ``HEAD`` of the stable-xxx branches.)
 
 * All CI tests MUST run against every pull request and SHOULD pass before merge.
 * All CI tests MUST pass for the commit that releases the collection.
