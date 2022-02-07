@@ -47,6 +47,9 @@ Collections
   * The CoC MUST be linked from the ``README.md`` file, or MUST be present or linked from the ``CODE_OF_CONDUCT.md`` file in the collection root.
   
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
+* SHOULD NOT contain any large objects (binaries) comparatively to the current Galaxy tarball size limit of 20 MB like, for example, package installers for testing purposes.
+* SHOULD NOT contain any unnecessary files like, for example, temporary files created by development tools.
+* MUST only contain objects that follow the :ref:`licensing rules<Licensing>`.
 
 Python Compatibility
 ====================
@@ -232,6 +235,8 @@ Module naming
 
 Modules that only gather information MUST be named ``<something>_info``. Modules that return ``ansible_facts`` are named ``<something>_facts`` and do not return non-facts.
 For more information, refer to the `Developing modules guidelines <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_general.html#creating-an-info-or-a-facts-module>`_.
+
+.. _Licensing:
 
 Licensing
 =========
