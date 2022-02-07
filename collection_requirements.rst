@@ -7,7 +7,7 @@ Ansible Community Package Collections Requirements
 Overview
 ========
 
-This document is for maintainers of Ansible Community collections, living in the `ansible-collections <https://github.com/ansible-collections>`_ repository or included in the Ansible community package (hereinafter the Collections), to provide them help, advice, and guidance on making sure their collections are correct.
+This document is for maintainers of Ansible Community collections, living in the `ansible-collections <https://github.com/ansible-collections>`_ repository or included in the Ansible community package (hereinafter the collections), to provide them help, advice, and guidance on making sure their collections are correct.
 
 .. note::
 
