@@ -16,7 +16,7 @@ This document is for maintainers of Ansible Community collections, living in the
 Feedback
 ========
 
-As with any project it's very important that we get feedback from users, contributors, and maintainers. We recognize that the move to Collections is a big change in how Ansible is developed and delivered.
+As with any project it's very important that we get feedback from users, contributors, and maintainers. We recognize that the move to collections is a big change in how Ansible is developed and delivered.
 
 Please raise feedback by:
 
@@ -30,7 +30,7 @@ Keeping informed
 
 Be sure you are subscribed to:
 
-* The `news-for-maintainers repository <https://github.com/ansible-collections/news-for-maintainers>`_ to track changes that Collection maintainers should be aware of. Subscribe only to issues if you want less traffic.
+* The `news-for-maintainers repository <https://github.com/ansible-collections/news-for-maintainers>`_ to track changes that collection maintainers should be aware of. Subscribe only to issues if you want less traffic.
 * The `Bullhorn <https://github.com/ansible/community/wiki/News#the-bullhorn>`_ Ansible contributor newsletter.
 
 Collection Infrastructure
@@ -42,7 +42,7 @@ Collections
 * MUST have a Code of Conduct (hereinafter the CoC).
 
   * The collection's CoC MUST be compatible with the `Ansible Code of Conduct <https://docs.ansible.com/ansible/latest/community/code_of_conduct.html>`_.
-  * The Collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better.
+  * The collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better.
   * The `Diversity and Inclusion working group <https://docs.ansible.com/ansible/latest/community/communication.html#working-groups>`_ may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents.
   * The CoC MUST be linked from the ``README.md`` file, or MUST be present or linked from the ``CODE_OF_CONDUCT.md`` file in the collection root.
   
@@ -129,7 +129,7 @@ galaxy.yml
 README.md
 ---------
 
-MUST have a ``README.md`` in the root of the Collection, see `collection_template/README.md <https://github.com/ansible-collections/collection_template/blob/main/README.md>`_ for an example.
+MUST have a ``README.md`` in the root of the collection, see `collection_template/README.md <https://github.com/ansible-collections/collection_template/blob/main/README.md>`_ for an example.
 
 meta/runtime.yml
 ----------------
@@ -342,7 +342,7 @@ To learn how to add tests to your collection, see:
 Collections and Working Groups
 ==============================
 
-The Collections have:
+The collections have:
 
 * Working group page(s) on a corresponding wiki if needed. Makes sense if there is a group of modules for working with one common entity, for example postgresql, zabbix, grafana, and so on.
 * Issue for agenda (or pinboard if there are not regular meetings) as a pinned issue in the repository.
@@ -377,7 +377,7 @@ Besides all the requirements listed in the `Development conventions <https://doc
 Requirements for collections to be included in the Ansible Package
 ==================================================================
 
-To be included in the `ansible` package, Collections must meet the following criteria:
+To be included in the `ansible` package, collections must meet the following criteria:
 
 * `Development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html>`_.
 * `Collection requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ (this document).
