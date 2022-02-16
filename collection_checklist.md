@@ -34,7 +34,7 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] `meta/runtime.yml` defines the minimal version of Ansible which the collection works with
 - [ ] has changelog, preferably with `changelogs/changelog.yaml`
 - [ ] collection repository should not contain any large objects (binaries) comparatively to the current Galaxy tarball size limit of 20 MB. For example, package installers for testing purposes shouldn't be added."
-- [ ] collection repository should not contain any unnecessary files like, for example, temporary files created by development tools
+- [ ] collection repository should not contain any unnecessary files like, for example, temporary files created by development tools. Temporary files MUST be added to `.gitignore`.
 
 **Tests:**
 
