@@ -33,8 +33,11 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] collection dependencies must have a lower bound on the version which is at least 1.0.0, and are all part of the `ansible` package
 - [ ] `meta/runtime.yml` defines the minimal version of Ansible which the collection works with
 - [ ] has changelog, preferably with `changelogs/changelog.yaml`
+- [ ] collection repository should not contain any large objects (binaries) comparatively to the current Galaxy tarball size limit of 20 MB. For example, package installers for testing purposes shouldn't be added.
+- [ ] collection repository should not contain any unnecessary files like, for example, temporary files created by development tools. Temporary files MUST be added to `.gitignore`.
 
 **Tests:**
+
 - [ ] passed `ansible-test sanity`
 - [ ] if `test/sanity/ignore*.txt` exists, it does not contain error codes listed [here](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#ci-testing)
 - [ ] has CI tests up and running against each of the "major versions" of `ansible-base`/`ansible-core` that the collection supports
