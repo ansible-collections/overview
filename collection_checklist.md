@@ -27,6 +27,7 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] modules (or plugins) from ansible-core use `ansible.builtin.` as a FQCN prefix
 - [ ] documentation and return sections use `version_added:` containing the *collection* version for which an option, module or plugin was added
 - [ ] FQCNs are used for `extends_documentation_fragment:`, unless you are referring to doc_fragments from ansible-core
+- [ ] public plugins, roles and playbooks do not use files outside of `meta/`, `plugins/`, `roles/`, and `playbooks/`
 
 **Collection management:**
 - [ ] `galaxy.yml` having `tags` field set
