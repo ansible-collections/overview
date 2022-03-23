@@ -159,10 +159,9 @@ Modules & Plugins
 Other directories
 -----------------
 
-Collections MUST not use files outside ``meta/``, ``plugins/``, ``roles/`` and ``playbooks/`` in public plugins, roles and playbooks they contain. A collection must work if every file or directory is deleted from the installed collection except these directories and their contents.
+Collections MUST not use files outside ``meta/``, ``plugins/``, ``roles/`` and ``playbooks/`` in any plugin, role, or playbook that can be called by FQCN, used from other collections, or used from user playbooks and roles.  A collection must work if every file or directory is deleted from the installed collection except those four directories and their contents.
 
-In the previous paragraph, `"public"` means that internal plugins, roles and playbooks are not affected. Internal means that they are part of tests, only used to release the collection, etc. Everything that can be used from other collections or user playbooks and roles, as well as playbooks that can be called by FQCN, is public.
-
+Internal plugins, roles and playbooks (artifacts used only in testing, or only to release the collection, or only for some other internal purpose and not used externally) are exempt from this rule and may rely on files in other directories.
 
 Documentation
 ~~~~~~~~~~~~~~
