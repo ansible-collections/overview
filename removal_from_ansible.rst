@@ -14,10 +14,14 @@ Right now this document tries to set up some first processes. In cases of emerge
 Broken collections
 ==================
 
-If it turns out that a collection contained in Ansible X.0.0 depends on another collection included in X.0.0 and does not work with it, the collection can be removed from Ansible (X+1).0.0 under the following conditions:
+A collection is considered broken if one of the following conditions is true:
 
-1. The collection seems to be unmaintained and nobody successfully manages to fix the problems.
-2. The imminent removal in the next major Ansible release and its reasons are announced in the Ansible changelog, in The Bullhorn, and in the collection's issue tracker at least two months before the (X+1).0.0 release, and at least one month before the first (X+1).0.0 beta release. The announcement must also contain information that, to prevent the removal, the collection urgently needs new maintainers who can fix the problems.
+#. It depends on another collection included in X.0.0 but does not work with the actual version of it that is included, and there is no content in the collection that still works.
+
+If the collection is broken, it can be removed from Ansible (X+1).0.0 under the following conditions:
+
+#. The collection seems to be unmaintained and nobody successfully manages to fix the problems.
+#. The imminent removal in the next major Ansible release and its reasons are announced in the Ansible changelog, in The Bullhorn, and in the collection's issue tracker at least two months before the (X+1).0.0 release, and at least one month before the first (X+1).0.0 beta release. The announcement must also contain information that, to prevent the removal, the collection urgently needs new maintainers who can fix the problems.
 
 Conditions under which the collection can stay in the Ansible package before removal in Ansible X+1:
 
@@ -40,9 +44,9 @@ A collection is considered unmaintained if multiple of the following conditions 
 
 There is no complete formal definition of what it means that a collection is considered unmaintained. To start the process of removing an unmaintained collection, the following has to be done in the following order:
 
-1. The appearance that the collection is no longer maintained and might be removed from the Ansible package has to be announced both in The Bullhorn and in the collection's issue tracker.
-2. The Ansible Community Engineering Steering Committee (SC) has to look at the collection and vote that it considers it unmaintained. This must happen at least four weeks after the notice has appeared in the collection's issue tracker and in The Bullhorn, and the vote must be open for at least one week.
-3. If the SC votes that the collection seems to unmaintained, another announcement is made in the collection's issue tracker, in The Bullhorn, and in the Ansible changelog that it will be removed from Ansible Y release. Here Y must be X+1 if Ansible X.0.0 will be released next, or Y must be X+1 if Ansible X.0.0 has already been released. This means that the announcement of impending removal will be active for at least one major release cycle of Ansible.
+#. The appearance that the collection is no longer maintained and might be removed from the Ansible package has to be announced both in The Bullhorn and in the collection's issue tracker.
+#. The Ansible Community Engineering Steering Committee (SC) has to look at the collection and vote that it considers it unmaintained. This must happen at least four weeks after the notice has appeared in the collection's issue tracker and in The Bullhorn, and the vote must be open for at least one week.
+#. If the SC votes that the collection seems to unmaintained, another announcement is made in the collection's issue tracker, in The Bullhorn, and in the Ansible changelog that it will be removed from Ansible Y release. Here Y must be X+1 if Ansible X.0.0 will be released next, or Y must be X+2 if Ansible X.0.0 has already been released. This means that the announcement of impending removal will be active for at least one major release cycle of Ansible.
 
 Conditions under which the collection can stay in the Ansible package before removal in Ansible X+1:
 
