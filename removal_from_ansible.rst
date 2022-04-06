@@ -22,7 +22,7 @@ The community can remove a collection from the Ansible community package if the 
 
 #. It depends on another collection included in X.0.0 but does not work with the actual version of it that is included, and there is no content in the collection that still works.
 
-If the collection is broken, it can be removed from Ansible (X+1).0.0 under the following conditions:
+We remove broken collections from Ansible (X+1).0.0 under the following conditions:
 
 #. The collection seems to be unmaintained and nobody fixes the problems.
 #. The plan to remove the collection in the next major Ansible release is publicized at least two months before the (X+1).0.0 release, and at least one month before the first (X+1).0.0 beta release. The removal must be announced in multiple places:
