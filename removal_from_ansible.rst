@@ -89,7 +89,7 @@ Conditions
 Process
 ~~~~~~~
 
-#. Update the removal issue in the collection's issue tracker, and close the issue.
+#. Update the removal issue in the collection's issue tracker and close the issue.
 #. Announce cancelled removal in The Bullhorn.
 #. Re-add collection to Ansible X+1 as described in :ref:`readd_collection`.
 
@@ -107,7 +107,7 @@ Conditions under which the collections can be re-included in the Ansible package
 Process
 ~~~~~~~
 
-#. Follow regular process of adding a new collection to Ansible.
+#. Follow `regular process of adding a new collection to Ansible <https://github.com/ansible-community/ansible-build-data/#adding-a-new-collection>`_.
 
 Unmaintained collections
 ========================
