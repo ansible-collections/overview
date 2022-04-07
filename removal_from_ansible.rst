@@ -16,7 +16,7 @@ General processes
 
 This section describes some general processes that will be referred to below.
 
-_announce_removal:
+.. _announce_removal:
 
 Announcing upcoming removal
 ---------------------------
@@ -26,7 +26,7 @@ Announcing upcoming removal
 #. Announce upcoming removal in the collection's issue tracker.
 #. Announce upcoming removal in The Bullhorn.
 
-_remove_collection:
+.. _remove_collection:
 
 Removing a collection
 ---------------------
@@ -38,7 +38,7 @@ To remove a collection from Ansible version X.0.0:
 #. Document actual removal for the first/next alpha of Ansible X.0.0 in the Ansible changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/changelog.yaml``).
    See the following link for an `example on how to add changelog entries to the Ansible changelog <https://github.com/ansible-community/ansible-build-data/pull/68/files>`__.
 
-_readd_collection:
+.. _readd_collection:
 
 Re-adding a collection
 ----------------------
