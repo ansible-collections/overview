@@ -11,6 +11,44 @@ Sometimes the Ansible community removes a collection from the Ansible package. W
 
 In cases of emergency (for example, a serious security vulnerability that is not fixed in a collection) the `Ansible Community Engineering Steering Committee <https://github.com/ansible/community-docs/blob/main/ansible_community_steering_committee.rst>`_ can vote on emergency exceptions. In most cases, we follow the rules listed on this page.
 
+General processes
+=================
+
+This section describes some general processes that will be referred to below.
+
+_announce_removal:
+
+Announcing upcoming removal
+---------------------------
+
+#. Announce upcoming removal in the Ansible changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/changelog.yaml``).
+   See the following link for an `example on how to add changelog entries to the Ansible changelog <https://github.com/ansible-community/ansible-build-data/pull/68/files>`__.
+#. Announce upcoming removal in the collection's issue tracker.
+#. Announce upcoming removal in The Bullhorn.
+
+_remove_collection:
+
+Removing a collection
+---------------------
+
+To remove a collection from Ansible version X.0.0:
+
+#. Remove from ``ansible.in`` (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/ansible.in``).
+#. Remove from ``collection-meta.yaml`` (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/collection-meta.yaml``).
+#. Document actual removal for the first/next alpha of Ansible X.0.0 in the Ansible changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/changelog.yaml``).
+   See the following link for an `example on how to add changelog entries to the Ansible changelog <https://github.com/ansible-community/ansible-build-data/pull/68/files>`__.
+
+_readd_collection:
+
+Re-adding a collection
+----------------------
+
+Re-adding a collection to Ansible works the same as adding it in the first place. See the `process of adding a new collection to Ansible <https://github.com/ansible-community/ansible-build-data/#adding-a-new-collection>`_ for reference.
+
+#. Re-add collection to ``ansible.in`` (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/ansible.in``).
+#. Re-add collection to ``collection-meta.yaml`` (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/collection-meta.yaml``).
+#. If the removal was announced in the Ansible changelog for a version that has not yet been released (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/changelog.yaml``), remove the announcement.
+
 Broken collections
 ==================
 
@@ -36,12 +74,8 @@ Process
 
 The announcement mentioned below must state the reasons for the proposed removal and alert maintainers and the Ansible community that, to prevent the removal, the collection urgently needs new maintainers who can fix the problems.
 
-#. Announce upcoming removal in the Ansible changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/changelog.yaml``).
-#. Announce upcoming removal in the collection's issue tracker.
-#. Announce upcoming removal in The Bullhorn.
-#. Remove from ``ansible.in`` for the next major version (``https://github.com/ansible-community/ansible-build-data/blob/main/<X+1>/ansible.in``).
-#. Remove form ``collection-meta.yaml`` for the next major release (``https://github.com/ansible-community/ansible-build-data/blob/main/<X+1>/collection-meta.yaml``).
-#. Once the first alpha of Ansible X+1 is to be released: document actual removal in the Ansible changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<X+1>/changelog.yaml``).
+#. Announce upcoming removal in Ansible X+1 as described in :ref:`<announce_removal>`.
+#. Remove collection from Ansible X+1 as described in :ref:`<remove_collection>`.
 
 Cancelling removal of a broken collection
 -----------------------------------------
@@ -57,8 +91,7 @@ Process
 
 #. Update the removal issue in the collection's issue tracker, and close the issue.
 #. Announce cancelled removal in The Bullhorn.
-#. Re-add collection to ``ansible.in`` for the next major release (``https://github.com/ansible-community/ansible-build-data/blob/main/<X+1>/ansible.in``).
-#. Re-add collection to ``collection-meta.yaml`` for the next major release (``https://github.com/ansible-community/ansible-build-data/blob/main/<X+1>/collection-meta.yaml``).
+#. Re-add collection to Ansible X+1 as described in :ref:`readd_collection`.
 
 Re-adding collection to Ansible
 -------------------------------
@@ -100,12 +133,8 @@ Process
 #. At least four weeks after the notice appeared in The Bullhorn and the collection's issue tracker, the Ansible Community Engineering Steering Committee (SC) must look at the collection and vote that it considers it unmaintained. The vote must be open for at least one week.
 #. If the SC does not votes that the collection seems to be unmaintained, the process is stopped. The issue needs to be updated accordingly.
 #. If X.0.0 will be released next, set Y=X+1. If X.0.0 has already been released, but (X+1).0.0 has not yet been released, set Y=X+2.
-#. Announce upcoming removal from Ansible Y in the Ansible changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/changelog.yaml``).
-#. Announce upcoming removal from Ansible Y in the collection's issue tracker.
-#. Announce upcoming removal from Ansible Y in The Bullhorn.
-#. Remove from ``ansible.in`` for Ansible Y (``https://github.com/ansible-community/ansible-build-data/blob/main/<Y>/ansible.in``).
-#. Remove form ``collection-meta.yaml`` for Ansible Y (``https://github.com/ansible-community/ansible-build-data/blob/main/<Y>/collection-meta.yaml``).
-#. Once the first alpha of Ansible Y is to be released: document actual removal in the Ansible changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<Y>/changelog.yaml``).
+#. Announce upcoming removal from Ansible Y as described in :ref:`<announce_removal>`.
+#. Remove collection from Ansible Y as described in :ref:`<remove_collection>`.
 
 Cancelling removal of an unmaintained collection
 ------------------------------------------------
@@ -123,8 +152,7 @@ Process
 #. The Steering Committee votes on whether the result is acceptable.
 #. A negative vote must come with a good explanation why the clean up work has not been sufficient. In that case, this process stops.
 #. If the Steering Committee does not vote against still removing the collection (this includes the case that the vote did not reach quorum), proceed as follows.
-#. Re-add collection to ``ansible.in`` for Ansible Y (``https://github.com/ansible-community/ansible-build-data/blob/main/<Y>/ansible.in``).
-#. Re-add collection to ``collection-meta.yaml`` for Ansible Y (``https://github.com/ansible-community/ansible-build-data/blob/main/<Y>/collection-meta.yaml``).
+#. Re-add collection to Ansible Y as described in :ref:`readd_collection`.
 
 Re-adding collection to Ansible
 -------------------------------
