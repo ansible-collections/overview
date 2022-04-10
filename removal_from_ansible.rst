@@ -7,7 +7,7 @@ Ansible Community Package Collections Removal Process
 Overview
 ========
 
-Sometimes the Ansible community removes a collection from the Ansible package. We try to do this only rarely. This document describes why we might remove a collection from the `Ansible community package <https://pypi.org/project/ansible/>`_ (`build data <https://github.com/ansible-community/ansible-build-data/>`_).
+Sometimes the Ansible community removes a collection from the Ansible package for stability, legal, or security reasons. This document describes why we might remove a collection from the `Ansible community package <https://pypi.org/project/ansible/>`_ (`build data <https://github.com/ansible-community/ansible-build-data/>`_).
 
 In cases of emergency (for example, a serious security vulnerability that is not fixed in a collection) the `Ansible Community Engineering Steering Committee <https://github.com/ansible/community-docs/blob/main/ansible_community_steering_committee.rst>`_ can vote on emergency exceptions. In most cases, we follow the rules listed on this page.
 
