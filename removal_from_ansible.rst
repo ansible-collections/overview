@@ -1,3 +1,5 @@
+.. _removal_from_ansible::
+
 *****************************************************
 Ansible Community Package Collections Removal Process
 *****************************************************
@@ -14,7 +16,12 @@ In cases of emergency (for example, a serious security vulnerability that is not
 General processes
 =================
 
-This section describes some general processes that will be referred to below.
+The general process of removing a collection follows these steps:
+
+#. announcing an upcoming removal of a collection
+#. removing the collection
+#. when appropriate, re-adding the collection
+
 
 .. _announce_removal:
 
