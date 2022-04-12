@@ -1,4 +1,4 @@
-.. _removal_from_ansible::
+.. _removal_from_ansible:
 
 *****************************************************
 Ansible Community Package Collections Removal Process
