@@ -81,8 +81,8 @@ Process
 
 The announcement mentioned below must state the reasons for the proposed removal and alert maintainers and the Ansible community that, to prevent the removal, the collection urgently needs new maintainers who can fix the problems.
 
-#. Announce upcoming removal in Ansible X+1 as described in :ref:`announce_removal`.
-#. Remove collection from Ansible X+1 as described in :ref:`remove_collection`.
+#. `Announce upcoming removal in Ansible X+1 <announce_removal>`_.
+#. `Remove collection from Ansible X+1 <remove_collection>`_.
 
 Cancelling removal of a broken collection
 -----------------------------------------
@@ -98,7 +98,7 @@ Process
 
 #. Update the removal issue in the collection's issue tracker and close the issue.
 #. Announce cancelled removal in The Bullhorn.
-#. Re-add collection to Ansible X+1 as described in :ref:`readd_collection`.
+#. `Re-add collection to Ansible X+1 <readd_collection>`_.
 
 Re-adding collection to Ansible
 -------------------------------
@@ -140,8 +140,8 @@ Process
 #. At least four weeks after the notice appeared in The Bullhorn and the collection's issue tracker, the Ansible Community Engineering Steering Committee (SC) must look at the collection and vote that it considers it unmaintained. The vote must be open for at least one week.
 #. If the SC does not votes that the collection seems to be unmaintained, the process is stopped. The issue needs to be updated accordingly.
 #. If X.0.0 will be released next, set Y=X+1. If X.0.0 has already been released, but (X+1).0.0 has not yet been released, set Y=X+2.
-#. Announce upcoming removal from Ansible Y as described in :ref:`announce_removal`.
-#. Remove collection from Ansible Y as described in :ref:`remove_collection`.
+#. `Announce upcoming removal from Ansible Y <announce_removal>`_.
+#. `Remove collection from Ansible Y <remove_collection>`_.
 
 Cancelling removal of an unmaintained collection
 ------------------------------------------------
@@ -159,7 +159,7 @@ Process
 #. The Steering Committee votes on whether the result is acceptable.
 #. A negative vote must come with a good explanation why the clean up work has not been sufficient. In that case, this process stops.
 #. If the Steering Committee does not vote against still removing the collection (this includes the case that the vote did not reach quorum), proceed as follows.
-#. Re-add collection to Ansible Y as described in :ref:`readd_collection`.
+#. `Re-add collection to Ansible Y <readd_collection>`_.
 
 Re-adding collection to Ansible
 -------------------------------
