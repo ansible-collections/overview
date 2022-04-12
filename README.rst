@@ -157,11 +157,6 @@ These changes, however, will have both a temporary and permanent impact.
   * Users of devel will need to get both ansible-base (the package with contains ``ansible-playbook``) and the ansible collections that their playbooks rely on. The collections will reside in multiple other git repositories (or can be installed from galaxy).
   * If your workflow presently updates your checkout of the ansible devel branch, you'll need to change it to also retrieve the collections you need otherwise your playbooks will fail,
 
-Q: When will the next version of Ansible be released with these changes?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We don't have a firm date yet, but we plan to release Ansible 2.10 sometime in 2020, and we do expect to have several alpha/beta releases between now and then. Until that time, Ansible 2.9 will continue to be the available version.
-
 Q: I'd like to consume the development stream of Ansible during this process. How do I do that?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
