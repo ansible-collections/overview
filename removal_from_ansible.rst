@@ -138,7 +138,7 @@ Process
 
 #. The appearance that the collection is no longer maintained and might be removed from the Ansible package has to be announced both in The Bullhorn and in the collection's issue tracker.
 #. At least four weeks after the notice appeared in The Bullhorn and the collection's issue tracker, the Ansible Community Engineering Steering Committee (SC) must look at the collection and vote that it considers it unmaintained. The vote must be open for at least one week.
-#. If the SC does not votes that the collection seems to be unmaintained, the process is stopped. The issue needs to be updated accordingly.
+#. If the SC does not vote that the collection seems to be unmaintained, the process is stopped. The issue needs to be updated accordingly.
 #. If X.0.0 will be released next, set Y=X+1. If X.0.0 has already been released, but (X+1).0.0 has not yet been released, set Y=X+2.
 #. `Announce upcoming removal from Ansible Y <announce_removal_>`_.
 #. `Remove collection from Ansible Y <remove_collection_>`_.
