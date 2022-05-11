@@ -380,6 +380,8 @@ Besides all the requirements listed in the `Development conventions <https://doc
 Collection Dependencies
 =======================
 
+**Notation:** if foo.bar has a dependency on baz.bam, we say that baz.bam is the collection *dependend on*, and foo.bar is the *dependent collection*.
+
 * Collection dependencies must have a lower bound on the version which is at least 1.0.0.
 
   * This means that all collection dependencies have to specify lower bounds on the versions, and these lower bounds should be stable releases, and not versions of the form 0.x.y.
@@ -389,6 +391,31 @@ Collection Dependencies
     #. First release ``foo.baz`` as 1.0.0.
     #. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'`` for ``foo.baz``.
     #. Finally release ``foo.bar`` as 1.0.0.
+
+* The dependencies between collections included in Ansible must be valid. If a dependency is violated, the involved collections must be be pinned so that all dependencies are valid again. This means that the version numbers from the previous release are kept or only partially incremented so that the resulting set of versions has no invalid dependencies.
+
+* If a collection has a too strict dependency for a longer time, and forces another collection to be hold back, that collection will be removed from the next major Ansible release. What "longer time" means depends on when the next Ansible major release happens. If a dependent collection prevents a new major version of a collection to be included in the next major Ansible release, the dependent collection will be removed from that major release.
+
+* We strongly suggest that collections also test against the ``main`` branches of their dependencies to ensure that incompatibilities with future releases of these are detected as early as possible and can be resolved in time to avoid such problems. Collections depending on other collections must understand that they bear the risk of being removed when they do not ensure compatibility with the latest releases of their dependencies.
+
+* Collections included in Ansible must not depend on other collections except if they satisfy one of the following cases:
+
+  #. They have a loose dependency on one (or more) major versions of other collections included in Ansible. For example ``ansible.netcommon: >=1.0.0``, or ``ansible.netcommon: >=2.0.0, <3.0.0``. In case the collection depended on releases a new major version outside of this version range that will be included in the next major Ansible release, the dependent collection will be removed from the next major Ansible release. The cut-off date for this is feature freeze.
+  #. They are explicitly being allowed to do by the Steering Committee.
+
+Examples
+~~~~~~~~
+
+#. community.foo 1.2.0 has a dependency on community.bar >= 1.0.0, < 1.3.0.
+
+   * Now community.bar creates a new release 1.3.0. When community.foo does not create a new release with a relaxed dependency, we have to include community.bar 1.2.x in the next Ansible release despite 1.3.0 being available.
+   * If community.foo does not relax its dependency on community.bar for some time, community.foo will be removed from the next Ansible major release.
+   * Unfortunately community.bar has to stay at 1.2.x until either community.bar is removed (in the next major release), or loosens its requirements so that newer community.foo 1.y.z releases can be included.
+
+#. community.foonetwork depends on ansible.netcommon >= 2.0.0, <3.0.0.
+
+   * ansible.netcommon 4.0.0 is released during this major Ansible release cycle.
+   * community.foonetwork either releases a new version before feature freeze of the next major Ansible release that allows depending on all ansible.netcommon 4.x.y releases, or it will be removed from the next major Ansible release.
 
 Requirements for collections to be included in the Ansible Package
 ==================================================================
