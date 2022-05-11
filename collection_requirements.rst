@@ -115,16 +115,7 @@ galaxy.yml
 ----------
 
 * The ``tags`` field MUST be set.
-* Collection dependencies must have a lower bound on the version which is at least 1.0.0.
-
-  * This means that all collection dependencies have to specify lower bounds on the versions, and these lower bounds should be stable releases, and not versions of the form 0.x.y.
-  * When creating new collections where collection dependencies are also under development, you need to watch out since Galaxy checks whether dependencies exist in the required versions:
-
-    #. Assume that ``foo.bar`` depends on ``foo.baz``.
-    #. First release ``foo.baz`` as 1.0.0.
-    #. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'`` for ``foo.baz``.
-    #. Finally release ``foo.bar`` as 1.0.0.
-
+* Collection dependencies must satisfy a set of rules. See the section on `Collection Dependencies <collection_dependencies_>`_ for this.
 * The ``ansible`` package MUST NOT depend on collections not shipped in the package.
 * If you plan to split up your collection, the new collection MUST be approved for inclusion before the smaller collections replace the larger in Ansible.
 * If you plan to add other collections as dependencies, they MUST run through the formal application process.
@@ -384,6 +375,20 @@ Besides all the requirements listed in the `Development conventions <https://doc
   create new ``_info`` or ``_facts`` modules instead (for more information, refer to the `Developing modules guidelines <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_general.html#creating-an-info-or-a-facts-module>`_)
 * ``check_mode`` is supported in all ``*_info`` and ``*_facts`` modules (for more information, refer to the `Development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html#following-ansible-conventions>`_)
 
+.. _collection_dependencies:
+
+Collection Dependencies
+=======================
+
+* Collection dependencies must have a lower bound on the version which is at least 1.0.0.
+
+  * This means that all collection dependencies have to specify lower bounds on the versions, and these lower bounds should be stable releases, and not versions of the form 0.x.y.
+  * When creating new collections where collection dependencies are also under development, you need to watch out since Galaxy checks whether dependencies exist in the required versions:
+
+    #. Assume that ``foo.bar`` depends on ``foo.baz``.
+    #. First release ``foo.baz`` as 1.0.0.
+    #. Then modify ``foo.bar``'s ``galaxy.yml`` to specify ``'>=1.0.0'`` for ``foo.baz``.
+    #. Finally release ``foo.bar`` as 1.0.0.
 
 Requirements for collections to be included in the Ansible Package
 ==================================================================
