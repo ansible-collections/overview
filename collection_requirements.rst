@@ -404,7 +404,7 @@ Collection Dependencies
   #. They are explicitly being allowed to do by the Steering Committee.
 
 Examples
-~~~~~~~~
+--------
 
 #. community.foo 1.2.0 has a dependency on community.bar >= 1.0.0, < 1.3.0.
 
