@@ -43,5 +43,5 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] if `test/sanity/ignore*.txt` exists, it does not contain error codes listed [here](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#ci-testing)
 - [ ] has CI tests up and running against each of the "major versions" of `ansible-base`/`ansible-core` that the collection supports
 - [ ] all CI tests run against every pull request
-- [ ] all CI tests run against a commit that releases the collection; if they don't pass, the collection won't be released
 - [ ] all CI tests run regularly (nightly, or at least once per week)
+- [ ] Sanity tests run against a commit that releases the collection; if they don't pass, the collection won't be released
