@@ -19,4 +19,4 @@ jobs:
             sudo pip install rstcheck
 
       - name: run rstcheck
-        run: rstcheck --report error *.rst
+        run: rstcheck --report-level error *.rst
