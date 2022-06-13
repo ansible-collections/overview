@@ -338,7 +338,7 @@ CI Testing
 
 * You MUST run CI against each of the "major versions" (2.10, 2.11, 2.12, etc) of ``ansible-base``/``ansible-core`` that the collection supports. (Usually the ``HEAD`` of the stable-xxx branches.)
 * All CI tests MUST run against every pull request and SHOULD pass before merge.
-* At least sanity tests MUST run against a commit that releases the collection (if the collection has integration/unit tests, they SHOULD run too); if they don't pass, the collection will NOT be released.
+* At least sanity tests MUST run against a commit that releases the collection; if they do not pass, the collection will NOT be released. If the collection has integration/unit tests, they SHOULD run too; if they do not pass, the errors SHOULD be analyzed to decide whether they should block the release or not.
 * All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repositories without regular commits are tested against the latest version of ansible-test from each ansible-base/ansible-core version tested. The results from the regular CI runs MUST be checked regularly.
 
 All of the above can be achieved by using the `GitHub Action template <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_.
