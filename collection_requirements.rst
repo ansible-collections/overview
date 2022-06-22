@@ -49,7 +49,7 @@ Collections
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
 * SHOULD NOT contain any large objects (binaries) comparatively to the current Galaxy tarball size limit of 20 MB like, for example, package installers for testing purposes.
 * SHOULD NOT contain any unnecessary files like, for example, temporary files created by development tools.
-* MUST only contain objects that follow the :ref:`licensing rules<Licensing>`.
+* MUST only contain objects that follow the `Licensing rules <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#licensing>`_.
 
 Python Compatibility
 ====================
@@ -337,10 +337,10 @@ CI Testing
   * Reviewers can block acceptance of a new collection if they don't agree with the ignores.txt entries.
 
 * You MUST run CI against each of the "major versions" (2.10, 2.11, 2.12, etc) of ``ansible-base``/``ansible-core`` that the collection supports. (Usually the ``HEAD`` of the stable-xxx branches.)
-
 * All CI tests MUST run against every pull request and SHOULD pass before merge.
-* All CI tests MUST pass for the commit that releases the collection.
- 
+* At least sanity tests MUST run against a commit that releases the collection; if they do not pass, the collection will NOT be released.
+
+  - If the collection has integration/unit tests, they SHOULD run too; if they do not pass, the errors SHOULD be analyzed to decide whether they should block the release or not.
 * All CI tests MUST run regularly (nightly, or at least once per week) to ensure that repositories without regular commits are tested against the latest version of ansible-test from each ansible-base/ansible-core version tested. The results from the regular CI runs MUST be checked regularly.
 
 All of the above can be achieved by using the `GitHub Action template <https://github.com/ansible-collections/collection_template/tree/main/.github/workflows>`_.
