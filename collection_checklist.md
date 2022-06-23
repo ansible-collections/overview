@@ -4,6 +4,8 @@ _For details about the following points, refer to the [Collection Requirements](
 
 Every comment should say whether the reviewer expects it to be addressed, or whether it's optional.
 
+Note for reviewers: If you don't know how to check any of the points below, please ask maintainers of the collection you're reviewing or a [Steering Committee member](https://docs.ansible.com/ansible/devel/community/steering/community_steering_committee.html#current-steering-committee-members) for clarifications in comments of corresponding inclusion discussion.
+
 **Public availability and communication:**
 - [ ] published on [Ansible Galaxy](https://galaxy.ansible.com) with version 1.0.0 or later
 - [ ] has a policy of releasing, versioning and deprecation announced to contributors and users in some way
@@ -38,6 +40,12 @@ Every comment should say whether the reviewer expects it to be addressed, or whe
 - [ ] collection repository should not contain any unnecessary files like, for example, temporary files created by development tools. Temporary files MUST be added to `.gitignore`.
 
 **Tests:**
+
+Note for reviewers: If you don't know how to check the points below, please ask maintainers of the collection you're reviewing how you can do it.
+- In most cases, CI is set up via GitHub Actions.
+- Check `.yml` files in the `.github/workflows` directory. There must be at least the `sanity` section under `jobs` containing the `ansible-test sanity` command running against all supported ansible-core versions that must be also listed there, for example, `- stable-2.11, - stable-2.12, - stable-2.13`.
+- Check workflow runs by clicking the `Actions` tab in the repository's page - you're interested in `Scheduled` runs, runs against release commits and runs against pull requests.
+- If there are no workflows in the `Actions` tab, ask the collection maintainers how CI is implemented.
 
 - [ ] passed `ansible-test sanity`
 - [ ] if `test/sanity/ignore*.txt` exists, it MUST not contain error codes listed [here](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#ci-testing)
