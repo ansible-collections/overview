@@ -42,10 +42,10 @@ Note for reviewers: If you don't know how to check any of the points below, plea
 **Tests:**
 
 Note for reviewers: If you don't know how to check the points below, please ask maintainers of the collection you're reviewing how you can do it.
-- In most cases, CI is set up via GitHub Actions.
-- Check `.yml` files in the `.github/workflows` directory. There must be at least the `sanity` section under `jobs` containing the `ansible-test sanity` command running against all supported ansible-core versions that must be also listed there, for example, `- stable-2.11, - stable-2.12, - stable-2.13`.
-- Check workflow runs by clicking the `Actions` tab in the repository's page - you're interested in `Scheduled` runs, runs against release commits and runs against pull requests.
-- If there are no workflows in the `Actions` tab, ask the collection maintainers how CI is implemented.
+* In most cases, CI is set up via GitHub Actions.
+* Check `.yml` files in the `.github/workflows` directory. There must be at least the `sanity` section under `jobs` containing the `ansible-test sanity` command running against all supported ansible-core versions that must be also listed there, for example, `- stable-2.11, - stable-2.12, - stable-2.13`.
+* Check workflow runs by clicking the `Actions` tab in the repository's page - you're interested in `Scheduled` runs, runs against release commits and runs against pull requests.
+* If there are no workflows in the `Actions` tab, ask the collection maintainers how CI is implemented.
 
 - [ ] passed `ansible-test sanity`
 - [ ] if `test/sanity/ignore*.txt` exists, it MUST not contain error codes listed [here](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#ci-testing)
