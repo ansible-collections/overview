@@ -10,7 +10,7 @@ Overview
 **Warning:** Subject to frequent updates
        This is a "living document", expect it to change as we progress with the Collections work over the next few months.
        
-This guide uses MUST and SHOULD, etc as defined in `RFC 2119 <https://datatracker.ietf.org/doc/html/rfc2119>`_. 
+This guide uses MUST, MUST NOT, SHOULD, SHOULD NOT and MAY as defined in `RFC 2119 <https://datatracker.ietf.org/doc/html/rfc2119>`_. 
 
 Feedback
 ========
