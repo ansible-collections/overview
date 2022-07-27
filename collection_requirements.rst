@@ -401,7 +401,7 @@ Collection Dependencies
 * Collections included in Ansible must not depend on other collections except if they satisfy one of the following cases:
 
   #. They have a loose dependency on one (or more) major versions of other collections included in Ansible. For example, ``ansible.netcommon: >=1.0.0``, or ``ansible.netcommon: >=2.0.0, <3.0.0``. In case the collection depended on releases a new major version outside of this version range that will be included in the next major Ansible release, the dependent collection will be removed from the next major Ansible release. The cut-off date for this is feature freeze.
-  #. They are explicitly being allowed to do by the Steering Committee.
+  #. They are explicitly being allowed to do so by the Steering Committee.
 
 Examples
 --------
