@@ -253,17 +253,17 @@ ways:
                <https://opensource.org/licenses/BSD-2-Clause>`_ license to make it possible for
                third-party modules which are licensed incompatibly with the GPLv3 to use them.
                Please consider this use case when licensing your own ``module_utils``.
-:Code outside ``plugins/``: Code outside ``plugins/``, in particular unit tests, must be licensed with
-                            a free software license that is compatible with the
-                            `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.
-                            Note that such code that imports GPL licensed code must be GPL licensed
-                            itself as well.
-:All other code: All other code must be under the `GPL-3.0-or-later
-                 <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  These plugins are run
-                 inside of the Ansible controller process which is licensed under the GPLv3+ and
-                 often must import code from the controller.  For these reasons, the GPLv3+ must be
-                 used.
-:Non code content: At the moment, these must also be under the `GPL-3.0-or-later
+:All other code in ``plugins/``: All other code in ``plugins/`` must be under the `GPL-3.0-or-later
+                                 <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  These plugins
+                                 are run inside of the Ansible controller process which is licensed under
+                                 the GPLv3+ and often must import code from the controller.  For these
+                                 reasons, the GPLv3+ must be used.
+:All other code: Code outside ``plugins/``, in particular unit tests, must be licensed with
+                 a free software license that is compatible with the
+                 `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.
+                 Note that such code that imports GPL licensed code must be GPL licensed
+                 itself as well.
+:Non code content: At the moment, these must also be under the `GPL-3.0-or-later       
                    <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.
 
 Use `this table of licenses from the Fedora Project
