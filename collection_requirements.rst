@@ -256,7 +256,7 @@ ways:
 :All other code in ``plugins/``: All other code in ``plugins/`` must be under the `GPL-3.0-or-later
                                  <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  These plugins
                                  are run inside of the Ansible controller process which is licensed under
-                                 the GPLv3+ and often must import code from the controller.  For these
+                                 the ``GPL-3.0-or-later`` and often must import code from the controller.  For these
                                  reasons, the GPLv3+ must be used.
 :All other code: Code outside ``plugins/``, in particular unit tests, may be licensed under
                  another free software license that is compatible with the
