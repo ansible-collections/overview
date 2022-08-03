@@ -394,7 +394,7 @@ Collection Dependencies
 
 * The dependencies between collections included in Ansible must be valid. If a dependency is violated, the involved collections must be pinned so that all dependencies are valid again. This means that the version numbers from the previous release are kept or only partially incremented so that the resulting set of versions has no invalid dependencies.
 
-* If a collection has a too strict dependency for a longer time, and forces another collection to be hold back, that collection will be removed from the next major Ansible release. What "longer time" means depends on when the next Ansible major release happens. If a dependent collection prevents a new major version of a collection it depends on to be included in the next major Ansible release, the dependent collection will be removed from that major release to avoid blocking the collection being dependend upon.
+* If a collection has a too strict dependency for a longer time, and forces another collection depended on to be held back, that collection will be removed from the next major Ansible release. What "longer time" means depends on when the next Ansible major release happens. If a dependent collection prevents a new major version of a collection it depends on to be included in the next major Ansible release, the dependent collection will be removed from that major release to avoid blocking the collection being depended on.
 
 * We strongly suggest that collections also test against the ``main`` branches of their dependencies to ensure that incompatibilities with future releases of these are detected as early as possible and can be resolved in time to avoid such problems. Collections depending on other collections must understand that they bear the risk of being removed when they do not ensure compatibility with the latest releases of their dependencies.
 
@@ -410,7 +410,7 @@ Examples
 
    * Now ``community.bar`` creates a new release ``1.3.0``. When ``community.foo`` does not create a new release with a relaxed dependency, we have to include ``community.bar 1.2.x`` in the next Ansible release despite ``1.3.0`` being available.
    * If ``community.foo`` does not relax its dependency on ``community.bar`` for some time, ``community.foo`` will be removed from the next Ansible major release.
-   * Unfortunately ``community.bar`` has to stay at ``1.2.x`` until either ``community.bar`` is removed (in the next major release), or loosens its requirements so that newer ``community.foo 1.y.z`` releases can be included.
+   * Unfortunately ``community.bar`` has to stay at ``1.2.x`` until either ``community.foo`` is removed (in the next major release), or loosens its requirements so that newer ``community.bar 1.3.z`` releases can be included.
 
 #. ``community.foonetwork`` depends on ``ansible.netcommon >= 2.0.0, <3.0.0``.
 
