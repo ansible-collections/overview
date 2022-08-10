@@ -261,7 +261,7 @@ ways:
 :All other code: Code outside ``plugins/``, in particular unit tests, may be licensed under
                  another free software license that is compatible with the
                  `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_,
-                 provided that such code that does not import any other code that is licensed under
+                 provided that such code does not import any other code that is licensed under
                  the ``GPL-3.0-or-later``. If the file does import other ``GPL-3.0-or-later`` code,
                  then it must similarly be licensed under ``GPL-3.0-or-later``.
 :Non code content: At the moment, these must also be under the `GPL-3.0-or-later       
