@@ -119,8 +119,17 @@ Process
 Unmaintained collections
 ========================
 
-Identifying and removing an unmaintained collection
----------------------------------------------------
+Collections that have been announced deprecated / unmaintained by their maintainers
+-----------------------------------------------------------------------------------
+
+Process
+~~~~~~~
+
+#. `Announce upcoming removal from the next major Ansible release <announce_removal_>`_.
+#. `Remove collection from the next major Ansible release <remove_collection_>`_.
+
+Identifying and removing an unmaintained collection that has not been deprecated by their maintainers
+-----------------------------------------------------------------------------------------------------
 
 Conditions for removal
 ~~~~~~~~~~~~~~~~~~~~~~
