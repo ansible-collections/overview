@@ -211,7 +211,7 @@ Q: I'd like to submit a new module or plugin to Ansible. How shall I proceed?
 
 If you're a vendor/partner and you're writing Ansible content to interact with your software, we recommend writing your own collection. This will allow you to pursue certification against the Ansible Automation Platform. For more info on certification, read the `Partners Page <http://ansible.com/partners>`_.
 
-If you want to submit your module to an existing collection, you'll want to coordinate with the maintainers of those collections and follow their guidelines. 
+If you want to submit your module to an existing collection, you'll want to coordinate with the maintainers of those collections and follow their guidelines.
 
 As of today **ansible-core (github.com/ansible/ansible) will no longer accept new modules or plugins.**
 

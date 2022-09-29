@@ -45,7 +45,7 @@ Collections
   * The collections SHOULD consider using the Ansible CoC if they do not have a CoC that they consider better.
   * The `Diversity and Inclusion working group <https://docs.ansible.com/ansible/latest/community/communication.html#working-groups>`_ may evaluate all CoCs and object to a collection's inclusion based on the CoCs contents.
   * The CoC MUST be linked from the ``README.md`` file, or MUST be present or linked from the ``CODE_OF_CONDUCT.md`` file in the collection root.
-  
+
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
 * SHOULD NOT contain any large objects (binaries) comparatively to the current Galaxy tarball size limit of 20 MB like, for example, package installers for testing purposes.
 * SHOULD NOT contain any unnecessary files like, for example, temporary files created by development tools.
@@ -61,7 +61,7 @@ The collection should adhere to the tips mentioned in the official `Ansible Deve
 Python Requirements
 -------------------
 
-Python requirements for a collection vary between **controller-environment** and **other-environment**. On the controller-environment, the Python versions required may be higher than what is required on the other-environment. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment to help you choose Python versions accordingly: 
+Python requirements for a collection vary between **controller-environment** and **other-environment**. On the controller-environment, the Python versions required may be higher than what is required on the other-environment. While developing a collection, you need to understand the definitions of both  controller-environment and other-environment to help you choose Python versions accordingly:
 
 * controller-environment: The plugins/modules always run in the same environment (Python interpreter, venv, host, etc) as ansible-core itself.
 * other-environment: It is possible, even if uncommon in practice, for the plugins/modules to run in a different environment than ansible-core itself.
@@ -71,7 +71,7 @@ One example scenario where the "even if" clause comes into play is when using Cl
 Controller-environment
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In the controller environment, collections MUST support Python 2 (version 2.7) and Python 3 (Version 3.6 and higher), unless required libraries do not support these versions. Collections SHOULD also support Python v3.5 if all required libraries support this version. 
+In the controller environment, collections MUST support Python 2 (version 2.7) and Python 3 (Version 3.6 and higher), unless required libraries do not support these versions. Collections SHOULD also support Python v3.5 if all required libraries support this version.
 
 Other-environment
 ~~~~~~~~~~~~~~~~~
@@ -102,7 +102,7 @@ Standards for developing module and plugin utilities
 
 * ``module_utils`` and ``plugin_utils`` can be marked for only internal use in the collection, but they MUST document this and MUST use a leading underscore for filenames.
 * It is a breaking change when you make an existing ``module_utils`` private and in that case the collection requires a major version bump.
-* Below are some recommendations for ``module_utils`` documentation: 
+* Below are some recommendations for ``module_utils`` documentation:
 
   * No docstring: everything we recommend for ``other-environment`` is supported.
   * The docstring ``'Python versions supported: same as for controller-environment'``: everything we recommend for ``controller-environment`` is supported.
@@ -258,7 +258,7 @@ ways:
                  inside of the Ansible controller process which is licensed under the GPLv3+ and
                  often must import code from the controller.  For these reasons, the GPLv3+ must be
                  used.
-:Non code content: At the moment, these must also be under the `GPL-3.0-or-later       
+:Non code content: At the moment, these must also be under the `GPL-3.0-or-later
                    <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.
 
 Use `this table of licenses from the Fedora Project
@@ -300,7 +300,7 @@ CI Testing
 
   You can copy the free-to-use `GitHub action workflow file <https://github.com/ansible-collections/collection_template/blob/main/.github/workflows/ansible-test.yml>`_ from the `Collection Template repository <https://github.com/ansible-collections/collection_template/>`_ to the `.github/workflows` directory in your collection to set up testing through GitHub actions. The workflow covers all the requirements below.
 
-* You MUST run the ``ansible-test sanity`` command from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_. 
+* You MUST run the ``ansible-test sanity`` command from the `latest stable ansible-base/ansible-core branch <https://github.com/ansible/ansible/branches/all?query=stable->`_.
 
   * Collections MUST run an equivalent of the ``ansible-test sanity --docker`` command.
   * If they do not use ``--docker``, they must make sure that all tests run, in particular the compile and import tests (which should run for all `supported Python versions <https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3>`_).
