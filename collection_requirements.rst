@@ -257,7 +257,7 @@ ways:
                                  <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_.  These plugins
                                  are run inside of the Ansible controller process which is licensed under
                                  the ``GPL-3.0-or-later`` and often must import code from the controller.
-                                 For these reasons, the GPLv3+ must be used.
+                                 For these reasons, ``GPL-3.0-or-later`` must be used.
 :All other code: Code outside ``plugins/`` may be licensed under another free software license that is compatible
                  with the `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_,
                  provided that such code does not import any other code that is licensed under
