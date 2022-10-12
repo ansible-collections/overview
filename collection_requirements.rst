@@ -48,7 +48,7 @@ Collections
 
 * MUST be published to `Ansible Galaxy <https://galaxy.ansible.com>`_.
 * SHOULD NOT contain any large objects (binaries) comparatively to the current Galaxy tarball size limit of 20 MB like, for example, package installers for testing purposes.
-* SHOULD NOT contain any unnecessary files like, for example, temporary files created by development tools.
+* SHOULD NOT contain any unnecessary files like, for example, temporary files.
 * MUST only contain objects that follow the `Licensing rules <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#licensing>`_.
 
 Python Compatibility
