@@ -18,9 +18,9 @@ General processes
 
 The general process of removing a collection follows these steps:
 
-#. announcing an upcoming removal of a collection
-#. removing the collection
-#. when appropriate, re-adding the collection
+#. Announcing an upcoming removal of a collection.
+#. Removing the collection.
+#. When appropriate, re-adding the collection.
 
 
 .. _announce_removal:
@@ -165,3 +165,57 @@ Re-adding collection to Ansible
 -------------------------------
 
 There is no simplified process. Once the collection has been removed from Ansible Y.0.0, it needs to go through the full inclusion process to be re-added to the Ansible package. Exceptions are only possible if the Steering Committee votes on them. The Steering Committee can approve or deny a fast re-entry without going through the full review process.
+
+Collections not satisfying the Collection Requirements
+======================================================
+
+A collection can be removed from the package if it violates one or more of the `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_.
+
+This section is not applicable to cases of broken or unmaintained collections. Instead, see the corresponding paragraphs of this document.
+
+Identifying and removing a collection
+-------------------------------------
+
+Conditions for removal
+~~~~~~~~~~~~~~~~~~~~~~
+
+#. A collection violates one or more of the `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_.
+#. Collection maintainers have not fixed the violations and have not released a fixed version of the collection within the time period established by this document.
+
+Process
+~~~~~~~
+
+#. A community person who found a violation creates a `community topic <https://github.com/ansible-community/community-topics/issues>`_.
+#. If SC members generally agree that the violation is present, a community person creates an issue in the collection's repository. The issue contains:
+
+  * References to corresponding `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ the collection violates.
+  * Actions collection maintainers need to do to make the collection satisfying the requirements.
+#. A default term for the collection to solve the issue is four weeks since the issue was created. It can vary depending on a requirement violated, SC opinions or other circumstances.
+#. If the issue was not solved in the established time, the Community and SC vote on considering the collection violating the requirements and removing it from the package. The vote must be open for at least one week.
+#. If SC does not vote that the collection is violation the requirements, the process is stopped. The issue needs to be updated accordingly.
+#. If X.0.0 will be released next, set Y=X+1. If X.0.0 has already been released, but (X+1).0.0 has not yet been released, set Y=X+2.
+#. Announce upcoming removal from Ansible Y in the original issue in the collection's repository.
+#. `Announce upcoming removal from Ansible Y <announce_removal_>`_.
+#. `Remove collection from Ansible Y <remove_collection_>`_.
+
+Cancelling removal
+------------------
+
+Conditions
+~~~~~~~~~~
+
+#. Ansible Y has not yet been released.
+#. All the requirements violations have been fixed.
+
+Process
+~~~~~~~
+
+#. SC votes on whether the result is acceptable.
+#. A negative vote must come with a good explanation why the actions done by collection maintainers have not been sufficient.
+#. If SC does not vote against the removal of the collection (this includes the case that the vote did not reach quorum), the removal will continue.
+#. If SC votes to cancel the removal, `re-add collection to Ansible Y <readd_collection_>`_.
+
+Re-adding collection to Ansible
+-------------------------------
+
+There is no simplified process. Once the collection has been removed from Ansible Y.0.0, it needs to go through the full inclusion process to be re-added to the Ansible package. Exceptions are only possible if SC votes on them. SC can approve or deny a fast re-entry without going through the full review process.
