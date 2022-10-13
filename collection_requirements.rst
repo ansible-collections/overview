@@ -280,7 +280,9 @@ licensing and legal concerns that may otherwise affect your code.
 Repository management
 =====================
 
-Every collection MUST have a public SCM repository and releases of the collection MUST be tagged in this repository.
+Every collection MUST have a public git repository and releases of the collection MUST be tagged in this repository.
+
+We are open to add more SCMs once our tooling supports them.
 
 Branch name and configuration
 -----------------------------
