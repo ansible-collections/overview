@@ -186,7 +186,8 @@ Process
 ~~~~~~~
 
 #. A community person who found a violation creates a `community topic <https://github.com/ansible-community/community-topics/issues>`_.
-#. If SC members generally agree that the violation is present, a community person creates an issue in the collection's repository. The issue contains:
+#. Two SC members check the reported circumstances and confirm in the topic that the violation is present.
+#. A community person creates an issue in the collection's repository. The issue contains:
 
   * References to corresponding `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ the collection violates.
   * Actions collection maintainers need to do to make the collection satisfying the requirements.
