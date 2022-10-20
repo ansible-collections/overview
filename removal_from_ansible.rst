@@ -185,15 +185,15 @@ Conditions for removal
 Process
 ~~~~~~~
 
-#. A community person who found a violation creates a `community topic <https://github.com/ansible-community/community-topics/issues>`_.
-#. Two SC members check the reported circumstances and confirm in the topic that the violation is present.
-#. A community person creates an issue in the collection's repository. The issue contains:
+#. A community person who found a violation creates an issue in the collection's repository. The issue contains:
 
   * References to corresponding `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ the collection violates.
   * Actions collection maintainers need to do to make the collection satisfying the requirements.
 #. A default term for the collection to solve the issue is four weeks since the issue was created. It can vary depending on a requirement violated, SC opinions or other circumstances.
-#. If the issue was not solved in the established time, the Community and SC vote on considering the collection violating the requirements and removing it from the package. The vote must be open for at least one week.
-#. If SC does not vote that the collection is violation the requirements, the process is stopped. The issue needs to be updated accordingly.
+#. If the violation is not fixed or there is a disagreement between the reporter and the maintainers, the reporter or another person creates a `community topic <https://github.com/ansible-community/community-topics/issues>`_.
+#. Two SC members check the reported circumstances and confirm in the topic that the violation is present.
+#. The Community and SC vote on considering the collection violating the requirements and removing it from the package. The vote must be open for at least one week.
+#. If SC votes that the collection does NOT violate the requirements, the process is stopped. The issue needs to be updated accordingly.
 #. If X.0.0 will be released next, set Y=X+1. If X.0.0 has already been released, but (X+1).0.0 has not yet been released, set Y=X+2.
 #. Announce upcoming removal from Ansible Y in the original issue in the collection's repository.
 #. `Announce upcoming removal from Ansible Y <announce_removal_>`_.
