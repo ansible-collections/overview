@@ -188,10 +188,9 @@ Process
 #. Any community member who finds a collection that violates one or more of the `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ may file an issue against said collection's repository. If the reporter is unsure whether something constitutes a violation or believes that the apparently violated guideline is unclear, they should consult with the steering committee by filing a `community topic <https://github.com/ansible-community/community-topics/issues>`_ before proceeding.
 #. The issue filed against the collection's repository should include the following information:
 
-  * References to the corresponding `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ the collection violates
-  * Actions collection maintainers need to do to make the collection comply with the requirements
-  * A link to the Collection Requirements violations tracking issue (https://github.com/ansible-community/community-topics/issues/PLACEHOLDER)
-
+  * References to the corresponding `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ the collection violates.
+  * Actions collection maintainers need to do to make the collection comply with the requirements.
+  * A link to the Collection Requirements violations tracking `issue <https://github.com/ansible-community/community-topics/issues/>`_.
 #. A default term for the collection to solve the issue is four weeks since the issue was created. It can vary depending on a requirement violated, SC opinions or other circumstances.
 #. If the violation is not fixed or there is a disagreement between the reporter and the maintainers, the reporter or another person creates a `community topic <https://github.com/ansible-community/community-topics/issues>`_.
 #. Two SC members check the reported circumstances and confirm in the topic that the violation is present.
