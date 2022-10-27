@@ -169,7 +169,7 @@ There is no simplified process. Once the collection has been removed from Ansibl
 Collections not satisfying the Collection Requirements
 ======================================================
 
-A collection can be removed from the package if it violates one or more of the `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ without making enough effort to mitigate these violations.
+A collection can be removed from the package if it violates one or more of the `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ without resolving the violations within the time allowed.
 
 This section is not applicable to cases of broken or unmaintained collections. Instead, see the corresponding paragraphs of this document.
 
