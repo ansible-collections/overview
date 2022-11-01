@@ -190,7 +190,6 @@ Process
 
   * References to the corresponding `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ the collection violates.
   * Actions collection maintainers need to do to make the collection comply with the requirements.
-  * A link to the Collection Requirements violations tracking `issue <https://github.com/ansible-community/community-topics/issues/>`_.
 #. A default term for the collection to solve the issue is four weeks since the issue was created. It can vary depending on a requirement violated, SC opinions or other circumstances.
 #. If the violation is not fixed or there is a disagreement between the reporter and the maintainers, the reporter or another person creates a `community topic <https://github.com/ansible-community/community-topics/issues>`_.
 #. Two SC members check the reported circumstances and confirm in the topic that the violation is present from their point of view, and is one that must be fixed.
