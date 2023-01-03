@@ -382,9 +382,10 @@ Development conventions
 
 Besides all the requirements listed in the `Development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html>`_, be sure:
 
+* Your modules satisfy the concept of `idempotency <https://docs.ansible.com/ansible/latest/reference_appendices/glossary.html#term-Idempotency>`_: if a module repeatedly runs with the same set of inputs, it will not make any changes on the system.
 * Your modules do not query information using special ``state`` option values like ``get``, ``list``, ``query``, or ``info`` -
-  create new ``_info`` or ``_facts`` modules instead (for more information, refer to the `Developing modules guidelines <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_general.html#creating-an-info-or-a-facts-module>`_)
-* ``check_mode`` is supported in all ``*_info`` and ``*_facts`` modules (for more information, refer to the `Development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html#following-ansible-conventions>`_)
+  create new ``_info`` or ``_facts`` modules instead (for more information, refer to the `Developing modules guidelines <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_general.html#creating-an-info-or-a-facts-module>`_).
+* ``check_mode`` is supported in all ``*_info`` and ``*_facts`` modules (for more information, refer to the `Development conventions <https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html#following-ansible-conventions>`_).
 
 .. _collection_dependencies:
 
