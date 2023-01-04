@@ -18,6 +18,7 @@ Note for reviewers: If you don't know how to check any of the points below, plea
 - [ ] follows [licensing rules](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#licensing)
 - [ ] follows the [Ansible documentation standards](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html) and the [style guide](https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide)
 - [ ] follows [development conventions](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html); as well as these other requirements:
+  - [ ] modules satisfy the concept of [idempotency](https://docs.ansible.com/ansible/latest/reference_appendices/glossary.html#term-Idempotency>)
   - [ ] modules that only gather information are named `<something>_info`
   - [ ] modules that return `ansible_facts` are named `<something>_facts` and do not return non-facts
   - [ ] other modules must not allow querying information using specific `state` option values, or similar mechanisms (like `state=get` or `state=query`).  These features should be moved to `<something>_info` or `<something>_fact` modules.
