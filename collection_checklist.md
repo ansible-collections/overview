@@ -28,7 +28,7 @@ Note for reviewers: If you don't know how to check any of the points below, plea
 - [ ] has `README.md`
 - [ ] documentation, examples, and return sections use FQCNs for the `M(..)` [format macros](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_documenting.html#linking-and-other-format-macros-within-module-documentation) when referring to modules
 - [ ] modules (or plugins) from ansible-core use `ansible.builtin.` as a FQCN prefix
-- [ ] documentation and return sections use `version_added:` containing the *collection* version for which an option, module or plugin was added
+- [ ] documentation and return sections use `version_added:` containing the *collection* version for which an option, module or plugin was added (except cases when they were added in the very first release of the collection)
 - [ ] FQCNs are used for `extends_documentation_fragment:`, unless you are referring to doc_fragments from ansible-core
 - [ ] public plugins, roles and playbooks do not use files outside of `meta/`, `plugins/`, `roles/`, and `playbooks/`
 
