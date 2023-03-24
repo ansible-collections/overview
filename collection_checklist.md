@@ -1,6 +1,6 @@
 # Ansible Collections Checklist (short version)
 
-_For details about the following points, refer to the [Collection Requirements](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst)._
+_For details about the following points, refer to the [Collection Requirements](https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html)._
 
 Every comment should say whether the reviewer expects it to be addressed, or whether it's optional.
 
@@ -15,7 +15,7 @@ Note for reviewers: If you don't know how to check any of the points below, plea
 
 **Standards and documentation:**
 - [ ] adheres to [semantic versioning](https://semver.org/)
-- [ ] follows [licensing rules](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#licensing)
+- [ ] follows [licensing rules](https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html#collection-licensing-requirements)
 - [ ] follows the [Ansible documentation standards](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_documenting.html) and the [style guide](https://docs.ansible.com/ansible/devel/dev_guide/style_guide/index.html#style-guide)
 - [ ] follows [development conventions](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html); as well as these other requirements:
   - [ ] modules satisfy the concept of [idempotency](https://docs.ansible.com/ansible/latest/reference_appendices/glossary.html#term-Idempotency>)
@@ -23,8 +23,8 @@ Note for reviewers: If you don't know how to check any of the points below, plea
   - [ ] modules that return `ansible_facts` are named `<something>_facts` and do not return non-facts
   - [ ] other modules must not allow querying information using specific `state` option values, or similar mechanisms (like `state=get` or `state=query`).  These features should be moved to `<something>_info` or `<something>_fact` modules.
   - [ ] `check_mode` is supported in all `_info` and `_facts` modules
-- [ ] supports Python 2.6 or greater and Python 3.5 or greater. If it does not, read the [full guidelines](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#python-compatibility) to see if you qualify for an exception and document the unsupported [Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) in the collection ``README.md`` and in every module and plugin (or in doc fragments)
-- [ ] only uses the [allowed plugin types](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#modules-plugins) in the `plugins/` directory
+- [ ] supports Python 2.6 or greater and Python 3.5 or greater. If it does not, read the [full guidelines](https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html#python-compatibility) to see if you qualify for an exception and document the unsupported [Python versions](https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html#ansible-and-python-3) in the collection ``README.md`` and in every module and plugin (or in doc fragments)
+- [ ] only uses the [allowed plugin types](https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html#modules-plugins) in the `plugins/` directory
 - [ ] has `README.md`
 - [ ] documentation, examples, and return sections use FQCNs for the `M(..)` [format macros](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_documenting.html#linking-and-other-format-macros-within-module-documentation) when referring to modules
 - [ ] modules (or plugins) from ansible-core use `ansible.builtin.` as a FQCN prefix
@@ -49,7 +49,7 @@ Note for reviewers: If you don't know how to check the points below, please ask 
 * If there are no workflows in the `Actions` tab, ask the collection maintainers how CI is implemented.
 
 - [ ] passed `ansible-test sanity`
-- [ ] if `test/sanity/ignore*.txt` exists, it MUST not contain error codes listed [here](https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst#ci-testing)
+- [ ] if `test/sanity/ignore*.txt` exists, it MUST not contain error codes listed in the [list of errors that must not be ignored](https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html#ci-testing)
 - [ ] has CI tests up and running against each of the "major versions" of `ansible-base`/`ansible-core` that the collection supports
 - [ ] all CI tests MUST run against every pull request
 - [ ] all CI tests MUST run regularly (nightly, or at least once per week)

@@ -169,7 +169,7 @@ There is no simplified process. Once the collection has been removed from Ansibl
 Collections not satisfying the Collection Requirements
 ======================================================
 
-A collection can be removed from the package if it violates one or more of the `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ without resolving the violations within the time allowed.
+A collection can be removed from the package if it violates one or more of the `Collection Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_ without resolving the violations within the time allowed.
 
 This section is not applicable to cases of broken or unmaintained collections. Instead, see the corresponding paragraphs of this document.
 
@@ -179,16 +179,16 @@ Identifying and removing a collection
 Conditions for removal
 ~~~~~~~~~~~~~~~~~~~~~~
 
-#. A collection violates one or more of the `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_.
+#. A collection violates one or more of the `Collection Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_.
 #. Collection maintainers have not fixed the violations and have not released a fixed version of the collection within the time period established by this document.
 
 Process
 ~~~~~~~
 
-#. Any community member who finds a collection that violates one or more of the `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ may file an issue against said collection's repository. If the reporter is unsure whether something constitutes a violation or believes that the apparently violated guideline is unclear, they should consult with the steering committee by filing a `community topic <https://github.com/ansible-community/community-topics/issues>`_ before proceeding.
+#. Any community member who finds a collection that violates one or more of the `Collection Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_ may file an issue against said collection's repository. If the reporter is unsure whether something constitutes a violation or believes that the apparently violated guideline is unclear, they should consult with the steering committee by filing a `community topic <https://github.com/ansible-community/community-topics/issues>`_ before proceeding.
 #. The issue filed against the collection's repository should include the following information:
 
-  * References to the corresponding `Collection Requirements <https://github.com/ansible-collections/overview/blob/main/collection_requirements.rst>`_ the collection violates.
+  * References to the corresponding `Collection Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_ the collection violates.
   * Actions collection maintainers need to do to make the collection comply with the requirements.
 #. A default term for the collection to solve the issue is four weeks since the issue was created. It can vary depending on a requirement violated, SC opinions or other circumstances.
 #. If the violation is not fixed or there is a disagreement between the reporter and the maintainers, the reporter or another person creates a `community topic <https://github.com/ansible-community/community-topics/issues>`_.
