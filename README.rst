@@ -32,9 +32,9 @@ Previously: Ansible 2.9 and earlier
 **Classic Ansible**
 
 * Single repository `ansible/ansible <https://github.com/ansible/ansible>`_.
-* Single package called `ansible`
-* `ansible` had major releases twice a year
-* New features go into the next major release - ie worst case you need to wait 6 months
+* Single package called `ansible`.
+* `ansible` had major releases twice a year.
+* New features go into the next major release - ie worst case you need to wait 6 months.
 
 
 Now: Ansible 2.10 and later
@@ -42,17 +42,17 @@ Now: Ansible 2.10 and later
 
 * The ``ansible/ansible`` (`ansible-base`) repository only contains:
 
-  * The core Ansible programs, ``ansible-{playbook,galaxy,doc,test,etc}``
-  * Some documentation
-  * A tiny subset of modules and plugins to allow for a functioning controller
-  * Together this will be known as ``ansible-base``
+  * The core Ansible programs, ``ansible-{playbook,galaxy,doc,test,etc}``.
+  * Some documentation.
+  * A tiny subset of modules and plugins to allow for a functioning controller.
+  * Together this will be known as ``ansible-base``.
 * The rest of the modules and plugins have been moved into various "collections"
 
   * Ansible Collections:
 
     * Can be released independently of ansible-base and Ansible, at whatever release cycle/cadence the collection maintainer prefers.
-    * Will have their own repo (GitHub, GitLab, etc) with dedicated backlog, ie no more shared massive issue & PR backlog
-    * Should still have CI testing and in many cases can be tested more thoroughly
+    * Will have their own repo (GitHub, GitLab, etc) with dedicated backlog, ie no more shared massive issue & PR backlog.
+    * Should still have CI testing and in many cases can be tested more thoroughly.
 
 * The released package of Ansible 2.10 will pull in ``ansible-base`` and the various community collections that were previously a part of ``ansible/ansible``
 
@@ -103,7 +103,7 @@ Although this document focuses on Community (upstream) content, there will be Pr
 Documentation
 ==============
 
-* `Using Ansible Collections <https://docs.ansible.com/ansible/latest/user_guide/collections_using.html>`_
+* `Using Ansible Collections <https://docs.ansible.com/ansible/latest/user_guide/collections_using.html>`_.
 * `Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_
 * `Ansible Collections Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_
 
