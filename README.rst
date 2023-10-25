@@ -104,8 +104,8 @@ Documentation
 ==============
 
 * `Using Ansible Collections <https://docs.ansible.com/ansible/latest/user_guide/collections_using.html>`_.
-* `Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_
-* `Ansible Collections Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_
+* `Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_.
+* `Ansible Collections Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_.
 
 Work needed
 ===========
@@ -136,7 +136,7 @@ Users of Ansible
 
 `Using Ansible Collections <https://docs.ansible.com/ansible/latest/user_guide/collections_using.html>`_
 
-Q: Once the next version of Ansible is released, will my playbooks still work
+Q: Once the next version of Ansible is released, will my playbooks still work?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For users of the community version of ansible ``pip/apt-get install ansible`` will continue to give you a working install of Ansible including the three thousand plus modules that previously shipped with Ansible 2.9.
@@ -243,7 +243,7 @@ The benefits of claiming content are the following:
 * Your own dedicated Issue and PR backlog
 * Ability to use more GitHub functionality, such as direct assignments, reviews, milestones and Project Boards
 
-Q: What will versioning and deprecation look like for Collections
+Q: What will versioning and deprecation look like for Collections?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * In ansible/ansible:
