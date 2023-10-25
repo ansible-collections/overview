@@ -168,7 +168,7 @@ Individual collections can be installed by doing:
 
 ``ansible-galaxy collection install NAMESPACE.COLLECTION``
 
-Q: What exactly is ansible-base for and what does it contain
+Q: What exactly is ansible-base for and what does it contain?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Ansible-base** is the name of the code and package for what github.com/ansible/ansible has become now that most of the content has been removed.
