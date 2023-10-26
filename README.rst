@@ -32,8 +32,8 @@ Previously: Ansible 2.9 and earlier
 **Classic Ansible**
 
 * Single repository `ansible/ansible <https://github.com/ansible/ansible>`_.
-* Single package called `ansible`.
-* `ansible` had major releases twice a year.
+* Single package called `ansible`
+* `ansible` had major releases twice a year
 * New features go into the next major release - ie worst case you need to wait 6 months.
 
 
