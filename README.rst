@@ -52,7 +52,7 @@ Now: Ansible 2.10 and later
 
     * Can be released independently of ansible-base and Ansible, at whatever release cycle/cadence the collection maintainer prefers.
     * Will have their own repo (GitHub, GitLab, etc) with dedicated backlog, i.e. no more shared massive issue & PR backlog.
-    * Should still have CI testing and in many cases can be tested more thoroughly.
+    * Should still have CI testing and in many cases can be tested more thoroughly
 
 * The released package of Ansible 2.10 will pull in ``ansible-base`` and the various community collections that were previously a part of ``ansible/ansible``
 
