@@ -103,9 +103,9 @@ Although this document focuses on Community (upstream) content, there will be Pr
 Documentation
 ==============
 
-* `Using Ansible Collections <https://docs.ansible.com/ansible/latest/user_guide/collections_using.html>`_.
-* `Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_.
-* `Ansible Collections Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_.
+* `Using Ansible Collections <https://docs.ansible.com/ansible/latest/user_guide/collections_using.html>`_
+* `Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_
+* `Ansible Collections Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_
 
 Work needed
 ===========
