@@ -34,7 +34,7 @@ Previously: Ansible 2.9 and earlier
 * Single repository `ansible/ansible <https://github.com/ansible/ansible>`_
 * Single package called `ansible`
 * `ansible` had major releases twice a year
-* New features go into the next major release - i.e., in the worst case, you need to wait 6 months.
+* New features go into the next major release — i.e., in the worst case, you need to wait 6 months.
 
 
 Now: Ansible 2.10 and later
