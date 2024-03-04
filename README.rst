@@ -31,10 +31,10 @@ Previously: Ansible 2.9 and earlier
 
 **Classic Ansible**
 
-* Single repository `ansible/ansible <https://github.com/ansible/ansible>`_.
+* Single repository `ansible/ansible <https://github.com/ansible/ansible>`_
 * Single package called `ansible`
 * `ansible` had major releases twice a year
-* New features go into the next major release - ie worst case you need to wait 6 months
+* New features go into the next major release — i.e., in the worst case, you need to wait 6 months.
 
 
 Now: Ansible 2.10 and later
@@ -45,13 +45,13 @@ Now: Ansible 2.10 and later
   * The core Ansible programs, ``ansible-{playbook,galaxy,doc,test,etc}``
   * Some documentation
   * A tiny subset of modules and plugins to allow for a functioning controller
-  * Together this will be known as ``ansible-base``
+  * Together this will be known as ``ansible-base``.
 * The rest of the modules and plugins have been moved into various "collections"
 
   * Ansible Collections:
 
     * Can be released independently of ansible-base and Ansible, at whatever release cycle/cadence the collection maintainer prefers.
-    * Will have their own repo (GitHub, GitLab, etc) with dedicated backlog, ie no more shared massive issue & PR backlog
+    * Will have their own repo (GitHub, GitLab, etc) with dedicated backlog, i.e. no more shared massive issue and PR backlog
     * Should still have CI testing and in many cases can be tested more thoroughly
 
 * The released package of Ansible 2.10 will pull in ``ansible-base`` and the various community collections that were previously a part of ``ansible/ansible``
@@ -105,7 +105,7 @@ Documentation
 
 * `Using Ansible Collections <https://docs.ansible.com/ansible/latest/user_guide/collections_using.html>`_
 * `Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_
-* `Ansible Collections Checklist <https://github.com/ansible-collections/overview/blob/master/collection_requirements.rst>`_
+* `Ansible Collections Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_
 
 Work needed
 ===========
@@ -136,7 +136,7 @@ Users of Ansible
 
 `Using Ansible Collections <https://docs.ansible.com/ansible/latest/user_guide/collections_using.html>`_
 
-Q: Once the next version of Ansible is released, will my playbooks still work
+Q: Once the next version of Ansible is released, will my playbooks still work?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For users of the community version of ansible ``pip/apt-get install ansible`` will continue to give you a working install of Ansible including the three thousand plus modules that previously shipped with Ansible 2.9.
@@ -168,7 +168,7 @@ Individual collections can be installed by doing:
 
 ``ansible-galaxy collection install NAMESPACE.COLLECTION``
 
-Q: What exactly is ansible-base for and what does it contain
+Q: What exactly is ansible-base for and what does it contain?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Ansible-base** is the name of the code and package for what github.com/ansible/ansible has become now that most of the content has been removed.
@@ -204,14 +204,14 @@ Contributors to Ansible
 
 `Developing Collections <https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html>`_
 
-`Ansible Collections Checklist <https://github.com/ansible-collections/overview/blob/master/collection_requirements.rst>`_
+`Ansible Collections Requirements <https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html>`_
 
 Q: I'd like to submit a new module or plugin to Ansible. How shall I proceed?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you're a vendor/partner and you're writing Ansible content to interact with your software, we recommend writing your own collection. This will allow you to pursue certification against the Ansible Automation Platform. For more info on certification, read the `Partners Page <http://ansible.com/partners>`_.
 
-If you want to submit your module to an existing collection, you'll want to coordinate with the maintainers of those collections and follow their guidelines. 
+If you want to submit your module to an existing collection, you'll want to coordinate with the maintainers of those collections and follow their guidelines.
 
 As of today **ansible-core (github.com/ansible/ansible) will no longer accept new modules or plugins.**
 
@@ -243,7 +243,7 @@ The benefits of claiming content are the following:
 * Your own dedicated Issue and PR backlog
 * Ability to use more GitHub functionality, such as direct assignments, reviews, milestones and Project Boards
 
-Q: What will versioning and deprecation look like for Collections
+Q: What will versioning and deprecation look like for Collections?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * In ansible/ansible:
