@@ -30,7 +30,7 @@ Announcing upcoming removal
 
 #. Announce upcoming removal in the Ansible changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/changelog.yaml``).
    See the following link for an `example on how to add changelog entries to the Ansible changelog <https://github.com/ansible-community/ansible-build-data/pull/68/files>`__.
-#. Announce upcoming removal in the collection's issue tracker.
+#. Announce upcoming removal in the collection's issue tracker if possible.
 #. Announce upcoming removal in The Bullhorn.
 
 .. _remove_collection:
@@ -125,16 +125,10 @@ Collections that have been announced deprecated / unmaintained by their maintain
 Process
 ~~~~~~~
 
-If the latest stable Ansible version is X.something:
+#. `Announce upcoming removal from the next major Ansible release <announce_removal_>`_.
+#. `Remove collection from the next major Ansible release <remove_collection_>`_.
 
-#. Announce upcoming removal in the Ansible changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/changelog.yaml``).
-#. Remove from ``ansible.in`` (``https://github.com/ansible-community/ansible-build-data/blob/main/<X+1>/ansible.in``).
-#. Remove from ``collection-meta.yaml`` (``https://github.com/ansible-community/ansible-build-data/blob/main/<X+1>/collection-meta.yaml``).
-#. Document actual removal for the next Ansible release in the changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<X+1>/changelog.yaml``).
-
-See `<https://github.com/ansible-community/ansible-build-data/pull/374/files>`__ for an example on how to do this.
-
-After this has been approved and merged, announce the upcoming removal in The Bullhorn.
+See `<https://github.com/ansible-community/ansible-build-data/pull/374/files>`__ for an example on how to this in just one PR in ``ansible-build-data``.
 
 Identifying and removing an unmaintained collection that has not been deprecated by their maintainers
 -----------------------------------------------------------------------------------------------------
