@@ -128,7 +128,7 @@ Process
 #. `Announce upcoming removal from the next major Ansible release <announce_removal_>`_.
 #. `Remove collection from the next major Ansible release <remove_collection_>`_.
 
-See `<https://github.com/ansible-community/ansible-build-data/pull/374/files>`__ for an example on how to this in just one PR in ``ansible-build-data``.
+See `the example pull request <https://github.com/ansible-community/ansible-build-data/pull/374/files>`_ in the ``ansible-build-data`` repository to learn how to remove the collection.
 
 Identifying and removing an unmaintained collection that has not been deprecated by their maintainers
 -----------------------------------------------------------------------------------------------------
