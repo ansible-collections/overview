@@ -119,8 +119,8 @@ Process
 Unmaintained collections
 ========================
 
-Collections that have been announced deprecated / unmaintained by their maintainers
------------------------------------------------------------------------------------
+Removing a collection that has been explicitly deprecated or abandoned by its maintainers
+-----------------------------------------------------------------------------------------
 
 Process
 ~~~~~~~
@@ -133,8 +133,8 @@ If there already has been a feature freeze release of the next major version X+1
 
 See `the example pull request <https://github.com/ansible-community/ansible-build-data/pull/374/files>`_ in the ``ansible-build-data`` repository to learn how to remove the collection.
 
-Identifying and removing an unmaintained collection that has not been deprecated by their maintainers
------------------------------------------------------------------------------------------------------
+Identifying and removing an unmaintained collection that has not been deprecated by its maintainers
+---------------------------------------------------------------------------------------------------
 
 Conditions for removal
 ~~~~~~~~~~~~~~~~~~~~~~
