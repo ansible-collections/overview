@@ -125,8 +125,11 @@ Collections that have been announced deprecated / unmaintained by their maintain
 Process
 ~~~~~~~
 
-#. `Announce upcoming removal from the next major Ansible release <announce_removal_>`_.
-#. `Remove collection from the next major Ansible release <remove_collection_>`_.
+If the current major release is X and there hasn't been a feature freeze release of the next major version X+1, remove the collection from Y=(X+1).0.0.
+If there already has been a feature freeze release of the next major version X+1, remove the collection from Y=(X+2).0.0.
+
+#. `Announce upcoming removal from the Y Ansible release <announce_removal_>`_.
+#. `Remove collection from the Y Ansible release <remove_collection_>`_.
 
 See `the example pull request <https://github.com/ansible-community/ansible-build-data/pull/374/files>`_ in the ``ansible-build-data`` repository to learn how to remove the collection.
 
