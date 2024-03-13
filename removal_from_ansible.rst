@@ -119,8 +119,8 @@ Process
 Unmaintained collections
 ========================
 
-Removing a collection that has been explicitly deprecated or abandoned by its maintainers
------------------------------------------------------------------------------------------
+Removing a collection that has been explicitly deprecated or abandoned by its (former) maintainers
+--------------------------------------------------------------------------------------------------
 
 Process
 ~~~~~~~
