@@ -30,7 +30,7 @@ Announcing upcoming removal
 
 #. Announce upcoming removal in the Ansible changelog (``https://github.com/ansible-community/ansible-build-data/blob/main/<X>/changelog.yaml``).
    See the following link for an `example on how to add changelog entries to the Ansible changelog <https://github.com/ansible-community/ansible-build-data/pull/68/files>`__.
-#. Announce upcoming removal in the collection's issue tracker.
+#. Announce upcoming removal in the collection's issue tracker if possible.
 #. Announce upcoming removal in The Bullhorn.
 
 .. _remove_collection:
@@ -119,8 +119,22 @@ Process
 Unmaintained collections
 ========================
 
-Identifying and removing an unmaintained collection
----------------------------------------------------
+Removing a collection that has been explicitly deprecated or abandoned by its (former) maintainers
+--------------------------------------------------------------------------------------------------
+
+Process
+~~~~~~~
+
+If the current major release is X and there hasn't been a feature freeze release of the next major version X+1, remove the collection from Y=(X+1).0.0.
+If there already has been a feature freeze release of the next major version X+1, remove the collection from Y=(X+2).0.0.
+
+#. `Announce upcoming removal from the Y Ansible release <announce_removal_>`_.
+#. `Remove collection from the Y Ansible release <remove_collection_>`_.
+
+See `the example pull request <https://github.com/ansible-community/ansible-build-data/pull/374/files>`_ in the ``ansible-build-data`` repository to learn how to remove the collection.
+
+Identifying and removing an unmaintained collection that has not been deprecated by its maintainers
+---------------------------------------------------------------------------------------------------
 
 Conditions for removal
 ~~~~~~~~~~~~~~~~~~~~~~
