@@ -22,6 +22,11 @@ The general process of removing a collection follows these steps:
 #. Removing the collection.
 #. When appropriate, re-adding the collection.
 
+Where the community has `write` access to the collection repository, follow these steps:
+
+#. Update the README.md to clearly state (at the top) that this is unmaintained.
+#. Push a release to Galaxy based off the last release with just the updated README.md (no other CI, etc fixes).
+#. Add a comment to any  open issues in the repo saying that the collection is unmaintained and will be removed from the Ansible package.
 
 .. _announce_removal:
 
