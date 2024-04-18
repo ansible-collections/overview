@@ -54,3 +54,10 @@ Note for reviewers: If you don't know how to check the points below, please ask 
 - [ ] all CI tests MUST run against every pull request
 - [ ] all CI tests MUST run regularly (nightly, or at least once per week)
 - [ ] sanity tests MUST run against a commit that releases the collection; if they don't pass, the collection won't be released
+
+**Steps to complete after inclusion is approved**
+
+- [ ] Subscribe to the [news-for-maintainers](https://github.com/ansible-collections/news-for-maintainers) repo and track announcements there.
+- [ ] Optionally but highly recommended, subscribe to the [Ansible Bullhorn](https://github.com/ansible/community/wiki/News#the-bullhorn). You can also post in the Bullhorn for community feedback or for important announcements such new releases of this collection.
+- [ ] Review the [Maintainer guidelines](https://github.com/ansible/community-docs/blob/main/maintaining.rst). 
+- [ ] Optionally, share the above with future maintainers, in a README on CONTRIBUTING file in the collection repo.
