@@ -11,7 +11,8 @@ Note for reviewers: If you don't know how to check any of the points below, plea
 - [ ] has a policy of releasing, versioning and deprecation announced to contributors and users in some way
 - [ ] have a Code of Conduct (CoC) compatible with the [Ansible Code of Conduct (CoC)](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
 - [ ] have a publicly available issue tracker that does not require a paid level of service to create an account or view issues
-- [ ] have a public git repository, releases of the collection are tagged in this repository
+- [ ] have a public git repository
+- [ ] releases of the collection are tagged in its repository
 
 **Standards and documentation:**
 - [ ] adheres to [semantic versioning](https://semver.org/)
@@ -26,10 +27,8 @@ Note for reviewers: If you don't know how to check any of the points below, plea
 - [ ] supports [all Python versions supported by all ansible-core versions its supports](https://docs.ansible.com/ansible/devel/reference_appendices/release_and_maintenance.html#ansible-core-support-matrix). If it does not, read the [full guidelines](https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html#python-compatibility) to see if you qualify for an exception and document the unsupported [Python versions](https://docs.ansible.com/ansible/devel/reference_appendices/release_and_maintenance.html#ansible-core-support-matrix) in the collection ``README.md`` and in every module and plugin (or in doc fragments)
 - [ ] only uses the [allowed plugin types](https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html#modules-plugins) in the `plugins/` directory
 - [ ] has `README.md`
-- [ ] documentation, examples, and return sections use FQCNs for the `M(..)` [format macros](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_documenting.html#linking-and-other-format-macros-within-module-documentation) when referring to modules
-- [ ] modules (or plugins) from ansible-core use `ansible.builtin.` as a FQCN prefix
+- [ ] FQCNs are used for all plugins and modules including `ansible.builtin.` for builtin ones from ansible-core in all their appearances in the documentation, examples, and return sections, and in `extends_documentation_fragment:`s.
 - [ ] documentation and return sections use `version_added:` containing the *collection* version for which an option, module or plugin was added (except cases when they were added in the very first release of the collection)
-- [ ] FQCNs are used for `extends_documentation_fragment:`, unless you are referring to doc_fragments from ansible-core
 - [ ] public plugins, roles and playbooks do not use files outside of `meta/`, `plugins/`, `roles/`, and `playbooks/`
 
 **Collection management:**
@@ -44,7 +43,7 @@ Note for reviewers: If you don't know how to check any of the points below, plea
 
 Note for reviewers: If you don't know how to check the points below, please ask maintainers of the collection you're reviewing how you can do it.
 * In most cases, CI is set up via GitHub Actions.
-* Check `.yml` files in the `.github/workflows` directory. There must be at least the `sanity` section under `jobs` containing the `ansible-test sanity` command running against all supported ansible-core versions that must be also listed there, for example, `- stable-2.11, - stable-2.12, - stable-2.13`.
+* Check `.yml` files in the `.github/workflows` directory. There must be at least the `sanity` section under `jobs` containing the `ansible-test sanity` command running against all supported ansible-core versions that must be also listed there, for example, `- stable-2.15, - stable-2.16, - stable-2.17`.
 * Check workflow runs by clicking the `Actions` tab in the repository's page - you're interested in `Scheduled` runs, runs against release commits and runs against pull requests.
 * If there are no workflows in the `Actions` tab, ask the collection maintainers how CI is implemented.
 
