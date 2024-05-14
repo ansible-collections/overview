@@ -8,7 +8,6 @@ Note for reviewers: If you don't know how to check any of the points below, plea
 
 **Public availability and communication:**
 - [ ] published on [Ansible Galaxy](https://galaxy.ansible.com) with version 1.0.0 or later
-- [ ] has a policy of releasing, versioning and deprecation announced to contributors and users in some way
 - [ ] have a Code of Conduct (CoC) compatible with the [Ansible Code of Conduct (CoC)](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
 - [ ] have a publicly available issue tracker that does not require a paid level of service to create an account or view issues
 - [ ] have a public git repository
