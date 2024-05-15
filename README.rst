@@ -137,7 +137,7 @@ Users of Ansible
 `Using Ansible Collections <https://docs.ansible.com/ansible/latest/user_guide/collections_using.html>`_
 
 Q: Once the next version of Ansible is released, will my playbooks still work?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For users of the community version of ansible ``pip/apt-get install ansible`` will continue to give you a working install of Ansible including the three thousand plus modules that previously shipped with Ansible 2.9.
 
@@ -169,7 +169,7 @@ Individual collections can be installed by doing:
 ``ansible-galaxy collection install NAMESPACE.COLLECTION``
 
 Q: What exactly is ansible-base for and what does it contain?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Ansible-base** is the name of the code and package for what github.com/ansible/ansible has become now that most of the content has been removed.
 
